@@ -49,8 +49,12 @@ export class ConfigFile {
     try {
       this.value = await persist.get(this.path)
     } catch (err) {
-      // never let a corrupt file fail a ConfigFile
-      dispatch(globalThis, err)
+      // A missing file on first boot is expected, not corruption: reset to
+      // defaults quietly. Broadcasting it as a window error would trip the
+      // BIOS fatal-error trap -- a fresh ?reset-data boot showed a BIOS ERROR
+      // dialog for the absent /users.json5 via this path.
+      // Genuine corruption (unparseable file) is still reported.
+      if (err?.code !== 'ENOENT') dispatch(globalThis, err)
       await this.reset()
     }
 
