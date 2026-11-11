@@ -93,6 +93,7 @@ function syncFromStorage() {
     saveData = { active: 1, cases: { 1: freshState(), 2: freshState(), 3: freshState() } };
     state = saveData.cases[1];
     PAGES = CASE_PAGES[1]; PEOPLE = CASE_PEOPLE[1]; EVIDENCE = CASE_EVIDENCE[1];
+    reconcile3y3Icon(); /* the wipe also removes the downloaded tool's desktop icon */
     return true;
   }
   let parsed = null;
@@ -197,7 +198,10 @@ function doReset() {
   }
   clearTimeout(resetArmTimer);
   try { localStorage.removeItem(LS_KEY); } catch (e) {}
-  location.reload();
+  /* Remove the 3y3.exe desktop icon first (the save it came from is gone),
+     then reload. The 2s race keeps a hung filesystem call from ever
+     bricking the reset; the load-time reconcile deletes the icon anyway. */
+  Promise.race([remove3y3Icon(), sleep(2000)]).then(() => location.reload());
 }
 
 /* ================= tune player (WebAudio music box) ================= */
@@ -248,7 +252,7 @@ function playTune(which) {
 /* ================= downloads (3y3.exe + encrypted .nfo files) ================= */
 function downloadFile(key) {
   if (key === "3y3.exe") {
-    if (!state.has3y3) { state.has3y3 = true; save(); toast("⬇ Downloaded <b>3y3.exe</b> — open it from Start → Programs → Somnius to decrypt files."); }
+    if (!state.has3y3) { state.has3y3 = true; save(); reconcile3y3Icon(); toast("⬇ Downloaded <b>3y3.exe</b> — it's on your desktop now. Open it to decrypt files."); }
     else toast("3y3.exe is already downloaded.");
     return;
   }
@@ -257,6 +261,57 @@ function downloadFile(key) {
   if (!state.downloads) state.downloads = [];
   if (!state.downloads.includes(key)) { state.downloads.push(key); save(); toast("⬇ Downloaded <b>" + esc(key) + "</b> — open 3y3.exe to decrypt it."); }
   else toast("Already downloaded.");
+}
+
+/* ================= 3y3.exe desktop icon (Case 3) ================= */
+/* In the original nested game, downloading the trainer made a 3y3.exe icon
+   appear on the fake Somnius desktop (eye glyph, "3y3.exe") and opening it
+   launched the decryptor. In the de-inception the decryptor is a native
+   program, so the download must instead plant a REAL shortcut on the
+   Windows 94 desktop: a .desktop file in ~/desktop/, written through the
+   OS filesystem (window.parent.sys42.fs — the same parent object
+   openProgram() uses for apps.launch; os.fs = fs in 42/api/os.js:138).
+   The desktop folder watches the file index (42/ui/media/folder.js #watch)
+   and re-renders live, so the icon appears without a reload; its grid
+   flows column-first (desktop.css: grid-auto-flow: column), so the new
+   icon lands in column 1, row 4, right below Case File, and the desktop's
+   own untracked-icon handler persists that position into desktop.json5
+   (keep() auto-saves mutations). A .desktop with Exec="somnius-decryptor"
+   and no Icon= resolves its picture from the Decryptor program's own eye
+   icon (getIconFromPath getDesktopFile -> parseExec -> exec.icon), and a
+   double-click runs os.exec("somnius-decryptor"). The file lives in the
+   IndexedDB-backed virtual FS (driver write() updates the file index and
+   stores the content), so it survives a page reload; it is NOT in
+   files.cbor — runtime files aren't shipped. Gated on cases[3].has3y3,
+   the Case 3 download, never on the active case, so it cannot appear in
+   Cases 1/2. */
+const DESKTOP_3Y3_PATH = "/c/users/windows93/desktop/3y3.desktop";
+const DESKTOP_3Y3_CONTENT = "[Desktop Entry]\nName=\"3y3.exe\"\nExec=\"somnius-decryptor\"\n";
+function osFs() {
+  try {
+    const p = window.parent;
+    if (p && p !== window && p.sys42 && p.sys42.fs) return p.sys42.fs;
+  } catch (e) {}
+  return null;
+}
+async function remove3y3Icon() {
+  const fs = osFs();
+  if (!fs) return;
+  try { if (await fs.access(DESKTOP_3Y3_PATH)) await fs.delete(DESKTOP_3Y3_PATH); } catch (e) {}
+}
+/* Make the desktop match the save: icon present iff Case 3 downloaded
+   3y3.exe. Idempotent — safe to call from every program on load, and
+   after a download or a wipe. */
+async function reconcile3y3Icon() {
+  const fs = osFs();
+  if (!fs) return; /* standalone tab: no desktop to update */
+  try {
+    const want = !!(saveData.cases[3] && saveData.cases[3].has3y3);
+    if (!want) { await remove3y3Icon(); return; }
+    let exists = false;
+    try { exists = await fs.access(DESKTOP_3Y3_PATH); } catch (e) { exists = false; }
+    if (!exists) await fs.writeText(DESKTOP_3Y3_PATH, DESKTOP_3Y3_CONTENT);
+  } catch (e) {}
 }
 
 /* ================= per-case config: report, case file, intro, home ================= */
@@ -491,3 +546,9 @@ window.Somnius = {
   }
 };
 window.doReset = doReset;
+
+/* Reconcile the 3y3.exe desktop icon with the loaded save on every program
+   launch: a returning player who already downloaded it in Case 3 gets the
+   icon back on boot, and a stale icon left by a wiped save (?reset=1, or a
+   reset in another program) is removed. Runs in every program; idempotent. */
+reconcile3y3Icon();
