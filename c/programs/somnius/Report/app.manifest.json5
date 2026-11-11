@@ -1,0 +1,13 @@
+{
+  name: "File Report",
+  command: "somnius-report",
+  categories: ["Somnius"],
+
+  width: 620,
+  height: 540,
+  maximizable: true,
+  resizable: true,
+  solo: true,
+
+  document: "./index.html",
+}

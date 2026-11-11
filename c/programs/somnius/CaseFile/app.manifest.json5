@@ -1,0 +1,13 @@
+{
+  name: "Case File",
+  command: "somnius-casefile",
+  categories: ["Somnius"],
+
+  width: 680,
+  height: 560,
+  maximizable: true,
+  resizable: true,
+  solo: true,
+
+  document: "./index.html",
+}

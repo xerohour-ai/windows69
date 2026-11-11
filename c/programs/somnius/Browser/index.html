@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Somnius Browser</title>
+<link rel="stylesheet" href="../shared.css">
+<script src="../data/pages.js"></script>
+<script src="../data/pages2.js"></script>
+<script src="../data/pages3.js"></script>
+<script src="../shared.js"></script>
+</head>
+<body>
+<div class="prog">
+  <div class="prog-head"><span>🌐 Somnius Browser</span><span class="sub" id="zone-name">Goodtime Valley</span></div>
+  <div class="btoolbar">
+    <button id="btn-back">◀ Back</button><button id="btn-fwd">Forward ▶</button>
+    <button id="btn-dir">📁 Directory</button><button id="btn-hist">🕘 History</button>
+    <input type="text" id="search-input" placeholder="Search Somnius… (public pages only)">
+    <button id="btn-search">Search</button>
+  </div>
+  <div id="addr">somnius://home</div>
+  <div id="assist-panel"></div>
+  <div id="browser-view"></div>
+  <div class="pagefoot"><span id="page-meta"></span><span style="flex:1"></span><button id="btn-bookmark">☆ Bookmark</button><button id="btn-pin">📌 Pin to Notepad</button></div>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>

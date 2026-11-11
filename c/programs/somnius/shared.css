@@ -1,0 +1,110 @@
+/* Somnius native programs — document styles (adapted from the nested game). */
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; font-family: Tahoma, Verdana, sans-serif; font-size: 12px; background: #c0c0c0; color: #000; }
+.prog { height: 100%; display: flex; flex-direction: column; padding: 6px; overflow: hidden; }
+.prog-head { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; font-weight: bold; padding: 4px 8px; margin: -6px -6px 6px; flex: none; display: flex; justify-content: space-between; gap: 8px; }
+.prog-head .sub { font-weight: normal; opacity: .9; }
+.prog-body { flex: 1; overflow: auto; }
+.prog-body.white { background: #fff; border: 1px inset #fff; padding: 8px; }
+button, input, select, textarea { font-family: Tahoma, Verdana, sans-serif; font-size: 12px; }
+button { cursor: pointer; }
+/* ---------- browser ---------- */
+#browser-view a { color: #0000ee; }
+#browser-view a:visited { color: #551a8b; }
+.btoolbar { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; margin-bottom: 5px; flex: none; }
+.btoolbar input[type=text] { flex: 1; min-width: 120px; padding: 3px; }
+#addr { width: 100%; padding: 3px; margin-bottom: 5px; background: #fff; border: 1px inset #fff; color: #333; flex: none; }
+#assist-panel { display: none; background: #ffffcc; border: 1px solid #cc9; padding: 6px; margin-bottom: 5px; flex: none; }
+#assist-panel b { color: #660; }
+#browser-view { background: #fff; border: 1px inset #fff; min-height: 200px; overflow: auto; flex: 1; }
+.pagefoot { display: flex; gap: 6px; align-items: center; margin-top: 5px; color: #444; font-size: 11px; flex-wrap: wrap; flex: none; }
+/* ---------- in-world pages ---------- */
+.pg { padding: 12px 14px; min-height: 280px; font-size: 13px; line-height: 1.45; }
+.pg h1 { font-size: 20px; margin: 2px 0 8px; }
+.pg h2 { font-size: 15px; margin: 12px 0 4px; }
+.pg.stars { background: #20206e; color: #fff;
+  background-image: radial-gradient(#fff 1px, transparent 1.4px), radial-gradient(#ffe9a8 1px, transparent 1.4px), radial-gradient(#fff 1px, transparent 1.2px);
+  background-size: 90px 70px, 130px 110px, 60px 90px; }
+.pg.stars a { color: #ffff66; }
+.pg.stars .box { background: rgba(0,0,0,.45); border: 1px solid #8888ff; color: #fff; }
+.pg.dark { background: #111; color: #c9c9c9; }
+.pg.dark a { color: #ff7777; }
+.pg.dark h1 { color: #eee; letter-spacing: 2px; }
+.pg.quiet { background: #dfe8ff; color: #223; }
+.pg.plain { background: #fff; color: #000; }
+.pg.possum { background: #e8e0d0; color: #332; }
+.pg .box { border: 1px solid #888; padding: 8px; margin: 8px 0; background: #f4f4f4; color: #000; }
+.pg .box.warn { background: #ffe1e1; border-color: #c00; }
+.pg .box.sad { background: #e1ecff; border-color: #36c; }
+.pg .gb p { border-bottom: 1px dashed #999; padding: 6px 0; margin: 0; }
+.pg.stars .gb p, .pg.dark .gb p { border-color: #666; }
+.pg .sig { font-size: 11px; font-style: italic; opacity: .85; margin-top: 14px; }
+.pg .tiny { font-size: 11px; color: #888; }
+.pg.stars .tiny, .pg.dark .tiny { color: #bbb; }
+.pg .hl { background: #ff0; color: #000; padding: 0 2px; font-weight: bold; }
+.pg .poem { font-style: italic; margin-left: 12px; }
+table.card { border-collapse: collapse; margin: 8px 0; background: #fff; color: #000; }
+table.card td { border: 1px solid #999; padding: 4px 8px; }
+.tune-btn { font-size: 13px; padding: 4px 12px; margin-top: 4px; }
+.tune-state { color: #060; font-weight: bold; }
+.pg.teen { background: #3d1a5c; color: #fff;
+  background-image: radial-gradient(#ff9ff3 1px, transparent 1.4px), radial-gradient(#fff 1px, transparent 1.2px);
+  background-size: 110px 80px, 70px 90px; }
+.pg.teen a { color: #ff9ff3; }
+.pg.teen .box { background: rgba(0,0,0,.45); border: 1px solid #c9f; color: #fff; }
+.pg.teen .tiny { color: #d9b3ff; }
+.pg.corp { background: #f2f2f2; color: #111; border-left: 6px solid #c00; }
+.pg.corp h1 { color: #c00; letter-spacing: 1px; }
+.pg.sketch { background: #fff8e1; color: #222; }
+.pg.sketch a { color: #7b1fa2; }
+.zoom-panel-art { background: #101030; color: #ffe9a8; font-size: 22px; text-align: center; padding: 18px 6px; letter-spacing: 4px; margin: 8px 0; }
+.zoom-btn { font-size: 13px; padding: 5px 14px; font-weight: bold; }
+.zoom-reveal { display: none; background: #000; color: #0f0; border: 3px dashed #f0f; padding: 12px; margin: 8px 0; text-align: center; }
+.pg.gamer { background: #0a0a2e; color: #fff;
+  background-image: radial-gradient(#ff0 1px, transparent 1.4px), radial-gradient(#f0f 1px, transparent 1.2px), radial-gradient(#fff 1px, transparent 1.2px);
+  background-size: 90px 70px, 130px 110px, 60px 90px; }
+.pg.gamer a { color: #ff0; }
+.pg.gamer .box { background: rgba(0,0,0,.55); border: 2px outset #888; color: #fff; }
+.pg.gamer .box.warn { background: #400; border-color: #f00; }
+.pg.gamer .tiny { color: #ccc; }
+.pg.gamer table.card td { color: #000; }
+.pg.nullsec { background: #000; color: #0f0; font-family: "Courier New", monospace; }
+.pg.nullsec a { color: #0f0; text-decoration: underline; }
+.pg.nullsec .box { background: #000; border: 1px solid #0f0; color: #0f0; }
+.pg.nullsec .tiny { color: #090; }
+.pg.nullsec h1 { color: #0f0; letter-spacing: 3px; }
+/* ---------- mail / notepad / casefile ---------- */
+.mail-list { border: 1px inset #fff; background: #fff; margin-bottom: 6px; }
+.mail-item { padding: 6px 8px; cursor: pointer; border-bottom: 1px solid #ddd; }
+.mail-item:hover { background: #eef; }
+.mail-item.unread { font-weight: bold; background: #fff8dc; }
+.mail-item .mdate { float: right; color: #888; font-weight: normal; font-size: 11px; }
+#mail-read { background: #fff; border: 1px inset #fff; padding: 10px; white-space: pre-wrap; min-height: 140px; flex: 1; overflow: auto; }
+#notes { width: 100%; height: 180px; }
+.pin { background: #ffffcc; border: 1px solid #cc9; padding: 5px 7px; margin: 4px 0; }
+.pin a { color: #00c; }
+.ledger { border-collapse: collapse; width: 100%; background: #fff; }
+.ledger td, .ledger th { border: 1px solid #999; padding: 3px 6px; font-size: 11px; text-align: left; }
+.ledger th { background: #dfe8ff; }
+.meter { height: 12px; background: #fff; border: 1px inset #fff; margin: 3px 0 8px; }
+.meter > div { height: 100%; background: #000080; }
+.slot { border: 1px solid #888; background: #fff; padding: 8px; margin: 8px 0; }
+.slot label { display: block; padding: 3px 0; cursor: pointer; }
+.slot .verdict { font-weight: bold; margin-top: 4px; }
+.verdict.ok { color: #060; } .verdict.bad { color: #c00; }
+#epilogue { display: none; background: #e1ecff; border: 2px solid #36c; padding: 12px; margin-top: 10px; }
+.case-switch { display: flex; gap: 6px; margin: 4px 0 10px; flex-wrap: wrap; }
+.case-switch button { padding: 5px 10px; }
+.case-switch button.active { background: #000080; color: #fff; font-weight: bold; }
+.stamp { display: inline-block; border: 3px solid #060; color: #060; padding: 2px 10px; font-weight: bold; transform: rotate(-4deg); letter-spacing: 2px; }
+/* ---------- decryptor ---------- */
+#eye-art { font-family: "Courier New", monospace; background: #000; color: #0f0; padding: 8px; margin: 0 0 8px; text-align: center; }
+#decrypt-out { background: #000; color: #0f0; font-family: "Courier New", monospace; white-space: pre-wrap; padding: 10px; min-height: 120px; border: 1px inset #fff; margin-top: 8px; }
+.file-row { display: block; padding: 3px 0; cursor: pointer; }
+/* ---------- toast + intro overlay ---------- */
+#som-toast { position: fixed; right: 12px; bottom: 12px; background: #ffffcc; border: 2px solid #cc9; padding: 10px 12px; z-index: 10001; display: none; max-width: 320px; box-shadow: 3px 3px 0 rgba(0,0,0,.3); }
+#som-intro { position: fixed; inset: 0; background: rgba(0,0,40,.72); z-index: 20000; display: flex; align-items: center; justify-content: center; }
+#som-intro .card { background: #c0c0c0; border: 2px solid; border-color: #dfdfdf #404040 #404040 #dfdfdf; width: 520px; max-width: 92vw; padding: 0; box-shadow: 6px 6px 0 rgba(0,0,0,.4); }
+#som-intro .card .intro-title { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; font-weight: bold; padding: 4px 8px; }
+#som-intro .card .body { padding: 14px 16px; background: #fff; }
+#som-intro h1 { margin: 0 0 6px; font-size: 18px; }

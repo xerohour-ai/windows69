@@ -1,0 +1,13 @@
+{
+  name: "Somnius Browser",
+  command: "somnius-browser",
+  categories: ["Somnius"],
+
+  width: 760,
+  height: 560,
+  maximizable: true,
+  resizable: true,
+  solo: true,
+
+  document: "./index.html",
+}

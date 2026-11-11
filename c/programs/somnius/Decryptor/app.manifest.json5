@@ -1,0 +1,13 @@
+{
+  name: "3y3.exe",
+  command: "somnius-decryptor",
+  categories: ["Somnius"],
+
+  width: 600,
+  height: 520,
+  maximizable: true,
+  resizable: true,
+  solo: true,
+
+  document: "./index.html",
+}

@@ -1,0 +1,13 @@
+{
+  name: "Somnius Notepad",
+  command: "somnius-notepad",
+  categories: ["Somnius"],
+
+  width: 520,
+  height: 460,
+  maximizable: true,
+  resizable: true,
+  solo: true,
+
+  document: "./index.html",
+}

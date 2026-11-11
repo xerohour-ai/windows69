@@ -1,0 +1,13 @@
+{
+  name: "Somnius Mail",
+  command: "somnius-mail",
+  categories: ["Somnius"],
+
+  width: 640,
+  height: 480,
+  maximizable: true,
+  resizable: true,
+  solo: true,
+
+  document: "./index.html",
+}
