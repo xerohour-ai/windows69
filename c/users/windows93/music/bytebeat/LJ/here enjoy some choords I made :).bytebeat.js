@@ -1,2 +1,0 @@
-/*! { author: "LJ", name: "here enjoy some choords I made :)", url: "https://www.pouet.net/topic.php?which=8357&page=26#c524954", date: "2016-12-15", sampleRate: 32000 } */
-((Math.abs(t*(.02+(t*.0001&0x4)*.01)*(1+((t*.0001)%4)<<5)%0xFF-0x80))&0xFF) + (t%100)*.3*Math.abs(sin(t*.00005)*.25+.5)+Math.min(Math.max((t>>16)-2,0)*.5,1)*(t*.1&0xF)*(t*.01&0xFF)/0x70

@@ -1,2 +1,0 @@
-/*! { author: "PortablePorcelain", name: "remix of ripthisentry.txt tune 3", url: "https://www.reddit.com/r/bytebeat/comments/tvnthr/creepy_droning_static_thing/", date: "2022-04-04", sampleRate: 32000, mode: "Floatbeat", remix: "raphaelgoulart/ripthisentry.txt, tune#3" } */
-n=t*[1,0,1,0,2,2,1,0,1,0,2,2,1,0,2,2][int(t/2048)%16],a=sin(n*Math.PI/255+cos(n*Math.PI/128)*(n/(524288+(16384*Math.random()))))*(128/256),b=cos((50000+(t/3200))/(t&16383))*(64/256),c=sin((2500+(t/3200))/(t&4095))*(48/256),tan(a+b+c)

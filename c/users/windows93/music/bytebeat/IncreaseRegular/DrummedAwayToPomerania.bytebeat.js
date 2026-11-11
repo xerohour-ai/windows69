@@ -1,2 +1,0 @@
-/*! { author: "IncreaseRegular", name: "DrummedAwayToPomerania", url: "https://www.reddit.com/r/bytebeat/comments/1lz4bec/combinations_i_think_3_whatever_edition", date: "2025-07-13", sampleRate: 32000, mode: "Floatbeat", remix: "wyngwyrm/WhiskedAwayToPomerania" } */
-t>>=2,c=(((2*t&8*t|t/32&36*t&18*t&9*t|t/128&32*t&t/64*t|t/16&t/4|t/32&t/16|t/12&t/8&t/6)&255)/128)-1,k=sin(4e3/('1001001001011010'[t>>10&15]*t&1023)&255)*2.5,h=(tan(t*random())&1)/(1+(t>>8&3)),s=sin(t*t*t)/(1+(t>>10&3))*(t>>12&1),c+k+h+s

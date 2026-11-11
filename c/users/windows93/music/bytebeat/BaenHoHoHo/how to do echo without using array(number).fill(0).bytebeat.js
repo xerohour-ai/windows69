@@ -1,2 +1,0 @@
-/*! { author: "BaenHoHoHo", name: "how to do echo without using array(number).fill(0)", url: "https://www.reddit.com/r/bytebeat/comments/14dhu1n/how_to_do_echo_without_using_arraynumberfill0/", date: "2022-06-19", remix: "the 42 melody" } */
-x=q=>(m=(234&q>>10),z=q*m%256/4),x(t)+x(t-2048)/2*(8192<t)+x(t-3072)/4*(16384<t)+x(t-4096)/8*(32768<t)+x(t-6144)/16*(32768<t)+x(t-8192)/32*(32768<t)+x(t-12288)/64*(4096<t)

@@ -1,2 +1,0 @@
-/*! { author: "Anonymous from russian imageboards", name: "11) THE HIT OF THE SEASON", url: ["https://arhivach.xyz/storage/a/9b/a9b7e820d10e52493570894ed002b9a5.jpg","http://arhivach.xyz/thread/28592/#71678428"], date: "2014-07-11" } */
-(t>0&t<65535?t%32>(t/10000)?t>>4:t>>6:0+t>65535&t<65535*2?t%32>(t%43)?t>>4:t>>6:0+t>65535*2&t<65535*3?t%36>(t%43)?t>>4:t>>6:0+t>65535*3&t<65535*4?t%64>(t%43)?t>>4:t>>6:0+t>65535*4&t<65535*5?t%43>5?t<<3:t>>6:0+t>65535*5&t<65535*6?t%27>5?t<<3:t>>6:0+t>65535*6&t<65535*8?t%63>5?t<<3:t>>6:0)&(t>>4)

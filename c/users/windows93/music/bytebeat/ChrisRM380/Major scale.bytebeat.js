@@ -1,2 +1,0 @@
-/*! { author: "ChrisRM380", name: "Major scale", url: "https://dollchan.net/btb/res/3.html#368", date: "2023-01-21" } */
-t*4*[1,1.13,1.275,1/0.75,1.5,1.7,1.875,2][(t>>12)%8]

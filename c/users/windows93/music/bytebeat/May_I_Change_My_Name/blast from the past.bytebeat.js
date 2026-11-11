@@ -1,2 +1,0 @@
-/*! { author: "May_I_Change_My_Name", name: "blast from the past", url: "https://www.reddit.com/r/bytebeat/comments/zxmmzm/comment/j3nh0ri/?utm_source=reddit&utm_medium=web2x&context=3", date: "2023-01-09", sampleRate: 44100, cover: "[Harold Faltermeyer - Axel F](https://youtu.be/Qx2gvHjNhQ0)" } */
-((z=(x=t>>6^t>>13)*4^t)+t>>(y=t>>11)%8|t%32^y<<x-t/3.12524|y<<6)|(t*1.06**(12+[0,0,0,,3,3,,0,,0,5,,0,,-2,,0,0,0,,7,7,,0,,0,8,,7,,3,,0,,7,,12,,0,-2,,10,-5,,2,2,0,0,0,0,0,0,,,,,,,,][t>>12&63]))%127

@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "sonic drowning ost", url: "https://dollchan.net/btb/res/163.html#253", date: "2022-11-19", sampleRate: 44100, cover: "[Sonic 1 Music - Drowning](https://youtu.be/9Yw5jkAHgME)" } */
-q=t,a=6.05,b=6.4,t*b/4,v=t/4*[a/4,b/4][q>>15&1]&128,f=((((t/4*[a/4,b/4][q>>15&1]*[1,4][q>>13&1]&127)+32)&128?-q>>5:0)&255)/2,u=(t*12)*sin(t>>4)&128?-(q>>7)+384:0,i=(t*12)*sin(q>>4)&128?-(q>>5):0,ac=min(v/2+f+((u)&255)/3+((i)&255)/5,255)

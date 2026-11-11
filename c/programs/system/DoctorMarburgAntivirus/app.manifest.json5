@@ -1,9 +1,0 @@
-{
-  name: "Dr. Marburg Antivirus",
-  command: "doctor",
-  categories: ["Amusement"],
-
-  solo: true,
-
-  module: "./Doctor.js",
-}

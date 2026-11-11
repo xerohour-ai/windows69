@@ -1,2 +1,0 @@
-/*! { author: "Glebguything", name: "Space Pong Title Screen", url: ["https://www.reddit.com/r/bytebeat_2/comments/1nd7vhb/space_pong_tittle_screen/","https://dollchan.net/btb/res/727.html#9074"], date: "2025-09-10", sampleRate: 26000 } */
-this.v??=0,t?v:v=0,x=[("1,0,0.333,0,0.333,1,0,1,".repeat(4).slice(0,-2)+"2").split(",")[t>>12&31]],v=((x*t)*(1&t>>10)>>(t/x)/8*(1&-t>>14))%256*(4095&-t)/2e3/2*(1&t*x*(7&(t>>12|t>>14^t>>13))>>9)

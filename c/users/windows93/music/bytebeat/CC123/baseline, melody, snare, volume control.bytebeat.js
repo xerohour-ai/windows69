@@ -1,2 +1,0 @@
-/*! { author: "CC123", name: "baseline, melody, snare, volume control", url: "http://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html?showComment=1317629876555#c513659358561118663", date: "2011-10-03", sampleRate: 11025 } */
-( ((t*4)*(((t>>>11)&1)?1:0)*(((t>>>11)&8)?0:1) + (t*2)*(((t>>>10)&1)?1:0)*(((t>>>10)&128)?0:1) +(t*4)*(((t>>>10)&1)?1:0)*(((t>>>10)&128)?1:0) + (t*sin(t)*(((t>>>10)&4)?1:0)*(((t>>>10)&1)?1:0))) % 256) * (7/10)

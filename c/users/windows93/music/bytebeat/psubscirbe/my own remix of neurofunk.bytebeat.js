@@ -1,5 +1,0 @@
-/*! { author: "psubscirbe", name: "my own remix of neurofunk", url: "https://www.reddit.com/r/bytebeat/comments/10hwo1a/my_own_remix_of_neurofunk/", date: "2023-02-21", remix: "SthephanShi/Neurofunk" } */
-nf=(t*((t&4096?t%65536<59392?7:t&7:16)+(1&t>>14))>>(3&-t>>(t&2048?2:10))|t>>(t&16384?t&4096?10:3:2))%256/3,
-kick=(3e5/(t&4095)&63),
-sna=t*random()&31|t>>6&63,
-nf+kick+sna

@@ -1,2 +1,0 @@
-/*! { author: "RealZynx92", name: "something i made while experimenting with my own remix of TIRO", url: "https://www.reddit.com/r/bytebeat/comments/s70nm1/something_i_made_while_experimenting_with_my_own/", date: "2022-01-18", sampleRate: 32000, remix: "RealZynx92/remix of \"The time is running out!\"" } */
-t/=5.5,((t*(t&16384?6:5)*(3-(3&-t>>9)+(3&t>>8))>>(2&t>>(t%65536<59392?(t&4096?2:11):2))|t>>4)/2&127)+(3E4/(t&4095)&128)+(random()*(((-t>>5)%64)+64))+(t*"23"[t>>14&1]&64)

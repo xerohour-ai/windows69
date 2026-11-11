@@ -1,2 +1,0 @@
-/*! { author: "RealZynx92", name: "zynx92 type beat remixed", description : "Unable to find the remix source.", url: "https://www.reddit.com/r/bytebeat/comments/s8hiun/comment/htjy1ae/?utm_source=reddit&utm_medium=web2x&context=3", date: "2022-01-21", sampleRate: 32000 } */
-(random()*"1000"[t>>10&3]*32)+(sqrt((t&16383)*400)&63*"10"[t>>12&1])+(((t&t>>11)&32)+(64*sin(t*(t&t>>12)*4/88200))+([1,1.5,0.5,0.8][(t>>16)%4]*t>>1&128))/3+31

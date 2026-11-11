@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "Nocturnizf", description : "Sort of a melody with this one?", url: "https://dollchan.net/btb/res/44.html#66", date: "2022-05-16", sampleRate: 44100 } */
-((a=t%2**17)/((b=2**(('22532250'[t>>17&7]-2)/12))*a%(64*'4321'[a>>[1,4,2,12][c=a>>14&3]&3]))/2**(a>>12&3)&255)/2+(c!=3)*(128*sin(b**2*4096/(a%32768)**.01)&64)

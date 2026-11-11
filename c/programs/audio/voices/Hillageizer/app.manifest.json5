@@ -1,9 +1,0 @@
-{
-  name: "Hillageizer",
-  categories: ["Audio", "Music", "Voice"],
-
-  width: 310,
-  height: 545,
-
-  document: "./index.html",
-}

@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "Eerie", url: "https://dollchan.net/btb/res/520.html#531", date: "2023-03-06", sampleRate: 128000, mode: "Floatbeat", remix: "PortablePorcelain/foldableboldface" } */
-l=0,t?0:a=Array(n=30000).fill(0),f=(z,v)=>sin(l++<z?f(z,v)-v:(l=0,v)),x=a.shift(),t/=16+sin(t/172663)/16,f=q=>(a.push(q/3-a[n/2|0]/2+a[n/4|0]/3),x),f(t/[32,49,63,24][t>>16&3]*1024%256/+333+sin(2.03**(-t/1e3%32+8)))-.2

@@ -1,7 +1,0 @@
-{
-  name: "IE6",
-  command: "ie6",
-  categories: ["Amusement", "Virus"],
-
-  module: "./IE6.js",
-}

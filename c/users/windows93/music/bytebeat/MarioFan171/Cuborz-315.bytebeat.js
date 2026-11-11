@@ -1,2 +1,0 @@
-/*! { author: "MarioFan171", name: "Cuborz-315", url: "https://www.reddit.com/r/bytebeat/comments/1btykv5/cuborz315/", date: "2024-04-02", sampleRate: 44100 } */
-T=t*2**(parseInt('077A5573352232053'[(t>>13)%16],36)/12),B=t*2**(parseInt('00000000333333335555555577777777'[(t>>13)%32],36)/12),bass=(B/4)&64+(B/8)&64|(B/(B&B>>12))&96,a=3e5/(t%16384),b=T/((T&T>>12^T>>8))^(T&T>>8&T>>9)^cbrt(T),a1=(T&64+cbrt(b&b>>12)+T%127+T%128+b%127+b%128)&127%T^256,ins=a1+(b%16),ins+a/1.75+bass

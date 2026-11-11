@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "FLⱯR3Z0NE", description : "\"Electrohouse\" with some additional sounds and slight tweaks.", url: "https://dollchan.net/btb/res/44.html#69", date: "2022-05-26", remix: "Anonymous from russian imageboards/Electrohouse" } */
-(t>>t%(t&1?t>>15&1?51:t>>14&3?58:65:39)&t>>4&255)/2+(3e5/(t-(t>>2&1024)&4095)&63)+(t>>11&1)*((t>>15&1?19:t>>14&3?17:15)/10*t%78+((t>>9&3)+2)*(t>>15&1?30:t>>14&3?27:20)/20*t%39)/1.5

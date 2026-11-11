@@ -1,2 +1,0 @@
-/*! { author: "PortablePorcelain", name: "sparta remix chord progression", url: "https://www.reddit.com/r/bytebeat/comments/11kp8bu/128char_sparta_remix_chord_progression/", date: "2023-03-07", sampleRate: 32000, cover: "[Keaton Monger - This is Sparta! Last techno remix](https://youtu.be/rvYZRskNV3w)" } */
-seq=[[2,5,9],[3,7,10],[0,3,7],[3,7,10]][t>>15&3],f=(a,b,c)=>(p=(a,b)=>(a*2**((b+1)/12)),p(t,a)%64+p(t,b)%64+p(t,c)%64),f(...seq)

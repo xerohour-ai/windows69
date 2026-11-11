@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "electric angel", url: ["https://dollchan.net/btb/res/204.html#2108","https://www.reddit.com/r/bytebeat/comments/164liea/electric_angel/"], date: "2023-08-29", sampleRate: 44100, cover: "[Kagamine Rin & Len - Electric Angel](https://youtu.be/sSYoz0JmnZo)" } */
-t*2**("V\0X\0ZZZ\0S\0Z\0]]]\0Z\0]\0_\0b\0a\0]\0ZZZ\0V\0X\0ZZZ\0]\0_\0]]]\0XXX\0X\0Z\0X\0V\0SSS\0Q\0S\0VVV\0S\0V\0XXX\0V\0X\0Z\0]\0Z\0X\0WWW\0Z\0]\0_\0]\0Z\0]\0XXX\0V\0X\0Z\0\0\0Q\0\0\0SSS\0".charCodeAt((t/1.05>>12)%128)/12-5)/1.17&128

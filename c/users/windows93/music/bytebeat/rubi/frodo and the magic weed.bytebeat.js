@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "frodo and the magic weed", url: "https://www.reddit.com/r/bytebeat/comments/14je5fs/frodo_and_the_magic_weed/", date: "2023-06-26", sampleRate: 48000 } */
-(((4e4/(t&2**13-1))*'1001101110011010'[15&t>>13]&128)+((t*sin(t>>2)*'00100011'[7&t>>14]&128)%256*(-t&2**14-1)/2e4)+(t*[1,1.2,1.35,1.5][3&t>>16]>>2&128)+(t/16*'8867'[3&t>>15]*'1232'[3&t>>13]&128))/1.5

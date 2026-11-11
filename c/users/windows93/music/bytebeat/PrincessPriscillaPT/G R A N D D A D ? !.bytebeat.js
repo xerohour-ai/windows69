@@ -1,2 +1,0 @@
-/*! { author: "PrincessPriscillaPT", name: "G R A N D D A D ? !", url: "https://dollchan.net/btb/res/7164.html#8345", date: "2025-07-20", sampleRate: 39824.254, cover: "[The Flintstones: The Rescue of Dino and Hoppy (NES) - Title Theme](https://youtu.be/U3-0w9eVENw)" } */
-t||(a=0),q=-9e9,a+=2**([7,7*(1-t/8192%1)**.5,0,0,q,12,12,9,7,7*(1-t/8192%1)**.5,0,0,q,7,7,5,(t>>11&1?q:4),4,5,7,0,0,2,2,4,4,4,4,q,q,q,q,7,7*(1-t/8192%1)**.5,0,0,q,12,12,9,7,7*(1-t/8192%1)**.5,0,0,q,7,7,5,(t>>11&1?q:4),4,5,7,0,0,2,2,0,0,0,0,q,q,q,q][t>>13&63]/12)

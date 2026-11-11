@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "lhphr", url: "https://www.reddit.com/r/bytebeat/comments/1h5ocqx/comment/m0h8a9i/", date: "2024-12-05", sampleRate: 48000, mode: "Floatbeat", remix: ["lhphr/clear delay example","emelchenko/i made my own version of the bytewave thingy"] } */
-x=y=>(t||(A=Array(n=24576).fill(0)),a=(sin((t|7)*2**(parseInt('AD  HF'[t>>14&5],36)/12)*y/113*PI*2**(b=[0,-2,-3,4][t>>18&3]/12))/2*(1-t/4**7%1))%256+A[t%n],A[t%n]=a/2,sin(cbrt(t&32767)*4)/2+(random()*(t&32768?t&16384?0:1-t/16384%1:0)**3)+(a+(t*y/4*2**b&255)/512)-1/3),[x(1.005),x(.995)]

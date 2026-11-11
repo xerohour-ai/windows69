@@ -1,2 +1,0 @@
-/*! { author: "ryg", name: "another take on simplifying mu6k's thing", url: ["https://www.pouet.net/topic.php?which=8357&page=10#c388986","https://youtu.be/tCRPUv8V22ot=394"], date: "2011-10-05", mode: "Signed Bytebeat", remix: "mu6k/No Limit", cover: "[2 Unlimited - No Limit](https://youtu.be/qM5W7Xn7FiA)" } */
-sin(2000/(y=t&4095))*25+((x=t*(15&0x9866>>(t>>12&12))/6)&127)*(y/1e+4)+((t>>6^t>>8|t>>12|x)&63)

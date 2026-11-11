@@ -1,2 +1,0 @@
-/*! { author: "0naCB0_1488", name: "sine thingy", url: "https://www.reddit.com/r/bytebeat/comments/1eq9dia/sine_thingy/", date: "2024-08-12", sampleRate: 48000, mode: "Floatbeat" } */
-(sin(t*PI/48/(1+(t>>16&1)))+sin(t*PI/64*(2+(t>>17&1)))+sin(t*PI/128*(4+(t>>19&1)))+sin(t*PI/192*(5+(-t>>20&1)))+sin(t*PI/512))*sin(t*PI/131072)/7

@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "cool music", url: "https://www.reddit.com/r/bytebeat/comments/14l697q/cool_music/", date: "2023-06-28", sampleRate: 10500, remix: "rubi/his name gort" } */
-a=t*[1,1.2,1.35,1.5][3&t>>14]>>2,((a%63+a%64)+(4e4/(t&2**12-1)&64)+(t*sin(t>>2)*(1&t>>12)&-t>>6&63)+(t*2*[1,1,1,,.9,,1,1,1,,.9,,1.2,,t&16384?1.35:1][15&t>>10]&63))/1.5

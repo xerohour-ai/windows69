@@ -1,9 +1,0 @@
-{
-  name: "Silent Bill",
-  categories: ["Audio", "Synth", "Drone", "Ambient", "Generative"],
-
-  width: 259,
-  height: 77,
-
-  document: "./index.html",
-}

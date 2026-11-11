@@ -1,2 +1,0 @@
-/*! { author: "RealZynx92", name: "i bet nobody has thought of using cbrt", url: "https://www.reddit.com/r/bytebeat/comments/skg4b7/i_bet_nobody_has_thought_of_using_cbrt/", date: "2022-02-04", sampleRate: 32000, mode: "Floatbeat" } */
-sin(pow(2,(-t/2048)%8)*100)/2+tan(cbrt(sin(t*[1,0,2,4,0,2,3,2,1.5,2,1,0,2,3,2,1.5][t>>13&15]/41)))/[2,3,4,6,8,12,16,24][t/[1,1.5][t>>12&1]>>10&7]/4+cbrt(asin(sin(t/[2,3,2.5,4][t>>16&3]/41)))/6

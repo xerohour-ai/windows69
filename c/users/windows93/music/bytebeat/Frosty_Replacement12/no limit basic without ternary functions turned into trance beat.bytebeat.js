@@ -1,2 +1,0 @@
-/*! { author: "Frosty_Replacement12", name: "no limit basic without ternary functions turned into trance beat", url: "https://www.reddit.com/r/bytebeat/comments/1h6fxh0/no_limit_basic_without_terminary_functions_turned/", date: "2024-12-04", sampleRate: 32000, remix: ["hcdphobe/no limit basic without ternary operators","SthephanShi/Trance beat"] } */
-((t*(15&39014>>(12&t>>14))/6|t>>6^t>>8|t>>12)&255)/((t*(15&39014>>(12&t>>14))/12)&127)|t>>6

@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "why do i keep making this", url: "https://dollchan.net/btb/res/520.html#737", date: "2023-03-31", sampleRate: 70997, cover: "[Forever Bound - Stereo Madness](https://youtu.be/JhKyKEDxo8Q)" } */
-T=.236,(t/2*T*2**([7,2,4,0][t>>17&3]/12)*((t>>14&1)+2)&63)+(abs(cbrt(sin(t*PI/128*T*2**([7,6,7,12.1][t>>17&3]/12))))*32)+(abs(cbrt(sin(t*PI/128*T*2**([11,9,4,0][t>>17&3]/12))))*32)+(abs(cbrt(sin(t*PI/128*T*2**([18.95,18,16,16][t>>17&3]/12))))*32)

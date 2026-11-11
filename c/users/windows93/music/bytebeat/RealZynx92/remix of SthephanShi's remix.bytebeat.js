@@ -1,2 +1,0 @@
-/*! { author: "RealZynx92", name: "remix of SthephanShi's remix", url: "https://www.reddit.com/r/bytebeat/comments/qf9meb/remix_of_the_time_is_running_out_by_stephanshi/hi9r80q/?utm_source=reddit&utm_medium=web2x&context=3", date: "2021-10-27", sampleRate: 44100, remix: "SthephanShi/Remix of RealZynx92's remix" } */
-t/=4,((t/2*(t&16384?7:5)*(t&512?0.5:(t&256?1:2))*(3-(3&t>>9)+(3&t>>8))>>(3&-t>>(t%65536<59392?(t&4096?2:16):2))|t>>4)&127)+(1E5/(t%(t&8192?4096:3072))&128-64)+(random()*(((-t>>(t&4096?5:(t&2048?3:4)))%64)+64))

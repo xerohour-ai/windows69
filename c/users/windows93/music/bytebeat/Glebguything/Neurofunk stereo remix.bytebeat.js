@@ -1,2 +1,0 @@
-/*! { author: "Glebguything", name: "Neurofunk stereo remix", url: "https://www.reddit.com/r/bytebeat/comments/1b8qvz5/messed_with_one_of_the_owners_song_and_this_is/", date: "2024-03-07", sampleRate: 32000, mode: "Signed Bytebeat", remix: "SthephanShi/Neurofunk" } */
-t/=5.5,[t*((t&4096?t%65536<59392?7:t&7:16)+(1&t>>14))>>(3&-t>>(t&2048?2:10))|t>>(t&16384?t&4096?3:4:1),t*((t&4096?t%65536<59392?7:t>>6:16)+(1&t>>14))>>(3&-t>>(t&2048?2:10))&-t>>(t&16384?t&4096?2:3:2)]

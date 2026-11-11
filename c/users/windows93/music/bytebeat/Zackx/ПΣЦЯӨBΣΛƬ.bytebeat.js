@@ -1,4 +1,0 @@
-/*! { author: "Zackx", name: "ПΣЦЯӨBΣΛƬ", url: "https://dollchan.net/btb/res/204.html#465", date: "2023-02-24", sampleRate: 32000, remix: "SthephanShi/Neurofunk" } */
-t/=4,z='1111111111111110'[15&t>>12]%4096,86-(t*((t&4096?t%65536<59392?7:t&7:16)+(1&t>>14))>>(3&-t>>(t&2048?2:10))|t>>(t&16384?t&4096?10:3:2))%256/3+
-sin(16*cbrt(t*z%4096))*32+32+
-32*random()*(~t*z&4095)/4e3*(t&4096)/2e3

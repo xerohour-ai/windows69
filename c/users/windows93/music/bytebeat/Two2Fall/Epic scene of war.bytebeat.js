@@ -1,2 +1,0 @@
-/*! { author: "Two2Fall", name: "Epic scene of war", url: "https://www.reddit.com/r/bytebeat/comments/1fapyy3/some_hardcore_songs/", date: "2024-09-07", sampleRate: 48000, remix: "Glebguything/Space Status VS Pong" } */
-f=t%(t>>15^t/90%(t>>9)%(t&t>>100))-4,drums=(((sqrt(3e2*(t&[16383,8191,16383,16383][(t>>15)%4]))&64)+((3e5/(t&32767))&64)+(t*sin(t>>2)&255)*(-t&8191)/2e4*"001"[(t>>13)%3])+(random()*(-t&8191)/2e2)),64+(drums+(.25*f&63))/2

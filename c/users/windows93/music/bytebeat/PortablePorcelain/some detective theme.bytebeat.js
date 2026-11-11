@@ -1,2 +1,0 @@
-/*! { author: "PortablePorcelain", name: "some detective theme", url: "https://dollchan.net/btb/res/55.html#109", date: "2022-07-22", sampleRate: 48000 } */
-l=(s,o,r,p,u)=>(c=s.charCodeAt((t/r)%s.length),2**((c-o)/p)/(2**u)),p=(w,x,y,z)=>w*(x**(y/z)),q=x=>l('0$$0$$0$1%0$$0$$0$+.',x,2**13,12,3),(t/4*q(12))%63+(t*q(17)*'0111'[t/(10*2**14)&3])%63+(t*q(8)*'0011'[t/(10*2**14)&3])%63

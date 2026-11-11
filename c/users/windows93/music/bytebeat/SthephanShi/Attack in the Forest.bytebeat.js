@@ -1,2 +1,0 @@
-/*! { author: "SthephanShi", name: "Attack in the Forest", url: "https://www.reddit.com/r/bytebeat/comments/18kzekh/funcbeat_in_dollchan_player/", date: "2023-12-18", sampleRate: 48000, mode: "Funcbeat", remix: "SthephanShi/Dark Forest" } */
-return t=>(T=9*t,b=T>>7,k=b+2&4?4:8,S=(s,p,d=0,a='0235705702357053')=>(5E3*T*2**(p+a[(T-d)/s%a.length|0]/12+((1-(T>>5&3))%2+2)/3)&128)/3,N=p=>1E5*sin(T*p|0)&64,S(2,0)+.6*S(2,0,3)+(b&&S(0,-2))+(b>1&&1.2*S(.25,1,0,'037')*(1-T%(k-2)/(k-1)))+(b>2&&.4*N(1E6)*(1-(T-k/2)%k/k))+(b>3&&48*(sin(80*(T%k)**.5)+1)+(T&k&&.8*N(280)*(1-T%k/k))))/128-1

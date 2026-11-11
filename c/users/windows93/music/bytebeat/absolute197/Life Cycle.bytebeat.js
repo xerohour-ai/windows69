@@ -1,3 +1,0 @@
-/*! { author: "absolute197", name: "Life Cycle", url: "https://www.reddit.com/r/bytebeat/comments/153j4u9/comment/jsjkzjf/?utm_source=reddit&utm_medium=web2x&context=3", date: "2023-07-19", sampleRate: 48000, mode: "Floatbeat" } */
-n=tan(sin(((1+(3&t/1.19>>14))*t*'35463546363645363544445354536344'[31&t/1.19>>12]/147)))/4,
-t?0:a=Array(R=13768).fill(0),r=n+a[t%R],a[t%R]=r/2,r/1.755

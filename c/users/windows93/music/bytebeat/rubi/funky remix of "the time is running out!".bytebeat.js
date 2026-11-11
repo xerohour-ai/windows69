@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "funky remix of \"the time is running out!\"", url: "https://www.reddit.com/r/bytebeat/comments/ry4ikf/comment/hrmh2m3/?utm_source=reddit&utm_medium=web2x&context=3", date: "2022-01-07", sampleRate: 11025, mode: "Signed Bytebeat", remix: "SthephanShi/The time is running out!" } */
-(t>>4|t*(t&16384?7:5)*(3-(3&t>>9)+(3&t>>8))>>(3&-t>>(t%65536<59392?(t&4096?2:16):2))&96)+(64*random(t)*(1&t>>11))+(44444/(t%pow(4,(3+(2+(1)))))&128)

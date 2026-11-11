@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "fly into sky", url: ["https://dollchan.net/btb/res/204.html#1904","https://www.reddit.com/r/bytebeat/comments/15qdvex/automatic_chord_engine/"], date: "2023-08-13", sampleRate: 48000, remix: "Zackx/exsynth sequences song" } */
-p=t=>(a=(x,y)=>t*2**(parseInt(x[(t>>y)%x.length],36)/12)/1.44,(a('BPIFKDMKFIHAHIHD',13)&128))*(1-t%8192/12E3),p(t)+p(t-12288)/2+p(t-24576)/4+p(t-36864)/8

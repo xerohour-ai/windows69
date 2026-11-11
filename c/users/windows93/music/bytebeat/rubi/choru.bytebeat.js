@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "choru", url: "https://www.reddit.com/r/bytebeat/comments/14rfl0n/choru/", date: "2023-07-05", sampleRate: 44100 } */
-a=t*[1,1.2,1.35,1.5][3&t>>13]/[1.5,1.5,1,1.1][3&t>>15],a%127+a%128

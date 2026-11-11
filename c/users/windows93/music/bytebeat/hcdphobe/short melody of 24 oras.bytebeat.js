@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "short melody of 24 oras", url: "https://www.reddit.com/r/bytebeat/comments/vrn5o6/short_melody_of_24_oras/", date: "2022-07-05", sampleRate: 22050 } */
-drum1=(t*random()|t>>6)&49,drum2=(((t>>5)*(t>>3))*[0,1][(t>>13)%2]*t|t>>6)&200,melody=([3.05,0,0,3.05,0,0,0,3.05,3.4,0,0,3.4,0,0,0,3.39,3.6,0,0,3.6,0,0,0,3.6,4.05,0,4.05,0,4.55,0,4.55][(t>>12)%32]*t)&129,melody+drum1+drum2

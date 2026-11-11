@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "\"you'll know i'll go get remix\": pwm cover", url: "https://www.reddit.com/r/bytebeat/comments/1585hrp/youll_know_ill_go_get_remix_pwm_cover_by_hcdphobe/", date: "2023-07-24", sampleRate: 15360, cover: "[DJ Haning & Rizky Ayuba - You Know I'll Go Get Tik Tok Remix](https://youtu.be/opGCwdMneTk)" } */
-l=t*1.15,v=4*t*1.065,v=v*2**([0,3,3,3,3,3,1,0,-2,3,3,3,3,3,3,5,5,0,0,0,0,0,0,3,5,1,1,1,5,1,1,3][l>>12&31]/12),v=(v&127)+((-l>>((l>>12&31)>28?4:5)&127)/1.5+24)&128,v+64

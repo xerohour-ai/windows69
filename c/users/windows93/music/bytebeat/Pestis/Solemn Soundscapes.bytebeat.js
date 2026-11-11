@@ -1,2 +1,0 @@
-/*! { author: "Pestis", name: "Solemn Soundscapes", description : "Lovebyte 2025 competition song.", url: "https://demozoo.org/music/367593", date: "2025-02-15", sampleRate: 48000, mode: "Floatbeat" } */
-(f=>{for(y=t*=C=2;C--;O=[y,x]=[d[++t]=x+S(32&f&&300*s**.1*n**f)/e,y])for(x=d[t-6e4]/3||0,i=5;--i;x+=S(S(2**((12*(n-"6687"[3&f])/7|0)/12+10)*s)*9**S(f*i+C)*S(n*f/21))/e)r=f/2**i*16,n="10315121"[r&f/4+1&7],s=r%1,e=2**(.06/s+n/2+n*s*6)})(t/8e4||(d=[S=sin])),O

@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "any idea named this?", url: "https://www.reddit.com/r/bytebeat/comments/190r8jm/any_idea_named_this/", date: "2024-01-07", sampleRate: 25600, mode: "Signed Bytebeat" } */
-g=1&t>>19,p=t*2**(parseInt(['C0735AA7C0735AFE'[15&t>>12],'8FM8FM8FM8FMAHMOCJRCJQCJMCJKCRVT'[31&t>>12]][g],36)/12),((p&(sin(p*PI/257)+127)*128)%256-128)*(1-t/['1111144111111111'[15&t>>12],1][g]%4096/6144)

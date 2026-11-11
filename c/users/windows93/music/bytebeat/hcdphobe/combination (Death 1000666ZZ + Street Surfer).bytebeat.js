@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "combination (Death 1000666ZZ + Street Surfer)", url: "https://www.reddit.com/r/bytebeat/comments/10qo7mm/someone_has_posted_a_bytebeat_link_in_comments_on/", date: "2023-02-01", remix: "skurk, raer/Street Surfer" } */
-(t*([(t>>10^t>>11|t>>12&t>>13),(t>>8^t>>6|t>>5&t>>9),(t>>11^t>>14|t>>13&t>>15)][(t>>14^t>>15^t>>13)%3])|t>>([2,3,2,3][(t>>13^t>>12^t>>11)%4]))&(t&4096?(t*(t^t%255)|t>>4)>>1:t>>3|(t&8192?t<<2:t))

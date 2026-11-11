@@ -1,2 +1,0 @@
-/*! { author: "May_I_Change_My_Name", name: "Trivial Interpolated Pitch", description : "The / character in the string fills its time slot with a slide from the previous pitch to the next.", url: "https://www.reddit.com/r/bytebeat/comments/15jjbff/trivial_interpolated_pitch/", date: "2023-08-06", sampleRate: 44100 } */
-t||(p=0),T=q=>2**(q/12),m='0/4/7/4/0 477 4 ',i=t/8192%m.length,I=i|0,dp=[0,T(m[I+1]-(m[I+1]-m[I-1])*(1-i%1)),T(m[i|0])].at(' /'.indexOf(m[I])),p+=dp

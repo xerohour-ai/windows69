@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "Nos Altas", url: "https://dollchan.net/btb/res/163.html#811", date: "2023-04-11", sampleRate: 48000, mode: "Floatbeat" } */
-z=3221225487/10**8/8,t/=1.5,t=t*PI/128*z,v=t,t%=2**14,t=2*t*(t>>9&3|-t>>10&3^-t>>13&3)/((t>>9&3)+3)/2,sin(t+atan(sin(t/2)*2+tan(sin(t))*.45)*2)/3*(-v&511)/510

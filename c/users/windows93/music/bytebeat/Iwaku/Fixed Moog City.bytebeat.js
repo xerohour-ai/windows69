@@ -1,2 +1,0 @@
-/*! { author: "Iwaku", name: "Fixed Moog City", url: "https://www.reddit.com/r/bytebeat/comments/13q0ycv/fixed_moog_city/", date: "2023-05-24", sampleRate: 48000, mode: "Floatbeat", remix: "Iwaku/Moog City MIDI cover", cover: "[C418 - Moog City](https://youtu.be/trRGS_Va7_M)" } */
-t?0:r=Array(l=12e3).fill(0),g=min(t/6e6,.7)*abs(expm1(sin(t*[330,440,494,659,784,988,1175,1568][0|t/10909%8]/7640*(62<(0|t/10909%64)?1.122:1))))+r[t%l]/2,r[t%l]=g/2,g-1

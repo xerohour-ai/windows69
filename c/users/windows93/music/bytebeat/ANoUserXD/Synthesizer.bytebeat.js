@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "Synthesizer", url: "https://www.reddit.com/r/bytebeat/comments/14yxiaj/synthesizer/", date: "2023-07-14", sampleRate: 32000 } */
-a=t*[1,1.5,1,1.2,0,1.2,1.5,1.8][t>>13&7],a*.499%256/4+a%256/4+a*1.49%256/4+a*1.99%256/4

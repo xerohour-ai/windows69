@@ -1,2 +1,0 @@
-/*! { author: "awogler9124812041", name: "formant synthesis", description : "Synthesized vowels \"a e i o u\".", url: "https://www.reddit.com/r/bytebeat/comments/15x6jtg/formant_synthesis/", date: "2023-08-21", sampleRate: 48000, mode: "Floatbeat" } */
-f=a=>sin(t/128/187.50*a*PI),p=a=>{q=0;a.forEach(b=>q+=f(b)/a.length);return q},vowels=[[660,1700,2400],[530,1850,2500],[270,2300,3000],[640,1200,2400],[300,870,2250]],p(vowels[(t>>15)%vowels.length])

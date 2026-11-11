@@ -1,2 +1,0 @@
-/*! { author: "PrincessPriscillaPT", name: "Attempt on a Sierpinski Sparta Remix", url: "https://www.reddit.com/r/bytebeat/comments/1fbo3g0/my_attempt_on_a_sierpinski_sparta_remix/", date: "2024-09-08", sampleRate: 31608, remix: "miiro/Sierpinski harmony", cover: "[Keaton Monger - This is Sparta! Last techno remix](https://youtu.be/rvYZRskNV3w)" } */
-t/=4,t*2**(([29,30,27,30][t>>13&3]/12)-2/12)|-t>>4

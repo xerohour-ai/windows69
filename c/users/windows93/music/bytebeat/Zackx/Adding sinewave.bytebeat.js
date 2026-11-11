@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "Adding sinewave", url: "https://dollchan.net/btb/res/204.html#249", date: "2022-11-16", remix: "Zackx/Sawtooth bass" } */
-z=[1,0.8865,0.79,0.593][(t>>14)%4]*[0.5,1,2,4][3&t>>10],(z*t%100+z*t%100.5+z*t%67)/1.5+32+(sin(z*t/1.34))*32

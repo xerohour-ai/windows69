@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "remix of sthephanshi's hard level", url: "https://www.reddit.com/r/bytebeat/comments/1btzugr/remix_of_sthephanshis_hard_level/", date: "2024-04-02", sampleRate: 32000, mode: "Floatbeat", remix: "SthephanShi/Hard level" } */
-a=t/4*(t&65536?7:5)*(5-(3&t>>10))>>(3&-t>>(t&16384?4:18)),b=cos(a*PI/128+abs(8*sin(t*PI/1048576))*sin(a*PI/128)*(1-t/4096%1))*(t/16384%1)+sin(40/(t/2048%8+.3))*(1-t/16384%1),b/2+(random()-.5)*.998**(t%8192)+sin((t/4|0)**3)/2*.9994**(t%16384)*(t>>14&1)

@@ -1,2 +1,0 @@
-/*! { author: "Greaserpirate", name: "the SWANG algorithm", description : "Put t-=t/4&256 before any bytebeat (but after you multiply t by the bpm) and you can make the rhythm swing.", url: "https://www.reddit.com/r/bytebeat/comments/1bfqimm/the_swang_algorithm_can_be_used_on_almost_any/", date: "2024-03-16", remix: "SthephanShi/Neurofunk" } */
-t-=t/4&256,t*((t&4096?t%65536<59392?7:t&7:16)+(1&t>>14))>>(3&-t>>(t&2048?2:10))|t>>(t&16384?t&4096?10:3:2)

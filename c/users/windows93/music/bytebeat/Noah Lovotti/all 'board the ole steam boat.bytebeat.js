@@ -1,2 +1,0 @@
-/*! { author: "Noah Lovotti", name: "all 'board the ole steam boat", url: ["https://youtube.com/watch?v=V4GfkFbDojc","https://pastebin.com/kiXJigzG"] } */
-v="4568"[t>>11&3],w=(t>>5|t>>v^sin(t/8/(v/(((t>>12&t>>14)&8)+((t>>14|t>>11)&1))))*29-100),w+(v*((t*v/7*4&t>>11)|w))

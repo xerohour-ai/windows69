@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "Desire drive (early version)", url: "https://dollchan.net/btb/res/204.html#2185", date: "2023-09-02", sampleRate: 44100, cover: "[Touhou 13: Ten Desires - Stage 4 Theme: Desire Drive](https://youtu.be/jHbGKNLKr8A)" } */
-d=12288,(a=t=>(n=x=>t*2**(parseInt(x,36)/12)*1.7,(n('C7C5C32A23AFEA5A23AFHEACEA5C73A2'[(t>>13)%32])&255)+76&256)/1*(1-t%8192/12E3),a(t)+a(t-d)/2+a(t-d*2)/4+a(t-d*3)/8+a(t-d*4)/16+a(t-d*5)/32+a(t-d*6)/64)/3+(n('KMJOKMOOO'[7&t>>15])/16/(t&8192?1:2)&64)

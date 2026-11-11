@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "uni Firaz", description : "This works well with too many sample rates for some reason.", url: "https://dollchan.net/btb/res/44.html#88", date: "2022-05-27", sampleRate: 22050 } */
-m=t/25*2**(4-!(-t>>15&3)+[0,4,9,0,4,9,12,16][t>>(11-(t>>14&1))&7]/12),f=z=>m/(4-(t>>15&3))/z&31,(1e3**(1-t%16384/1e4)&32)+(t>>14&1)*(-t>>9&31)*sin((t/(2+(t>>10&15))|0)**3)**2+(m&16^f(.99)^f(1.01))

@@ -1,2 +1,0 @@
-/*! { author: "BaenHoHoHo", name: "getdolphinedlol type beat", url: "https://www.reddit.com/r/bytebeat/comments/153i0lm/getdolphinedlol_lilfluffygoattt_type_beat/", date: "2023-07-19", sampleRate: 32000, remix: "rubi/a$$ music" } */
-((([t*sin(t>>4),t*sin(t>>2)][t>>14&1]&-t>>7)&127)+(t/7*' 4 4 4 6'[t>>13&7]&63)+(a=(t*'4523'[t>>16&3]/7),a%190+a%128)/2+(3e4/(t&16383)&64))/1.5

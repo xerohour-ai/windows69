@@ -1,9 +1,0 @@
-{
-  name: "Support Us",
-  command: "supportus",
-
-  width: 400,
-  height: 400,
-
-  document: "./index.html",
-}

@@ -1,2 +1,0 @@
-/*! { author: "D3nschøt", name: "Random Note generator 3", url: "https://www.reddit.com/r/bytebeat/comments/1cuj8ie/random_note_generator_3/", date: "2024-05-18", sampleRate: 44100, remix: "D3nschøt/Random Note generator 2" } */
-t*((-1-t*(6+((t^t/4&t/2)>>12&3))/6&255)>=(t/256&127))/128%256/3+t*(6+(t>>18&3))/12%256/4+((2<<17)/(t%(1<<15))&128)/2+((t-t/256)%256/4+(t+t/128)*7/6%256/4+(t*8/6+t/256)%256/4+(t*9/6-t/512)%256/4)*2/5

@@ -1,2 +1,0 @@
-/*! { author: "Greaserpirate", name: "the perfect c compatible drums", description : "These drums can also be added to ANY 8khz song. Just add this before the beginning: (t>>9&1+t>>12&7?0:9001/(t%4096)-t/9&8?-1:0)^t>>4&", url: "https://www.reddit.com/r/bytebeat/comments/1g57g96/the_perfect_c_compatible_drums/", date: "2024-10-16" } */
-t*t*4/((5656>>(t>>12&14)&7)+9)*(t>>10&893)&t>>4^((t>>16&1?0:t>>10&-t>>14&3)|t>>9&1+t>>12&7?0:9001/(t%4096)-t/9&8?-1:0)

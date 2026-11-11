@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "Never gonna give you up", url: "https://www.reddit.com/r/bytebeat/comments/s0b0m0/i_made_the_coolest_music/", date: "2022-01-10", cover: "[Rick Astley - Never Gonna Give You Up](https://youtu.be/dQw4w9WgXcQ)" } */
-a=64E3,80*(128<t*[[6.5,7.3,8.7,7.3,11,0,0,11,0,0,10,0,0,0,0,0,6.5,7.3,8.2,6.5,10,0,0,10,0,0,8.7,0,0,8.2,7.3,0,6.5,7.3,8.7,7.3,8.7,0,0,0,10,0,8.2,0,0,7.3,6.5,0,0,0,6.5,0,10,0,0,0,8.7,0,0,0,0,0,0,0][int(64*t/a%64)]][int(t/a)%1]%255)*(1-64*t%a/a)

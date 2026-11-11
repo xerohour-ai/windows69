@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "unknown entity", url: ["https://dollchan.net/btb/res/204.html#1570","https://www.reddit.com/r/bytebeat/comments/14v37vt/unknown_entity/"], date: "2023-07-09", sampleRate: 48000, mode: "Signed Bytebeat" } */
-n=x=>t*2**(parseInt(x,36)/12)/1.14,r=t/1.4,((n(['I8','D3','H1',['I3','H1'][1&r>>15]][3&r>>16][1&r>>13])&128)-64)/3*(1-r%8192/14E3)+((n('BBAA88A8'[7&r>>15])%256)-128)/4*(1-r%8192/14E3)+((n('88331131'[7&r>>15])/(r&8192?4:8)%128)-64)*(1-r*(r&32768?2:1)%8192/9E3)

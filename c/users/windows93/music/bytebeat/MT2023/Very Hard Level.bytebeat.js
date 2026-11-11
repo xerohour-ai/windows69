@@ -1,7 +1,0 @@
-/*! { author: "MT2023", name: "Very Hard Level", url: "https://dollchan.net/btb/res/500.html#516", date: "2023-03-03", sampleRate: 44100, remix: "SthephanShi/Hard level" } */
-t=t*8000/44100,
-a=(t/4*(t&16384?7:5)*(5-(3&t>>8))>>(3&-t>>(t&4096?2:16))|t/4>>(t&16384?t&4096?3:4:3))&63,
-b=sin(9*cbrt((t*1)%4096))*32+32,
-c=(t*random()|t>>4)&63,
-d=sin(t*(t&16384?7:5)*[1,2,3,4][(t>>9)%4]/20)*32+32,
-1.3*a+(b+.6*c)+.4*d

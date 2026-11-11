@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "slowlovania", url: "https://www.reddit.com/r/bytebeat/comments/14ceiyb/slowlovania/", date: "2023-06-18", sampleRate: 32000, cover: "[Undertale - Megalovania](https://youtu.be/wDgQdr8ZkTw)" } */
-T=t/1.5,Y=T>>11&31,Y2=T>>16&3,m=NaN,v=min(32,-t*2**([1,m,1,m,13,13,13,m,8,8,8,m,m,m,7,7,7,m,6,6,6,m,4,4,4,4,1,1,4,4,6,6][Y]/12)&96)*2,x=f=>f*t*2**([1,-1,-3,-1][Y2]/12)&255,v2=f=>x(f)&-T>>6&255,c=v+(v2(1)+v2(.99)+v2(1.5)+v2(1.505)+v2(.75)+x(1)*(-T&16383)/9e3)/8,c*c>>16?255:c

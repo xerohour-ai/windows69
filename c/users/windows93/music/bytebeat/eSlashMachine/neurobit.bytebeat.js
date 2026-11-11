@@ -1,2 +1,0 @@
-/*! { author: "eSlashMachine", name: "neurobit", url: "https://dollchan.net/btb/res/6946.html#9336", date: "2025-09-24", sampleRate: 48000, remix: "SthephanShi/Neurofunk" } */
-t/=6,(t*((t&4096?t%65536<59392?7:t&7:16)+(1&t>>14))>>(3&-t>>(t&2048?2:10))&128)*(t&65536?(-t>>(t&16384?t&4096?-1:t&2048?-1:2:3)&255)>>6:1)+(524288/(t%4096)&128)+((random()-random())*((-t>>8&3)==3))&128

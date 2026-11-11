@@ -1,9 +1,0 @@
-{
-  name: "Line In",
-  command: "linein",
-  categories: ["audio", "utility"],
-
-  maximizable: false,
-
-  module: "./index.js",
-}

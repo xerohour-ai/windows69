@@ -1,2 +1,0 @@
-/*! { author: "BaenHoHoHo", name: "suicide..", url: "https://dollchan.net/btb/res/2628.html#4683", date: "2024-10-18", sampleRate: 30500, mode: "Floatbeat", remix: "ANoUserXD/minified moment" } */
-t?(C=cos,S=sin,[(N=(t,S,C)=>(l=t>>14,a=PI*t/64*2**((((l/2&5|2)^l>>3&3+(2*l&6)/3)+(t%([0,0,2,3,0,-9,2,-11][l/2&7]+4))*7)/12),S(S(S(S(a+S(a))+C(a/2))+C(2*a)+S(t*PI/2/8192)+C(t*PI/2/12e3))+a/2+C(a*3/4)+S(5/4*a)+4*S(t*PI/2/15e3))))(t,S,C),N(t,C,S)].map(k=>(b+=c+=(k-b-15*c)/256))):b=c=0

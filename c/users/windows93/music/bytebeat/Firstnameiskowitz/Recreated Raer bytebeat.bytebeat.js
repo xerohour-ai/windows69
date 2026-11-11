@@ -1,2 +1,0 @@
-/*! { author: "Firstnameiskowitz", name: "Recreated Raer bytebeat", description : "Original formula by raer. The source is yet to be found.", url: "https://www.reddit.com/r/bytebeat/comments/11u8cbl/recreated_raer_bytebeat_october_7_2011/", date: "2023-03-12", sampleRate: 11025, remix: ["skurk, raer/Street Surfer","Blueberry/Good old fractal melody"] } */
-[t&4096?(t*(t^t%255)|t>>4)>>1:t>>3|(t&8192?t<<2:t),(t>>9^(t>>9)-1^1)%13*t]

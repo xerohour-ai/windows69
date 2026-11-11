@@ -1,2 +1,0 @@
-/*! { author: "kOLbOSa_exe", name: "i made some music for 5 minutes", description : "First ever documented mention of dollchan on reddit.", url: "https://www.reddit.com/r/bytebeat/comments/pp9row/i_made_some_music_for_5_minutes_first_post_here/", date: "2021-09-16", sampleRate: 44100 } */
-ab=function(mult, hz){return Math.sin(t/hz)*mult+128;}, ab(100,[2,6,8,5][(t>>1003)%4]-[0,1.4,1.2,1.1][(t>>15)%4])&~t>>6

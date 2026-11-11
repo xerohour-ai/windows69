@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "short simple music", url: "https://www.reddit.com/r/bytebeat/comments/s7cb1v/short_simple_music_based_on_simple_step_sequencer/", date: "2022-01-19", sampleRate: 32000, remix: ["neverforgettoleave/simple step sequencer","1583736/Cool waveform i guess (second one)"] } */
-t*[2,0,2.35,3,2,2,2.35,2.22,2,0,2.35,3,2,2,2.35,2.22,1.6,1.6,0,0,1.6,1.6,2,2,1.6,1.6,0,0,1.6,1.6,2,2,1.74,1.74,2.22,2.35,1.74,2.22,2.35,2.22,1.74,1.74,2.22,2.35,1.74,2.35,2.35,2.22,2,0,2.35,3,2,2,2.35,2.22,2,0,2.35,3,2,2,2.35,2.22][t>>12&63]|t>>"5655"[t>>16&3]

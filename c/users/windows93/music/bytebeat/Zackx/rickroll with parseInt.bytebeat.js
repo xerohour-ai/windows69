@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "rickroll with parseInt", url: "https://dollchan.net/btb/res/204.html#1405", date: "2023-06-26", sampleRate: 32000, remix: "Gasman/some kind of 80s synth type thing (Never Gonna Give You Up)", cover: "[Rick Astley - Never Gonna Give You Up](https://youtu.be/dQw4w9WgXcQ)" } */
-t*2**(parseInt('ACFCJJ JJ HHHHHHACEAHH HH FFFFFFACFCFF HH EEEEEECCAAHHHHHHFFFFFF'[63&t>>12],36)/12)&255

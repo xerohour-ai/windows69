@@ -1,2 +1,0 @@
-/*! { author: "emelchenko", name: "you better start running", url: "https://www.reddit.com/r/bytebeat/comments/1ii80d5/comment/mbh2tao/?context=3", date: "2025-02-05", sampleRate: 48000, mode: "Floatbeat" } */
-t||(A=Array(n=12288).fill(0)),x=(sin(t*2**([0,7,-2,-2][t>>16&3]/12)*PI/222)*(1-t/8192%1))+A[t%n],A[t%n]=x/1.1,tanh(abs(x*(t<(2**20)+(2**19)?1:3)))/2-1+(t<2**19?0:random()*(1-t/4096%1)/4)+(t<2**20?0:random()*(t&8192?1-t/8192%1:0)/4)+(t<(2**20)+(2**19)?0:atan(tan(cbrt(t&16383)*8))/8+.5)

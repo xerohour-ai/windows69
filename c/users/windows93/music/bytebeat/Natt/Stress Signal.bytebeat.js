@@ -1,2 +1,0 @@
-/*! { author: "Natt", name: "Stress Signal", description : "Lovebyte 2022 competition - 2nd place.", url: ["https://demozoo.org/music/305286/","https://gist.github.com/akumanatt/694eda21ebb263e6989dbefd20b8795a"], date: "2023-02-12", sampleRate: 44100 } */
-((t/(t>>9&15))&32)*(((-t>>16&t>>20|t>>21)&118518023>>(t>>11))&1)+((t/(t%152))&(-t>>7&t>>10&t>>17)&63)+(t*4/(3353657496>>(t>>18<<3)&255)&23)+(t*8/(3370500505>>(t>>18<<3)&255)&23)+(t*5/24&(-t>>9&13))+(t*5/32&(-t>>8&13))+((t/4-t/64*(-t>>17&1))&(-t/3>>8&13))

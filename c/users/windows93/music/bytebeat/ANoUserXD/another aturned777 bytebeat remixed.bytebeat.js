@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "another aturned777 bytebeat remixed", url: "https://www.reddit.com/r/bytebeat/comments/1biv9v4/another_aturned777_bytebeat_remixed/", date: "2024-03-19", sampleRate: 32000, mode: "Floatbeat", remix: "aturned777" } */
-(()=>{l=0;for(x=0;x<1+(t>>9&15);x++)l+=2**x*8*t/(4+(t>>15&15))*(1+(t>>13&3))/128%2-1;return n=l/x,n/4+sin(8/(t/16384%1+.07))/2+((t%8?a:a=random())-.5)/2*(1-t/16384%1)*(t>>14&1)})()

@@ -1,2 +1,0 @@
-/*! { author: "1583736", name: "Cool waveform i guess (second one)", url: "https://www.reddit.com/r/bytebeat/comments/ntpnza/cool_waveform_i_guess/", date: "2021-06-06", sampleRate: 32000, remix: "1583736/Cool waveform i guess (first one)" } */
-t=(3*(t-((t>>10&4|t>>13&3)|(t>>17&6|t>>14&4))*t/((t>>16&7)+4))),Math.pow(Math.abs(1-Math.abs(0.5+cos(t/64.25))**0.3),1-Math.abs(1-Math.abs(0.5-sin(t/63.75))**0.5))*128+32

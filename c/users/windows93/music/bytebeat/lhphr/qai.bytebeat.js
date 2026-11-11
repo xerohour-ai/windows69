@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "qai", description : "Somewhat reminiscent of \"The Evaluator\".", url: ["https://www.reddit.com/r/bytebeat/comments/ye0jc7/nice_little_melody/itz42ai/?context=3","https://dollchan.net/btb/res/44.html#367"], date: "2022-10-27", sampleRate: 44100, remix: "lhphr/The Evaluator" } */
-t?0:d=Array(x=3e4).fill(0),Q=t/5e3,k=Q/4%1,q=Q|0,c=('7798'[q/16&3]- -1)/8,w=v=>sin(PI*sin(t/2.7/v*c)),s=(w(q%4+(q/4&3)+1)*22+28*asin(w(16/'11022122'[q&7])))+d.shift(),d.push(s/3+d[x/2]/4+d[x/4]/3),k*s+28*sin(20*(1e3*k)**.4-1e3*(1-k)**(8*Q&32))+128

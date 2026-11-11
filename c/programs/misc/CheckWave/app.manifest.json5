@@ -1,9 +1,0 @@
-{
-  name: "CheckWave",
-  categories: ["design"],
-
-  width: 600,
-  height: 600,
-
-  document: "./index.html",
-}

@@ -1,2 +1,0 @@
-/*! { author: "PrincessPriscillaPT", name: "BFDI Ep.3 w/ Pitch Interpolation", url: "https://www.reddit.com/r/bytebeat/comments/1hdajbt/that_bfdi_ep3_and_ep8_scene_w_pitch_interpolation/", date: "2024-12-13", sampleRate: 34951.789, mode: "Signed Bytebeat", remix: "lhphr/the throwback" } */
-t||(d=Array(D=12288).fill(0),a=b=0),(c=a+=b+=(2**(([[0,3,7,12,15,12,7,3],[3*(t>>15&1),7,10,15,19,15,10,7],[5,9,12,17,21,17,12,9],[0,7,12,19,24,19,12,7]][t>>16&3][t>>12&7]+4.2)/12+2)-b)/(300+((2/3)*100))),c%=512,o=(c&256?128-c/2:c/2)+d[t%D],d[t%D]=o/2.5,o/4

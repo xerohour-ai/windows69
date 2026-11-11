@@ -48,7 +48,7 @@ export async function splash(log, logError) {
       log(`${name}: ${fn(env)}\n`)
     }
 
-    log(`\nStarting Windows93 on ${env}`)
+    log(`\nStarting Windows94 on ${env}`)
   } catch (error) {
     logError(error)
   }

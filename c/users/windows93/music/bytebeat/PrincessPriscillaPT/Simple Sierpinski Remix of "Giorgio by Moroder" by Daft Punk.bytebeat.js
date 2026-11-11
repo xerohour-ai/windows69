@@ -1,2 +1,0 @@
-/*! { author: "PrincessPriscillaPT", name: "Simple Sierpinski Remix of \"Giorgio by Moroder\" by Daft Punk", url: "https://www.reddit.com/r/bytebeat/comments/1gxvmrw/simple_sierpinski_remix_of_goirgio_by_moroder_by/", date: "2024-11-23", sampleRate: 31608, remix: "miiro/Sierpinski harmony", cover: "[Daft Punk - Giorgio by Moroder](https://youtu.be/zhl-Cs1-sG4)" } */
-((t*2**(([10,,13,,12,,13,17,,10,13,,12,,13,10,10,,13,,12,,13,17,,10,13,,12,,13,,][(t>>12)%32])/12)*2**(([0,-5][(t>>17)%2])/12)|t>>6)-(t>>7)%128)*[1,,1,,1,,1,1,,1,1,,1,,1,1,1,,1,,1,,1,1,,1,1,,1,,1,,][(t>>12)%32]

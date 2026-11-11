@@ -1,2 +1,0 @@
-/*! { author: "SthephanShi", name: "Death chase", url: "https://www.reddit.com/r/bytebeat/comments/qh9hhr/death_chase/", date: "2021-10-28", sampleRate: 44100 } */
-t/=4,c=523.25,cs=554.36,e=659.26,g=784,((t*[cs,e,cs,g,cs,e,cs,c][(t>>14)%8]/(t&2<<16?440:220)*(3-(1&t>>9))>>(3&t>>8)|t>>[5,4,4,4,4,4,4,3,4,4,4,3,4,4,4,4,5,4,4,4,4,4,4,3,5,4,4,4,5,4,4,4][(t>>12)%32])&127)+(3E5/(t&4095)&64)+random()*((-t>>[6,5,4,5,5,5,4,5][(t>>12)%8])%64+64)

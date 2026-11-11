@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "An tr808 cowbell thingy", url: "https://dollchan.net/btb/res/2628.html#2824", date: "2023-12-23", sampleRate: 48000, mode: "Floatbeat" } */
-t?(d((v(x+=T*800*p(a[r=4*t/s&7]))+v(y+=T*540*p(a[r])))/2,l[2*t/s&3]*t/s%4)):(s=48e3,T=2*PI/s,x=y=0,v=a=>2*asin(sin(a))/PI,d=(a,b)=>a/exp(b),p=a=>2**(a/12),a='00000031',l=[8,8,8,16])

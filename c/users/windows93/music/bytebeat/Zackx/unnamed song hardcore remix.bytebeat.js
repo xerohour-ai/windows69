@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "unnamed song hardcore remix", url: "https://dollchan.net/btb/res/204.html#874", date: "2023-04-20", sampleRate: 44100, remix: "Anonymous from russian imageboards/Extraordinary thread of FRACTAL MUSIC" } */
-t/=4,(5*(t+(t^t>>7)^.5)|19*(2*t>>43|15*t>>4)&(7*t>>172)/2*t*((t>>9|t>>13)&15)&129|t*((t>>9|3<t)&25&t>>10))%256/2.5+(3e4/(t*'1114111211141348'[15&t>>12]%4096)**.1&128)*(t>65536)/1.5+(cos(t*PI*2)*(t)-t>>7&127)*(t&8192)/18e3*(t>262144)

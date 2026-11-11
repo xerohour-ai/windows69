@@ -1,9 +1,0 @@
-{
-  name: "Noise",
-  categories: ["Audio", "Generator", "Noise"],
-
-  resizable: false,
-  maximizable: false,
-
-  module: "./index.js",
-}

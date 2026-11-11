@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "sleepless nights", url: ["https://dollchan.net/btb/res/204.html#1800","https://www.reddit.com/r/bytebeat/comments/15hwc8y/songs_was_publish_here_i_made_in_private_server/"], date: "2023-07-19", sampleRate: 48000, cover: "[FM Attack - Sleepless Nights](https://youtu.be/afSjekgcalI)" } */
-r=1.38,a=t=>((p=x=>t*2**(parseInt('6DIK6DIL6DIK4BGI29EG29EG29EG4BGI'[(t/r>>13)%32],36)/12)/1.22*x&255),p(1)+p(.992))/3*(1-t/r%8192/12E3),a(t)+a(t-12288*r)/2+a(t-24576*r)/4+a(t-49152*r)/8

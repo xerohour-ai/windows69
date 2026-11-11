@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "Remix of \"Atari 2600-like tune\"", url: "https://www.reddit.com/r/bytebeat/comments/14hybmh/comment/kdjywh7/?utm_source=reddit&utm_medium=web2x&context=3", date: "2023-12-16", sampleRate: 7500, remix: "kOLbOSa_exe/Atari 2600-like tune" } */
-(0b010101101011011>>(t*1.06**[0,2,-1,0][t>>15&3]/"97976565"[(t>>10)%8]%15)&1)*64+(t*(t%9^t%11)&64)*(-t>>2&255)/256+(4e5/(t&4095)&64)+((t>>1)*(t>>4&-t>>6)&32)*2*(-t>>9&1)

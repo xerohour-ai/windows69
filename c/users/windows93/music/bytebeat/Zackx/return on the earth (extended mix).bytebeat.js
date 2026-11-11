@@ -1,6 +1,0 @@
-/*! { author: "Zackx", name: "return on the earth (extended mix)", url: "https://dollchan.net/btb/res/204.html#2130", date: "2023-08-30", sampleRate: 48000, remix: "Zackx/return on the earth" } */
-(p=t=>(a=(x,y)=>t*2**(parseInt(x[(t>>y)%x.length],34)/12)/1.43,
-a('BPIFKDMKFIHAHIHD',13)&128)/2*(1-t%8192/12E3)*(t>1048576)+
-((a('BBBDFFFA',14)>>4&63)+(t>>11)&64)/1.8*(t>524288)+
-((a('356ADFHDIHDA8651',13)&63)+(a('356ADFHDIHDA8651',13)*.99&63))/2.5,
-p(t)+p(t-12288)/2+p(t-24576)/4+p(t-36864)/8)/1.5+(e='4 2 312 3 4 3 11444 2 3 423 3 11'[31&t>>12],s=x=>(x&128),((t*(sin(t>>e)/e)&128)*(~t>>4&255)>>8)+s(3E4/(t%16384)**.1))*(t>262144)/4

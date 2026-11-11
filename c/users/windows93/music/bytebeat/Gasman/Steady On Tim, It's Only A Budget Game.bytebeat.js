@@ -1,2 +1,0 @@
-/*! { author: "Gasman", name: "Steady On Tim, It's Only A Budget Game", description : "Lovebyte 2022 competition - 1st place.", url: ["https://demozoo.org/music/305284/","http://www.sizecoding.org/wiki/Steady_On_Tim"], date: "2023-02-12", sampleRate: 44100 } */
-M=T=>(b=abs((T&31)-16),(t*2**([-1,4,7][T*4%3|0]/12+(K=1+((1-(T>>5&3))%2-1)/6))&128)*(T>>8&&12-T%12)/12)+(t*2**(K+(b/5|0)-(5514>>b%(T>>9?4:5)*4&15)/12)&128),M(T=t/5e3)/3+M(T-3)/5+(T>>7&&(t*2**((T&4&&(T&7)-1)/6-4)&63*(197>>T%8&1))+random()*32*(1-(T+4)%8/8))

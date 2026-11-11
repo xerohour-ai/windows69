@@ -1,2 +1,0 @@
-/*! { author: "Chasyxx", name: "ヾ(⌐■_■)ノ400", description : "A combination of Zackx's tunes. Kernkraft with echo.", url: "https://dollchan.net/btb/res/756.html#1814", date: "2023-08-05", sampleRate: 40000, remix: ["Zackx/exsynth sequences song","Zackx/kernkraft 400"] } */
-a=t=>(t*2**((e=parseInt('0cfhjc0c0cfhjkjfh5 5f3jc0c0c0c0c'[(t>>13)%32],36),isNaN(e)?-9e9:e)/12)/2.4&128)*(1-t%8192/12E3),a(t)+a(t-12288)/2+a(t-24576)/4+a(t-49152)/8

@@ -1,2 +1,0 @@
-/*! { author: "PortablePorcelain", name: "remix of crude sinewave dubstep", url: "https://dollchan.net/btb/res/55.html#82", date: "2022-06-28", sampleRate: 169000, mode: "Signed Bytebeat", remix: "Gabriel Miceli/Crude Sinewave Dubstep" } */
-c=(v)=>sin(v*PI),b=t/4,q=c(b*(b&b>>12)/11025/2)/2,n=((6e5/(b&16383))/256)%1,k=((6e5/(b+16383&32767))/256)%1.5,o=((6e4/(b&4095))/256)%0.5,g=min((4*b/[8,8,8,9,10,10,9,9][b>>15&7]&255)*(-b>>5&255)>>8,128),w=min((q+n-k-o)*96+g,127)

@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "I Wanna Byte Your Ass", url: "https://www.reddit.com/r/bytebeat/comments/14ekxt6/i_wanna_byte_your_ass/", date: "2023-06-20", sampleRate: 11025, mode: "Signed Bytebeat" } */
-a=t*((t&1024?2:1)*(t&2048?2:.5))*(t&16384?(t&32768?.9:.8):1),(cbrt(sin(a/16))*25+sin(a/8)*10)+(random()*50*(1&t>>12)&-t>>6)

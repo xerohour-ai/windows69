@@ -1,2 +1,0 @@
-/*! { author: "RealZynx92", name: "remix of \"first bytebeat remixed\"", url: "https://www.reddit.com/r/bytebeat/comments/qlf0op/first_bytebeat_remixed/hj50s9a/?utm_source=reddit&utm_medium=web2x&context=3", date: "2021-11-03", sampleRate: 44100, remix: "NewFall2020/first bytebeat remixed" } */
-t/=5.5,64*sin((((t*(t&16384?6:5))/4|t>>4)*(1+(3&t>>11))>>(3&t>>9)|(t*(t&16384?6:5))*(3+(3&t>>(t&2048?334:14)))>>(1+(3&t>>8))&((sin(t)*t|t>>4)|(tan(t))|t>>3)&128)/21.5)+64+(sqrt((t&4095)*10000)&64|t/8&64)

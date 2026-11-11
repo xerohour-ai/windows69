@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "-PWM MUSIC-", url: "https://www.reddit.com/r/bytebeat/comments/s27xzz/pwm_muisc/", date: "2022-01-12", sampleRate: 32000 } */
-(([2,2,1,0,1,0,1,0,0.9,0.9,1,1,1.5,1.5,0.5,0.5][(t>>11)%16]*t&127)+(t>>10)&128)+(10*random())+(16383/(t%pow(4,(3+(3+(1))))))

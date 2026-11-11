@@ -1,2 +1,0 @@
-/*! { author: "SthephanShi", name: "Wheezing modem" } */
-100*((t<<2|t>>5|t^63)&(t<<10|t>>11))

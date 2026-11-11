@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "stars racing", description : "Beautiful arpeggio with echo.", url: "https://dollchan.net/btb/res/204.html#1681", date: "2023-07-20", sampleRate: 44100 } */
-a=t=>(t*2**(parseInt('OKHFKDCFKA858135'[(t>>11)%16],36)/12)*2**('0251'[3&t>>17]/12)*2&128)*(1-t%2048/2048/(-cos(t/4E4)+2)),a(t)+a(t-12288)/2+a(t-24576)/4

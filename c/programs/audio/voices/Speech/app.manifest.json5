@@ -1,9 +1,0 @@
-{
-  name: "Speech",
-  categories: ["Audio", "Voice", "Speech"],
-
-  width: 200,
-  height: 286,
-
-  document: "./index.html",
-}

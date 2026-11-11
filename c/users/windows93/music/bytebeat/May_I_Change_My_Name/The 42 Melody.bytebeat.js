@@ -1,5 +1,0 @@
-/*! { author: "May_I_Change_My_Name", name: "The 42 Melody", description : "The code text visualization with melody played. Set \"Points\" mode and zoom to 1/32.", url: "https://www.reddit.com/r/bytebeat/comments/13740tr/the_42_melody/", date: "2023-05-04", remix: "the 42 melody" } */
-P=[0,0,32,32,254,33,33,0,42,28,8,28,42,0,126,129,32,32,254,33,33,0,34,20,8,34,20,8,0,33,65,255,1,1,0,126,129,129,129,126,0,54,73,85,34,5,0,48,80,144,255,16,0,67,133,137,145,97,0,129,126,0,0,0],
-m=t>>10&42,
-R=(t*(m?m:1)&255)>>5,
-P[(t>>9)%P.length]>>R&1?32*R+32*random():0

@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "65536", url: "https://www.reddit.com/r/bytebeat/comments/s0ixnm/65536_signed_bytebeat/", date: "2022-01-10", sampleRate: 44100, mode: "Signed Bytebeat" } */
-t/=4.7,(((t>>3)*(t&32768?3:2)*(t&65536?1.8:2)&64)+((t*(t&16384?3:2)*(t&4096?2:1)&64)+(64*sin(3123/(t%pow(4,(3+(2+(1)))))))+(64*random()*(1-(1&t>>10))))/2)-64

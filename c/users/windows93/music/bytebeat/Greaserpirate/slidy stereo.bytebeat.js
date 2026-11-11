@@ -1,7 +1,0 @@
-/*! { author: "Greaserpirate", name: "slidy stereo", url: "https://www.reddit.com/r/bytebeat/comments/1fvuwm3/comment/lqb4j94/", date: "2024-10-04", sampleRate: 32768, remix: "akurwtools/ω" } */
-seq=(r,s,T=t,x=0)=>(i=T/2**s,j=i|0,k=(i-j)**x,L=r.length,x?(1-k)*r[j%L]+k*r[(j+1)%L]:r[j%L]),
-
-d=p=>t*1.25*[1,2,4,3][(t>>12)%4]/seq([1,1.25,1.5,1.3],5,t>>11,p?3:8),
-s=p=>(((d(p)/4%64+d(p)/16%64.249))+((d(p)/4%64+d(p)/8%64)&32)+((d(p)/4%64+d/4%64)&32)+((d(p)/4%64+d(p)/4%64.5)&32)),
-
-[s(0),s(1)]

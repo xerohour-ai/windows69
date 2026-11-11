@@ -1,5 +1,0 @@
-/*! { author: "Zackx", name: "Square & sawtooth the video game C chords", url: "https://dollchan.net/btb/res/204.html#396", date: "2023-02-11", sampleRate: 32000 } */
-e=[0,2,4,7][3&t>>11]+12,
-p=t*2**(([1,3,5,6,8,10,12,13][7&t>>15]+e)/12),
-v=((p&128)+(p/.996&128))/2.35,v2=(p%256+p%172+p%128+p%86*2)/5,
-[v,v2][1&t>>14]

@@ -1,5 +1,0 @@
-/*! { author: "Zackx", name: "remix of \"Cat-girl\". Nya (＾• ω •＾)", url: "https://dollchan.net/btb/res/204.html#457", date: "2023-02-23", sampleRate: 32000, remix: "SthephanShi/Cat-girl" } */
-t/=4,
-p=t*[0.7,0.945][1&t>>15],
-86-(17*t|(t>>2)+(t&32768?13:14)*t|t>>3|t>>5)%256/3+sin(12*cbrt(t%4096))*32+32+
-(10*random()*(~t>>4&255)>>6)*(t&4096)/4e3+((p%128+p%127)/2*(~t>>3&255)>>7)%256/3.5*[1,2][1&t>>11]

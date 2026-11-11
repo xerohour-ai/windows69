@@ -1,7 +1,0 @@
-/*! { author: "awogler9124812041", name: "ryg remix", url: "https://www.reddit.com/r/bytebeat/comments/184bgns/ryg_remix/", date: "2023-10-04", sampleRate: 44100, remix: "ryg" } */
-a=t=>(t%129+t%126)&128,
-b=x=>x*x|t>>5,
-w=(v,m,a)=>(((v-m)%(a-m))+(a-m))%(a-m)+m,
-a(t*'36364689'[t>>13&7]/12/2)/2
-+w(b(((t>>12^(t>>12)-2)%11*t/4|t>>13)),0,256)%256/4
-+((4e4/(t>>3&2047)+(random()*128|(t&1)*255)/(((t/128+192)%128)+1)+(random()*128|(t&1)*255)/(((t/128+160)%128)+1))%256|0)/2

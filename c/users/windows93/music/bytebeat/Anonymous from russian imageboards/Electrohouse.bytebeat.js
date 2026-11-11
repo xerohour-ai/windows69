@@ -1,2 +1,0 @@
-/*! { author: "Anonymous from russian imageboards", name: "Electrohouse", description : "Part of the \"Extraordinary thread of FRACTAL MUSIC\"", url: ["https://arhivach.xyz/storage/a/9b/a9b7e820d10e52493570894ed002b9a5.jpg","http://arhivach.xyz/thread/28592/#71681785","http://arhivach.ng/thread/28592/#71681785"], date: "2014-07-12" } */
-t>>(((t%2?t%((t>>13)%8>=2?((t>>13)%8>=4?41:51):61):t%34)))|(~t>>4)

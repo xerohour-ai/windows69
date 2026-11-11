@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "House Of Many Doors", url: "https://www.reddit.com/r/bytebeat/comments/1bhamwg/comment/kvdj8ms/", date: "2024-03-18", sampleRate: 32000, mode: "Floatbeat", cover: "[サイボーグDRAKON - House Of Many Doors](https://youtu.be/Rl1lbyIPnmE)" } */
-t?0:a=b=c=0,a+=1/128/1.02*2**([0,2,3,,3,5,3,2,0,-1,0,,-1,0,2,,0,2,3,,3,5,3,2,0,-1,0,,-1,-1,-1][t*4/5>>13&31]/12)||0,b+=c+=((a%1-.5+a*1.01%1-.5+a/2%1-.5)/4-b-c)/(16-(t*4/5>>9)%16)

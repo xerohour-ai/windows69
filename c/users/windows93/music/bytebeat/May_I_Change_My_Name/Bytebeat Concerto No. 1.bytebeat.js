@@ -1,2 +1,0 @@
-/*! { author: "May_I_Change_My_Name", name: "Bytebeat Concerto No. 1", url: "https://www.reddit.com/r/bytebeat/comments/ye7djq/bytebeat_concerto_no_1/", date: "2022-10-26", sampleRate: 11025 } */
-t*=34.647*256/11025,o=(t>>13)%3,T=(p)=>2**(p/12),C=(p,m)=>(2*t*p&~t>>(5+o)|3*t*p&~t>>(4+o)|4*(m?T(3):1.25)*t*p&~t>>(3+o))*2**o&255,S=(p)=>t*p%64+t*p%32.1+t*p%15.96+t*p%8.04+t*p%3.97,(S(T("aaeeecfffe`a^^ccce^^^c`^\\\\cccehhhcefhhhejhccchec".charCodeAt((t>>12)%48)-97))<<1)+C(T("55770050"[t/3>>13&7]-5),((t/3>>13)-2&7)<2)>>2

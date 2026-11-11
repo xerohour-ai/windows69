@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "Brazilian Type Beat 13", url: ["https://dollchan.net/btb/res/520.html#3452","https://www.reddit.com/r/bytebeat/comments/1cj1f9c/brazilian_type_beat_13/"], date: "2024-05-03", sampleRate: 35498.66666 } */
-n=.948,a=k=>t*n*2**(k[t>>15&3]/12)&64,(a([4,2,7,9])+a([9,7,12,14]))*'0001001000101000'[t>>12&15]+(t*n*2**([-3,-5,0,2][t>>15&3]/12)*'10001001'[t>>13&7]&128)

@@ -1,2 +1,0 @@
-/*! { author: "kOLbOSa_exe", name: "Hex-machine", url: "https://www.reddit.com/r/bytebeat/comments/13scxyx/hexmachine/", date: "2023-05-26", sampleRate: 22050 } */
-((((((0x22a322b3>>(t>>13)^(t>>13^t>>12))%2)*t*1.2+((t/+1927)%255*(t+918)%255*(t+8275)%255)*(((~t>>11)+1)&2)*100)&~t>>5)&127)+((4e4/(t*2%8192))&2)*20)

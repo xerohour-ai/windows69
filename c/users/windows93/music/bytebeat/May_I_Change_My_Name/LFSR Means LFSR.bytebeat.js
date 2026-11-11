@@ -1,2 +1,0 @@
-/*! { author: "May_I_Change_My_Name", name: "LFSR Means LFSR", description : "LFSR is a <a href='https://en.m.wikipedia.org/wiki/Linear-feedback_shift_register' target='_blank'>linear-feedback shift register</a>.", url: "https://www.reddit.com/r/bytebeat/comments/1b0el7i/lfsr_means_lfsr/", date: "2024-02-26", sampleRate: 32000, mode: "Floatbeat" } */
-t?T++:(R=Array(N=12),T=0,R[0]=1,R[1]=1),R[T%N]=R[T%N]^R[(T-1)%N]^R[(T-4)%N]^R[(T-6)%N]^R.reduce((s,n)=>s^n,0),R[T%N]

@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "Duotrigottogon", description : "Fast paced.", url: "https://dollchan.net/btb/res/44.html#54", date: "2022-04-26", sampleRate: 44100 } */
-(6E3**(1-t%2**(12-((t>>13&7)==7)-((t>>15&7)==7))/16384)&128)+(t*(t&t>>9)>>11&64)+(t<<3*(t&t>>10)>>4&63)

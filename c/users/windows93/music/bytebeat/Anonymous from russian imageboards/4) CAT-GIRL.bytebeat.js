@@ -1,2 +1,0 @@
-/*! { author: "Anonymous from russian imageboards", name: "4) CAT-GIRL", url: "https://arhivach.xyz/storage/a/9b/a9b7e820d10e52493570894ed002b9a5.jpg", date: "2014-07-11" } */
-t<35000?((t*8)|(t>>2)+(t*13)|(t>>3)%t|t>>5):(t<67500?((t*9)|(t>>2)+(t*13)|(t>>3)%t|t>>5):(t<84000?((t*9)|(t>>2)+(t*12)|(t>>3)%t|t>>5):(t<98000?((t*8)|(t>>2)+(t*12)|(t>>3)%t|t>>5):(t<129000?((t*8)|(t>>2)+(t*13)|(t>>3)%t|t>>5):t%0))))

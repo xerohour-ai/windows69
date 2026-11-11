@@ -1,2 +1,0 @@
-/*! { author: "orion_aboy", name: "sphere with sierpinski", description : "Sphere with sierpinski pattern on it. Set \"Diagram\" mode and zoom to 2(-8).", url: "https://www.reddit.com/r/bytebeat/comments/17ilipb/sphere/", date: "2023-10-28", mode: "Floatbeat" } */
-y=1-((t&255)/128),x=((t>>8)/128)-1,z=sqrt(1-x**2-y**2),z?((max((x*0.5+y*0.5+z*0.3),0)+0.3)*((((atan2(x,z)+1)*128)&((atan2(y,z)+1)*128))?0.5:1))*2-1:0

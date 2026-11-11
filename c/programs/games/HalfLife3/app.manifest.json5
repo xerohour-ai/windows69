@@ -1,8 +1,0 @@
-{
-  name: "Half-Life 3",
-  command: "hl3",
-
-  solo: true,
-
-  module: "./HalfLife3.js",
-}

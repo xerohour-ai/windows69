@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "Unnecessary-ARPEG.hc", description : "Unnecessary hardcore remix of \"Unnecessary-ARPEG\".", url: "https://dollchan.net/btb/res/44.html#50", date: "2022-04-19", sampleRate: 44100, remix: "lhphr/Unnecessary-ARPEG" } */
-((15+1*'1370'[t>>17&3])/8*'12346543'[t>>12&7]*(t/4)%192+160)%256/2+((sqrt(5E3*(t%65536&(2**[9,12,12,14,,,,,13,12,11,14][(t>>11&15|t^(t/32%8)*t)&11])-1))&128))

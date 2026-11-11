@@ -1,2 +1,0 @@
-/*! { author: "PortablePorcelain", name: "SArpnt's \"Funcbeat Example\" in Floatbeat", description : "Uses modified kick. Minified by several r/bytebeat users.", url: "https://www.reddit.com/r/bytebeat/comments/18nyjtz/comment/khkt2ep/", date: "2023-12-23", sampleRate: 48000, mode: "Floatbeat", remix: "SArpnt/Example" } */
-(t/=48E3)?(P=(t*2**(("$$$000,,,,,,,,''".charCodeAt(t*4.3&15)+22)/12)%1>t/2%1*.6+.2)/2-.25,l+=r+=(P-l-r*3)/(cos(t/5)*170+200),l+sin((t*4.3%2+.01)**.3*180)/4):l=r=0

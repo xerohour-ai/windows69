@@ -1,2 +1,0 @@
-/*! { author: "kOLbOSa_exe", name: "fiery sine waveform", description : "Beautiful fiery sin-waveform at the scope.", url: "https://www.reddit.com/r/bytebeat/comments/q4s2dl/some_cool_thingy_here/", date: "2021-10-09", sampleRate: 44100 } */
-per = (t/2048),(sin(t/10000)*64+80)+(random()*10)+((4e4/((t/4)&4095)%100)>>(random()*t))+(per>128?([13,-12,11,-10,9,-8,7,-6,5,-4,3,-2,1,0][(t>>12)%14]+15)&t%([34,32,33,35][(t>>14)%4]):0)+(per>64?(4e4/((t/4)%4095))%82:0)

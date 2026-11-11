@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "Spring park", url: "https://dollchan.net/btb/res/204.html#1445", date: "2023-06-30", sampleRate: 40000 } */
-((127&t*2**(parseInt('5CL5J5L05CL5J5L02CL2J2LM2OM2L2J0'[31&t>>13],36)/12)*.395)+(sin(t/8E3)*24+64)&128)*(1-t%8192/12e3)*2+(t/32%256)/3

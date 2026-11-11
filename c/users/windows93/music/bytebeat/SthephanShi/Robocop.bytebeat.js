@@ -1,2 +1,0 @@
-/*! { author: "SthephanShi", name: "Robocop" } */
-(t>>2)*(t&(t&32768?16:24)|t>>(t>>8&28))|t>>2

@@ -1,2 +1,0 @@
-/*! { author: "ChrisRM380", name: "\"credits song for my death\" remake", url: "https://dollchan.net/btb/res/368.html#3241", date: "2024-04-04", sampleRate: 72000, cover: "[vivivivivi - song for my death](https://youtu.be/urxeNbBc1nk)" } */
-r=24576,a=t=>(abs((t*0.875*2**([1,5,12,1,5,12,10,8,0,4,10,0,4,10,13,12,5,8,15,5,8,15,13,12,3,7,13,3,13,12,10,12][(t>>14)%32]/12)&255)-128)&255),(a(t)-0.5&224)+(a(t-r)-0.5&224)/2

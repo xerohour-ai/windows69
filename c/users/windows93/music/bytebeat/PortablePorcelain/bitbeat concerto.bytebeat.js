@@ -1,2 +1,0 @@
-/*! { author: "PortablePorcelain", name: "bitbeat concerto", url: "https://www.reddit.com/r/bytebeat/comments/14nq9up/bitbeat_concerto/", date: "2023-07-21", sampleRate: 48000, remix: "May_I_Change_My_Name/Bytebeat Concerto No. 1" } */
-t*=.184,(1&((t*2**(([5,5,7,7,0,0,5,0][t/3>>13&7]-5)/12-2))&((t>>9)%24+1)?!(1&t*2**(('aaeeecfffe`a^^ccce^^^c`^\\\\cccehhhcefhhhejhccchec'.charCodeAt((t>>12)%48)-97)/12-5))?1:('000000001000101011001100'[(t>>9)%24]*random()*2):0))*64

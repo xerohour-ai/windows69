@@ -1,2 +1,0 @@
-/*! { author: "a1k0n", name: "algorithmic music in a \"constructivist\" way", url: "https://news.ycombinator.com/item?id=3063359#3064980", date: "2011-10-03" } */
-SS=function(s,o,r,p){var c=s.charCodeAt((t>>r)%p);return c==32?0:31&t*Math.pow(2,c/12-o)},SS("0 0     7 7     037:<<",6,10,32) + (t&4096?SS("037",4,8,3)*(4096-(t&4095))>>12 : 0)

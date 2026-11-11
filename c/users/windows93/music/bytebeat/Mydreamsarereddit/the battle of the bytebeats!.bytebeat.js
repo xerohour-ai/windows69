@@ -1,2 +1,0 @@
-/*! { author: "Mydreamsarereddit", name: "the battle of the bytebeats!", url: "https://www.reddit.com/r/bytebeat/comments/1bq70if/the_battle_of_the_bytebeats_rachet_modem_tundra/", date: "2024-03-28", sampleRate: 9500, remix: ["Tundrah/ass kicking vocals","visy/Slow progression with 8-bit Atari inspired sounds","SthephanShi/Wheezing modem"] } */
-((t>>5|t>>4|(t%42*(t>>4)|357052691-(t>>4))/(t>>16)^(t|t>>4))&255)/3+((t%25-(t>>2|(t&16384?21.3333333333:16)*t|t%227)-t>>3|(t>>5&1663*(t<<5)|(t>>3)%1544)/(t%17|t%2048))&255)/3+(100*((t<<2|t>>5|t^63)&(t<<10|t>>11)))%256/3

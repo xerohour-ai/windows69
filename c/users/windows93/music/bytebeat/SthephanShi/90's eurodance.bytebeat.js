@@ -1,2 +1,0 @@
-/*! { author: "SthephanShi", name: "90's eurodance", url: "https://www.reddit.com/r/bytebeat/comments/qh9hhr/death_chase/", date: "2021-10-28", sampleRate: 44100, remix: "SthephanShi/Death chase" } */
-t/=4,a=440,b=493.88,c=523.25,d=587.32,e=659.26,((t*[e,b,c,a,e,b,c,d][(t>>14)%8]/220*(3-(1&t>>9))>>(3&t>>8)|t>>[5,4,4,4,4,4,4,3,5,4,4,4,5,4,4,4][(t>>12)%16])&127)+(3E5/(t&4095)&64)+random()*((-t>>[6,5,5,5,4,5,5,5][(t>>12)%8])%64+64)

@@ -1,2 +1,0 @@
-/*! { author: "RealZynx92", name: "remix of \"The time is running out!\"", url: "https://www.reddit.com/r/bytebeat/comments/qf9meb/remix_of_the_time_is_running_out_by_stephanshi/", date: "2021-10-25", sampleRate: 11025, remix: "SthephanShi/The time is running out!" } */
-((t*(t&16384?7:5)*(3-(3&-t>>9)+(3&t>>8))>>(2&t>>(t%65536<59392?(t&4096?2:16):2))|t>>4)/2&127)+(3E4/(t&4095)&128)+(random()*(((-t>>5)%64)+64))

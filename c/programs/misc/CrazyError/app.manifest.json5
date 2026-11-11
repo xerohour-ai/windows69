@@ -1,9 +1,0 @@
-{
-  name: "CrazyError",
-  command: "crazy",
-  categories: ["Amusement", "Malware"],
-
-  solo: true,
-
-  module: "./CrazyError.js",
-}

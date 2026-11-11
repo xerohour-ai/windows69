@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "Unfinished Accurate Super Mario Bros Underground Theme", url: "https://dollchan.net/btb/res/520.html#2619", date: "2023-11-11", sampleRate: 54067.2, cover: "[Super Mario Bros. - Underground Theme](https://youtu.be/c0SuIMUoShI)" } */
-n=[.62,.415][t/3>>16&1],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1][(A=t*n*2**([0,12,-3,9,-2,10][(t>>13)%12]/12))>>3&31]*8+(A/2&128/4)+((A*2&128&255)*(-t>>5&255)>>9)

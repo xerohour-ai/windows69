@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "ΛᄃIDIƧƬIᄃ", url: ["https://www.reddit.com/r/bytebeat/comments/150ewfy/%CE%BB%E1%84%83idi%C6%A8%C6%ADi%E1%84%83/","https://dollchan.net/btb/res/204.html#1625"], date: "2023-07-15", sampleRate: 44100, mode: "Signed Bytebeat" } */
-r=t*1.8,e=(r>>13)%12,((((t*2**(parseInt('3FF3FF3F1D4G'[e],36)/12)/3.4&255)*(1-(r>>'02202200000'[e])%8192/10e3)*(-cos(t/4E4)+2)&64)-32)*(~r>>'566566555555'[e]&255)>>6)

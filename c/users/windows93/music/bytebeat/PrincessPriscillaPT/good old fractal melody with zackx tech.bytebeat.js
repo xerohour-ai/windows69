@@ -1,2 +1,0 @@
-/*! { author: "PrincessPriscillaPT", name: "good old fractal melody with zackx tech", url: "https://www.reddit.com/r/bytebeat/comments/1ixuzkm/good_old_fractal_melody_with_zackx_tech/", date: "2025-02-25", sampleRate: 39824.254, mode: "Signed Bytebeat", remix: "Blueberry/Good old fractal melody" } */
-x=j=>(w=t=>t>0&&(e=a=>((((t/4*a*2**(round(log2(abs((((t>>11)^(t>>11)-2)%13)))*12)/12))&127))-64)*(1-t/4096%1)**.25,(e(1)+e(j))/2),w(t)+w(t-(d=12288))/2-w(t-d*2)/3+w(t-d*3)/4+w(t-d*4)/5+w(t-d*5)/6),[x(1.005),x(.995)]

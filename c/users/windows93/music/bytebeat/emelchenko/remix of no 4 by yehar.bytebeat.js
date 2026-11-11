@@ -1,2 +1,0 @@
-/*! { author: "emelchenko", name: "remix of no 4 by yehar", url: "https://www.reddit.com/r/bytebeat/comments/1hbwc07/remix_of_no_5_no_no_4_by_yehar/", date: "2024-12-11", remix: ["yehar/No 4","emelchenko/customizable beat"] } */
-(v=t/2^(t&64?63:0),v>>=v,v/(1+(v>>7))&t/32|(t>>11)%8%3*t*t&15)*1.5+(t*=4,a='+ -  +- ++-+ +- ',b=a[(t>>13)%a.length],(b=='+'?cbrt(t&8191)*2&1:b=='-'?(t&3?c:c=round(random())):0)*(~t>>6&127))

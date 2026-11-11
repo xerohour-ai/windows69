@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "CRAZY KERNKRAFT 400 DX", url: "https://dollchan.net/btb/res/163.html#1170", date: "2023-06-02", sampleRate: 48000, mode: "Floatbeat", remix: "hcdphobe/remix of \"kernkraft 400\"" } */
-t/=48e3,v=t*2**7.4284905,y=a=>32-(v/a%32),u=r=>(r%256/128-1),i=(u((v*143&1)&&255)/4+.5*random()-.25)*y(1)/16,f=sin(16*cbrt(128*v%4096)),z=v*[1,4,4.8,5.4,6,2,1,2,1,4,4.8,5.4,6,6.33,6,4.8,5.4,2.7,1.35,2.7,4.8,3,6,4,1,2,1,2,1,2,1,2][(v>>5)%32]*1.52*PI,sin(z+sin(z)*atan(sin(z/4))*1.09**y(1))/2*y(1)/32+[f,i,f,i,f,i,f,f][(v>>5)%8]/2

@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "cool saw and bass with drums ", url: "https://www.reddit.com/r/bytebeat/comments/1bmxfsj/cool_saw_and_bass_with_drums/", date: "2024-03-25", sampleRate: 48000, mode: "Floatbeat" } */
-sin(1.8**(-t/1024%32+8))*3/4+(random()-.5)*.9993**(t&16383)+sin((t/4|0)**3)*!(2-(t>>14&3))*.9997**(t&16383)+(t/800*2**([0,0,-4,-7][t>>16&3]/12)%1+(t/200*2**([0,0,3,5,5,7,3,3,0,,-5,-2,0,0,0,0][t>>13&15]/12)||0)%1-1)/2

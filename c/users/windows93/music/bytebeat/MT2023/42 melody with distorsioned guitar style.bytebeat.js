@@ -1,2 +1,0 @@
-/*! { author: "MT2023", name: "42 melody with distorsioned guitar style", url: "https://dollchan.net/btb/res/500.html#1868", date: "2023-08-09", sampleRate: 32000, remix: ["the 42 melody","MT2023/distorsioned guitar"] } */
-a=t=>sin(t*(PI/2048)*(t>>12&42))*16+16,p=(i)=>(a(t)+a(t-i)+a(t-(i*2))+a(t-(i*3))+a(t-(i*4))+a(t-(i*5))+a(t-(i*6))+a(t-(i*7))+a(t-(i*4)))/2,p(p(104)%p(0))+(29*sqrt(t*[1,2,4,8,1,2,4,3][(t>>14)%8]&16383)&64)|0

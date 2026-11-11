@@ -1,8 +1,0 @@
-{
-  name: "Manority Report",
-  command: "manority",
-
-  solo: true,
-
-  module: "./ManorityReport.js",
-}

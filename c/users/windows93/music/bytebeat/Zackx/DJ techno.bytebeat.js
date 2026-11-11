@@ -1,3 +1,0 @@
-/*! { author: "Zackx", name: "DJ techno", url: "https://dollchan.net/btb/res/204.html#729", date: "2023-03-31", sampleRate: 13000, remix: "Gabriel Miceli/Techno" } */
-r=t/1.25,p=2.35,((((t/10|0)^(t/10|0)-1280)%11*t/p&127)+(((t/640|0)^(t/640|0)-2)%13*t/p&127))/2+sin(3e3/(r%4096)**.01)*32+32+
-(t*sin(t)&-r>>6&127)*(r&4096)/4e3

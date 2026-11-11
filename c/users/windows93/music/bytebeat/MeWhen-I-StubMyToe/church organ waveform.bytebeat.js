@@ -1,2 +1,0 @@
-/*! { author: "MeWhen-I-StubMyToe", name: "church organ waveform", url: "https://www.reddit.com/r/bytebeat/comments/14a9yjp/church_organ_waveform/", date: "2023-06-15", sampleRate: 32768, mode: "Floatbeat", remix: "the 42 melody" } */
-t=t/8*(42&t/4>>10),(sin(t/64)+sin(t/48)+sin(t/32)+sin(t/24)+sin(t/16)+sin(t/12)+sin(t/8)+sin(t/6)+sin(t/4)+sin(t/3)+sin(t/2))/8

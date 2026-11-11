@@ -1,9 +1,0 @@
-{
-  name: "Gravity",
-  command: "gravity",
-  categories: ["Amusement", "Malware"],
-
-  solo: true,
-
-  module: "./Gravity.js",
-}

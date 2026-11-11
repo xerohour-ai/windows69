@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "Blue Da Ba Dee", url: ["https://dollchan.net/btb/res/204.html#1816","https://www.reddit.com/r/bytebeat/comments/15j98wk/song_i_made_while_vc/"], date: "2023-08-06", sampleRate: 38000, cover: "[Eiffel 65 - Blue (Da Ba Dee)](https://youtu.be/zA52uNzx7Y4)" } */
-a=t=>((t*2**(parseInt(['JBGJLEIJCGJNOGNL','JBGJI9EG07EG0EGI'][!(~t>>17&3)|0][(t>>13)%16],36)/12)/1.92&127)+(t>>6&127)&128)*(1-t%8192/12E3),a(t)+a(t-12288)/2+a(t-24576)/4+a(t-36864)/8

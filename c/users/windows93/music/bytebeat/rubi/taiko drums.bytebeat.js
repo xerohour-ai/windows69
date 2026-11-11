@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "taiko drums", url: "https://www.reddit.com/r/bytebeat/comments/s7daoh/taiko_drums/", date: "2022-01-19", sampleRate: 11025 } */
-([1,1,1,1,2,3,2.4,3,1,1,1,1,6,3,2,2.4][(t>>11)%16]*t*(t&4096?1:2)&t>>(t&8192?3:4))-16

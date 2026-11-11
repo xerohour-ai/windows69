@@ -1,2 +1,0 @@
-/*! { author: "awogler9124812041", name: "the audio effect on those meme content-aware scaling videos", description : "put this before ANY formula: t+=sin(t/100)*t/8000,", url: "https://www.reddit.com/r/bytebeat/comments/ybfq1h/the_audio_effect_on_those_meme_contentaware/", date: "2022-10-23", remix: "SthephanShi/Hard level" } */
-t+=sin(t/100)*t/8000,t*(t&16384?7:5)*(5-(3&t>>8))>>(3&-t>>(t&4096?2:16))|t>>(t&16384?t&4096?3:4:3)

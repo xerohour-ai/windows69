@@ -1,2 +1,0 @@
-/*! { author: "GDPlayer_1035", name: "chiptune engine v1", url: "https://www.reddit.com/r/bytebeat/comments/q5n3zc/chiptune_engine_v1/", date: "2021-10-11", sampleRate: 44100 } */
-delay=8000,len=8,s1=[1,2,4,8,6,4,2,1],s1v=[16,8,16,8,16,8,16,8],s2=[2,3,5,6,4,7,6,2],s2v=[8,4,8,4,8,4,8,4],n=[0,16,0,16,0,8,0,8],st1=t/2*s1[round(t/delay)%len]&s1v[round(t/delay)%len]*4,st2=t/2*s2[round(t/delay)%len]&s2v[round(t/delay)%len]*4,nse=random()*(n[round(t/delay)%len]*4),nse+st1+st2

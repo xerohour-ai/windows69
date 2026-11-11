@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "cool reverb with filter V2", url: "https://dollchan.net/btb/res/2628.html#2823", date: "2023-12-23", sampleRate: 48000, mode: "Floatbeat", remix: "ANoUserXD/cool reverb with filter" } */
-i=1/1.5,t||(A=Array(n=16384/i|0).fill(a=b=c=d=e=0)),a+=i*2**(("0x"+"035787A7"[i*++b>>14&7])/12),v=a%256/5+A[++c%n],A[c%n]=v/1.25,l=d++?(l*(x=127*abs(sin(e+=i*PI/524288)))+v)/(1+x):0,l/128-1

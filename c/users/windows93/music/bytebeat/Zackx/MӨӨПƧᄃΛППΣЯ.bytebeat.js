@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "MӨӨПƧᄃΛППΣЯ", url: "https://dollchan.net/btb/res/204.html#1606", date: "2023-07-12", sampleRate: 48000, remix: ["viznut/moon scanner generalization","Zackx/drums detail"] } */
-i=t/4,((2*(i>>5&i)-(i>>5)+i*(i>>14&14))&255)/3+((300**((t*[[1,,,4,,4,4,8,4],[1,,,4,,4,8,16]][!(~t>>16&1)|0][7&t>>13]%32768)**.04)&128)/2+random()*(-t&4095)/150+(t*sin(t>>2)&255)*(-t&8191)/24E3*'00100101'[7&t>>13])

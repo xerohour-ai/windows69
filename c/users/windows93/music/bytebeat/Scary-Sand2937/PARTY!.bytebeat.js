@@ -1,2 +1,0 @@
-/*! { author: "Scary-Sand2937", name: "PARTY!", url: "https://www.reddit.com/r/bytebeat/comments/12onki0/party/", date: "2023-04-16" } */
-((t+t%[1,3,5,2][(t/3>>10)&3])*2**([0,1,3,5,7,8][(t>>10)%6]/12)<<((t>>[10,11][t/3>>10&1])*1.25&3)>>1&63)-(t>>10&31|1)|t>>2

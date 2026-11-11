@@ -1,2 +1,0 @@
-/*! { author: "SthephanShi", name: "3D sphere animation 1/16", description : "Shine a flashlight on the sphere from all sides.", url: "https://www.reddit.com/r/bytebeat/comments/18yl6an/3d_sphere_animation/", date: "2024-01-05", sampleRate: 48000, mode: "Floatbeat", remix: "orion_aboy/sphere" } */
-T=(t-2048)%8192,k=PI*t/262144,y=1-T%16/8,x=(T>>5)/64-1,x*sin(3*k)+y*cos(k)+1.8*sqrt(1-x**2-y**2)-.8||-.8

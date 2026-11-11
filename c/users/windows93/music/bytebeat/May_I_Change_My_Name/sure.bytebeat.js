@@ -1,6 +1,0 @@
-/*! { author: "May_I_Change_My_Name", name: "sure", url: "https://www.reddit.com/r/bytebeat/comments/1erefv2/comment/lj4h3j5/", date: "2024-08-21", sampleRate: 11025, remix: "0naCB0_1488/Pls remix this" } */
-M=t=>(("64835582659355636583658265826421"[t>>11&31]*t)%100)%256*(1-t%2048/2048),
-E=(F,t,i=10)=>t>=0?F(t)+(i?E(F,t-3072,i-1)*.8:0)/2:0,
-T=f=>atan(asin(sin(t*f/11025*2*PI))*10)+PI/2,
-F=n=>(1-1/(t/n+1)),
-E(M,t)+(T(110)+T(165)+T(165*1.5)*F(2E4)+T(165*2.25)*F(1E5)+T(165*3.375)*F(4E5))*16*(.8+sin(t/8192*2*PI+PI/4)**2)/3

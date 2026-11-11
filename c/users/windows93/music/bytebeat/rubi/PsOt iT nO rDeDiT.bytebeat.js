@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "PsOt iT nO rDeDiT", url: "https://www.reddit.com/r/bytebeat/comments/shuj5e/psot_it_no_rdedit/", date: "2022-02-01", sampleRate: 44100, mode: "Signed Bytebeat" } */
-((t*[0,1,0,1,0,1,0,1.5][(t>>13)%8]>>1&96)+(t*[5,4.8,4.6,4.8,3,0,2.8,0,3,3,2.8,2.8,2,0,1,0][(t>>12)%16]>>2&64)+(90*sin(t/11025))+(64*sin(4e3/(t&16383))))/2-30

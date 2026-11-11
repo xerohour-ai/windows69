@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "music with loud kick and stereo", url: "https://www.reddit.com/r/bytebeat/comments/151n24t/music_with_loud_kick_and_stereo/", date: "2023-07-17", sampleRate: 32000, mode: "Floatbeat" } */
-T=q=>t*2**(q/12),z=t*1.25%16384,v=(x,y)=>(((T(t*1.25>>13&7)%256/3+1.49*T(t*1.25>>13&7)%256/3+1.99*T(t*1.25>>13&7)%256/3|t*1.25>>5)/2&127)+(((t*y(t>>3)*(t*1.25>>13&1)&128)&255)*(~t*1.25>>5&255)>>8)+random()*(-t*1.25&8192)/256+x(y(z**.55))*(.999**z)*512)/128-1,[v(asin,sin),v(acos,cos)]

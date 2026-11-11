@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "Automotivo 157", url: "https://www.reddit.com/r/bytebeat/comments/1ckpqef/random_recreated_melody_2/", date: "2024-05-05", sampleRate: 35498.66666, cover: "[DJ Th 011 - Automotivo 157](https://youtu.be/bcWe52lvyb4)" } */
-n=.95,a=k=>t*n*2**(k[t>>17&1]/12)&32,((a([-12,-12])+a([-7,-9])+a([-4,-5]))*(-(t%65536)*3>>10&255)>>8)+(t*n*2**([0,0,5,5,7,7,7,7,0,8,8,5,5,3,2,2,,,0,0,2,2,3,3,7,7,5,5,2,5,0,0][t>>13&31]/12)&32)%256*1+1/3

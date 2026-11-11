@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "Techno Syndrome - MORTAL KOMBAT!", url: ["https://dollchan.net/btb/res/204.html#1874","https://www.reddit.com/r/bytebeat/comments/15n7apk/techno_syndrome/"], date: "2023-08-10", sampleRate: 44100, cover: "[Techno Syndrome - (Mortal Kombat) Song by The Immortals](https://youtu.be/EAwWPadFsOA)" } */
-r=1.205,d=12288*r,a=t=>((127&t*2**(parseInt('99C9E9GECCGCJCGC77B7C7EC5595C5CB'[(t/r>>13)%32],36)/12)/2.67)+(t/r>>6&127)&128)*(1-t/r%8192/8192),a(t)+a(t-d)/2+a(t-d*2)/4+a(t-d*3)/8

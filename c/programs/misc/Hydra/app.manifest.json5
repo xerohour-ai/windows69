@@ -1,9 +1,0 @@
-{
-  name: "Hydra.exe",
-  command: "hydra",
-  categories: ["Amusement", "Malware"],
-
-  solo: true,
-
-  module: "./Hydra.js",
-}

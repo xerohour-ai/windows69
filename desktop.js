@@ -480,7 +480,7 @@ os.desktop.el = os.render({
                   picto: "apps/install",
                   action: async () => {
                     const res = await os.confirm(
-                      "Are you sure to reinstall Windows93, you will loose all your saved data (trust me...)",
+                      "Are you sure to reinstall Windows94, you will loose all your saved data (trust me...)",
                       { icon: "question" },
                     )
                     if (res) {

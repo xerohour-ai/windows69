@@ -1,2 +1,0 @@
-/*! { author: "absolute197", name: "Sawtooth Dreams", url: "https://www.reddit.com/r/bytebeat/comments/15031q7/sawtooth_dreams_also_unfinished/", date: "2023-07-15", sampleRate: 60000 } */
-q=()=>{for(i=0;i<(-t>>7&63);i++){i+=t/[3,2.4,3.6,4.8][3&t>>17]*2**((t>>13&3)*7/12)&127};return i*(-t>>9&15)**1.5},q()/128

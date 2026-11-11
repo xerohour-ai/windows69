@@ -1,2 +1,0 @@
-/*! { author: "Decent-Manager-6169", name: "the final marathon: hortas instrumental", url: "https://dollchan.net/btb/res/520.html#992", date: "2023-05-03", sampleRate: 43008, cover: "[VD - The final marathon - hortas](https://youtu.be/hUTl_b1Ua1w?t=1295)" } */
-v=-9e9,z=[-t,t,0,-t,t,0,0,0][t>>13&7],b=1.56,((t*b*2*2**([v,4,4,4,7,7,v,v,v,7,7,7,0,0,4,4,v,4,4,4,7,7,v,v,v,7,7,7,0,0,4,2][t>>13&31]/12)&64)+(t*b*2**([0,-3,-5,2][t>>16&3]/12)*'0001'[t>>14&3]&64)+(z*b*2**([5,4,0,-1][t>>16&3]/12)&64)+(z*b*2**([2,0,-3,-5][t>>16&3]/12)&64)+(z*b*2**([-3,-5,-8,-10][t>>16&3]/12)&64))/1.001

@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "cool reverb with filter", url: "https://www.reddit.com/r/bytebeat/comments/154h111/cool_reverb_with_filter/", date: "2023-07-20", sampleRate: 48000, mode: "Floatbeat", remix: "Greaserpirate/a limiter (that also removes offsets)" } */
-t/=1.5,this.v??=0,r=(w,i,s)=>(v++||(a=Array(i).fill(0)),w=w%256+a[z=v%a.length],a[z]=w*s,w),f=t?(f*(1+(l=[~t>>9&255,t>>9&255][t>>17&1]))+(r(t*2**([0,3,5,7,8,7,10,7][t>>14&7]/12)%256/4,24576,.75)&255))/(2+(l)):0,f/64-2

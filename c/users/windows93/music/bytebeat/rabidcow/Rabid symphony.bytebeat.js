@@ -1,2 +1,0 @@
-/*! { author: "rabidcow", name: "Rabid symphony", url: "https://www.reddit.com/r/programming/comments/mbakl/experimental_oneline_algorithmic_music/c2zn7qv/", date: "2011-11-15" } */
-t*Math.pow(2,("kotojokohogohotojokohogokokhpmjmjfokhomkjhggcc kotojokohogohotojokohogokokhpmjmjfrmorokfjkkkkkkrpomkjkmokmpoprrjjkkoommoottqqhjkkjjhfecebccccccfffhihfdfcdahhhjkjhghegcmjcjmjpjojmjkhchkhohmhkhjhkhmhohphmhoomkjkhhhhhh".charCodeAt((t>>10)&255)-58)/12)*63>>6&132

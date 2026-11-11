@@ -1,2 +1,0 @@
-/*! { author: "SthephanShi", name: "Toy phone", description : "Sounds similar to children's toys." } */
-t*((t>>10|t%16*t>>5)&8*t>>10&18)

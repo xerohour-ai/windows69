@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "relief", url: "https://www.reddit.com/r/bytebeat_2/comments/1nc11ym/relief_remix_of_anxious/", date: "2025-09-08", sampleRate: 44100, remix: "ANoUserXD/anxious" } */
-t/=1.1,off=8**9,v=4e3,a=(t,x=1.002)=>{for(A=B=0;A<7;A++)B+=t>0&&t*x**A*2**([0,2,5,7,9,10,12,17][(1+(t>>13&3)%3)*(t>>15-(t>>13&1^t>>12&3)^t>>14&3)&7]/12)&192-(t>>5&64);return B/A/2},a(t+off)+a(t-v+off)/2+a(t-v*2+off)/3

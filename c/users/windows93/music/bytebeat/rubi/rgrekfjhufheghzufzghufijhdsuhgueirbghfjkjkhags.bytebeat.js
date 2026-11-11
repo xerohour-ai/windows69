@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "rgrekfjhufheghzufzghufijhdsuhgueirbghfjkjkhags", url: "https://www.reddit.com/r/bytebeat/comments/12dfkuc/rgrekfjhufheghzufzghufijhdsuhgueirbghfjkjkhags/", date: "2023-04-06" } */
-a=t*(t>>10&3)/[1,1.5,1.25,1.30][t>>14&3],(4e4/(t&4095)&127)+(t/[1,1.25,1.5,1.75][t>>15&3]&64)+(a%64)+(a%63)

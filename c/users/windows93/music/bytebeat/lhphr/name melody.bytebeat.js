@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "name melody", description : "Used the concept of using 'lhphr' name as a melody.", url: "https://dollchan.net/btb/res/44.html#1367", date: "2023-05-29", sampleRate: 44100 } */
-N='lhphr',s=t/.75,t||(d=Array(l=12288).fill(0),D=Array.of(...d)),C=N[c='charCodeAt']((2+(s>>17)&3)+!(2+(-s>>17)&3))%16/12-4/3*!(-s>>18&3),z=(t*2**(N[c]((M=s*2>>14&15)%6)%11/12-2-C)&31*(M<14))+d[t%l],d[t%l]=z/2,x=(p,e=3)=>16*sin(t*2**(p/12-C)/32)**e/((s/16384&7)+1),Z=x(-12,15)+x(0)+x(4)+x(7)+D[t%l],D[t%l]=Z/1.3,z+Z+128

@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "lg twinwash end song", url: "https://dollchan.net/btb/res/163.html#2388", date: "2023-10-03", sampleRate: 48000, mode: "Floatbeat", cover: "[LG Washer End of Cycle Song](https://youtu.be/clHpyRzb1PI)" } */
-t*=47.3/48,y=t/1.25,h=y/.75>>15,t||(q=e=f=0),q+=((2*t*2**([7,7,7,12,11,9,7,7,7,4,4,4,5,7,9,2,4,5,4,4,4,7,7,7,7,7,7,12,11,9,7,7,7,12,12,12,12,14,12,11,9,11,12,12,12,12,12,12,12][y>>13]/12)%128+64&128?32:-32)*(256-y/((h==1||h==4||h==5||h==9||h>=12)?h>=14?7:1:3)/32%256)/256-q)/8,e+=(q-e)/7,f+=(q-e-f)/8,f/66

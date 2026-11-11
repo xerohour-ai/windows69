@@ -1,2 +1,0 @@
-/*! { author: "PortablePorcelain", name: "I get motion sick from the visualizer", description : "Dizzying visuals. Set to waveform mode, max zoom.", url: "https://www.reddit.com/r/bytebeat/comments/1ha51zt/for_some_reason_i_get_motion_sick_from_the/", date: "2024-12-09", sampleRate: 32000, mode: "Floatbeat" } */
-t?q++:a=Array(n=84).fill(q=0),v=(random()*1e3|0?0:255),m=(v%256/256)-a[q%n|0],a[q%n]=max(min(a[q%n]/160+m,1),-1),m

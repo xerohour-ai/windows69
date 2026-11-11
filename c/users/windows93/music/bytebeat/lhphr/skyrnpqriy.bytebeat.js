@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "skyrnpqriy", description : "Simple loop with a heavy kick.", url: "https://dollchan.net/btb/res/44.html#837", date: "2023-04-06", sampleRate: 48000, remix: "rubi/rgrekfjhufheghzufzghufijhdsuhgueirbghfjkjkhags" } */
-(t/=6)%262144?0:a=b=0,a+=b+=((1+(t>>10&3))/[1,1.5,5/4,4/3][t>>14&3]/6-b)/500,f=x=>2**(x/12+1)*a&127^2**(x/12)*a&127,y=t/4096%1,y**.2*(f(12)^f(-b)^f(a/64%1/a*5e3))+(1-y)*(1e3*(t%4096)**.3&128)

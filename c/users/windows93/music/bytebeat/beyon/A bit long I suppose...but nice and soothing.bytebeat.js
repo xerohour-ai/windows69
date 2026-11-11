@@ -1,2 +1,0 @@
-/*! { author: "beyon", name: "A bit long I suppose...but nice and soothing", url: ["http://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html?showComment=1318081308422#c4945456935852459432","http://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html?showComment=1318420534814#c3824894682767643057"], date: "2011-10-08" } */
-t>>6^t&0x25|t+(t^t>>11)-t*((t%24?2:6)&t>>11)^t<<1&(t&0x256?t>>4:t>>10)

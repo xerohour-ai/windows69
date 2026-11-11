@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "the ryg", url: ["https://www.reddit.com/r/bytebeat/comments/12r8v3k/list_of_my_creationremixes/","https://dollchan.net/btb/res/204.html#866"], date: "2023-04-19", sampleRate: 44100, remix: "ryg" } */
-(t*('36364689'[t>>13&7]&15)/12&128)/2+(((t>>12^(t>>12)-2)%11*t/4|t>>13)&127)*(t>1048576)/2.5+cbrt(sin(3e3/(t*(a='1112111411121348'[15&t>>14])%16384+128*a)**.02))*32+32+(((t*sin(t>>3)&128)*(-t>>8&127)>>7)*(t&32768)/64e3)*(t>524288)

@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "FM Ctrl+V", url: "https://dollchan.net/btb/res/163.html#486", date: "2023-02-27", sampleRate: 48000, mode: "Floatbeat", remix: "rubi/Ctrl+V" } */
-t*=44100/48000,s=sin,e=cos,a=([2,2,3,0,2.9,0,3,0,3.5,3.5,3,3,2.9,2.9,3,0,3,0,3,0,2.9,0,3,0,2,2,1.8,1.8,2,2,1,1][(t>>12)%32]*t*4),b=([0,2,0,2,0,2,0,3,0][(t>>13)%8]*t*.5),c=PI/128,s(a*c+e(a/4*c)-s(a/4*c))/4-s(b*c+e(b/2*c))/4

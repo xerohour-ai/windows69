@@ -1,2 +1,0 @@
-/*! { author: "MT2023", name: "h", url: ["https://dollchan.net/btb/res/500.html#4571","https://www.reddit.com/r/bytebeat/comments/1fs53bv/h/"], date: "2024-09-29", sampleRate: 48000, mode: "Floatbeat", remix: "psubscirbe/floatbeat rhythm" } */
-T=t,t/=4,max(min(sin(sqrt(T/6*([1,1,1.2,1.5,1,1,1.2,1.1][t>>14&7])&63)*4)/((t>>(t&8192?t&16384?2:3:4)&255)*.1)+atan(sin([1,1,1.2,1.5,1,1,1.2,1.1][t>>14&7]*T/6*PI/128+(4e3/(t%8192)))*8)/2,1),-1)/2+((random()*(-t>>3&255)/512)+(random()*(-t>>6&255)/256*(t>>13&1)))/2-.25

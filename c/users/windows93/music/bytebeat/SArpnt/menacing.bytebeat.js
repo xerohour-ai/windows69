@@ -1,2 +1,0 @@
-/*! { author: "SArpnt", name: "menacing", url: "https://www.reddit.com/r/bytebeat/comments/ff5phi/menacing/", date: "2020-03-08", sampleRate: 44100 } */
-r=11e3,s=floor(t/r+1)%32,b='ćóóóćÎÎÎÎÃÃÃÃÃÃÎ°°°°¦¦¦¦'.charCodeAt(s)/300*t%512,160/3*(sin(t%r/(t%r/100+8))+1)*(s%2+.6*(s%16==0))+b%(400+128*sin(b/(21+sin(t/r))))%256*1/3+(.999*(0xDBC97749&2**s?2*b:b)%128>64+15*sin(t/1e4)?64-t/r%1*32:0)

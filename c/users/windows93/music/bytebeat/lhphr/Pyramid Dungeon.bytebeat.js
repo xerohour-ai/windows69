@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "Pyramid Dungeon", description : "Slight desert-like style in this.", url: "https://dollchan.net/btb/res/44.html#69", date: "2022-05-22", sampleRate: 32000 } */
-m=2**([t>>13&5,7-(t>>13&5),7,4+3*(t>>17&2)][t>>16&3]/12),(m*t/2&32)+(m*t/8&31)+32*tan(PI/4*sin(m*t*PI/125)**(m*t/(8-2*(t>>17&1))&t>>12&62))

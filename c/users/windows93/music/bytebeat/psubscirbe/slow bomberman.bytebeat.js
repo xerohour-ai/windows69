@@ -1,3 +1,0 @@
-/*! { author: "psubscirbe", name: "slow bomberman", url: "https://www.reddit.com/r/bytebeat/comments/1gx3qba/slow_bomberman/", date: "2024-11-22", sampleRate: 32000, cover: "[Bomberman (NES) Music - Stage Theme](https://youtu.be/eNB8V1NPYc0))" } */
-trig=x=>parseInt("FEDCBA98765432100123456789ABCDEF"[x>>2&31]??"0",16)*8,
-trig(t*2**([0,(n=NaN),0,n,12,n,0,n,3,n,n,n,7,n,9,n,10,n,n,n,10,n,n,n,9,9,n,n,n,n,n,n,-2,n,-2,n,10,n,-2,n,2,n,n,n,5,n,7,n,8,n,n,n,7,n,8,n,-2,n,-3,n,-2,n,n,n,-5,n,-5,n,7,n,-5,n,5,n,n,n,4,n,5,n,-5,n,n,n,7,n,n,n,-5,-5,n,n,n,n,n,n,-5,n,-5,n,7,n,-5,n,5,n,n,n,4,n,5,n,-5,n,n,n,7,n,n,n,-5,n,-5,n,-3,n,-1][t>>11&127]/12))

@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "FM Running man", url: "https://dollchan.net/btb/res/163.html#373", date: "2023-01-22", sampleRate: 48000, mode: "Floatbeat", remix: "viznut/Another attempt at melody construction" } */
-t/=6,a=t*1.5/1*(3+(1^t>>10&5))*(5+(3&t>>14))>>(t>>8&3),Math.sin(Math.sin(a*PI/128)+a*PI/128)*Math.tan(Math.sin(a*PI/128)*Math.cos(a*PI/192))*Math.abs(2-Math.abs(Math.cos(a*PI/256)))/3

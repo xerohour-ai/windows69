@@ -1,2 +1,0 @@
-/*! { author: "ANoUserXD", name: "My Own Sierpinski harmony with kick and hihat", url: "https://www.reddit.com/r/bytebeat/comments/14y3qtx/my_own_sierpinski_harmony_with_kick_and_hihat/", date: "2023-07-13", sampleRate: 48000, remix: "miiro/Sierpinski harmony" } */
-t/=1.5,t>>=2,40+((10*t&t>>4|9*t&t>>7|6*t&t>>9|4*t&t>>10)&255)%256/3+40*sin(24*cbrt(t%4096))+(random()*([t,0,0,t,0,t,0,0,0,0,t,0,t,0,t,t][t>>10&15])&32)

@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "Four beats drum machine", url: "https://dollchan.net/btb/res/204.html#1387", date: "2023-06-22", sampleRate: 48000, mode: "Floatbeat" } */
-r=t*.8,h=['1111111144144242','2211224423336333','2222422424224222','1112222132212244'][3&r>>18][15&r>>12],sin(6*cbrt(r*h%16384/h+64))*(1-r*h%8192/8192)*(r*h&8192?0:1)*2

@@ -1,2 +1,0 @@
-/*! { author: "Sychamis", name: "A short tune using string noises", url: "https://www.reddit.com/r/bytebeat/comments/1dyjink/string_noises_using_the_karplusstrong_algorithm/", date: "2024-07-08", sampleRate: 48000, mode: "Floatbeat", remix: "Sychamis/String noises using the Karplus-Strong algorithm", cover: "[Josh Hutcherson - Whistle](https://www.youtube.com/watch?v=BbeeuzU5Qc8)" } */
-t%14e3==0?(f=[436,291,183,218,550,367,183,218,367,291,183,243,486,243,194,243][int(t/14e3)%16],b=Array.from({length:f},()=>random())):(b[t%f]=(b[t%f]+b[(t-1)%f])/2)*2-1

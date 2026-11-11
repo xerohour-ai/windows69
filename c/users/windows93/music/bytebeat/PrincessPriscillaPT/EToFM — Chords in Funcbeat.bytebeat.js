@@ -1,9 +1,0 @@
-/*! { author: "PrincessPriscillaPT", name: "EToFM — Chords in Funcbeat", url: "https://dollchan.net/btb/res/7164.html#8164", date: "2025-07-10", sampleRate: 48000, mode: "Funcbeat", remix: "Anonymous from russian imageboards/Extraordinary thread of FRACTAL MUSIC" } */
-return t=>(
-t*=32e3,
-m=midiNote=x=>(t/32000*256)*440*2**((x-69)/12)*(x>-1?x<128?1:0:0),
-((m(61)%256-128)*.29+(m(53)%256-128)*.46+(m([54,58][t>>16&1])%256-128)*[.43,.34][t>>16&1]+(m(70)%256-128)*.17)
-)/128/1.35
-
-// C#4 + F3 + ( t >> 14 & 1 ? Bb3 : F#3 ) + Bb4
-// F#maj7 - Bbm

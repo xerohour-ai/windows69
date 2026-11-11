@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "Hard level with drum", url: "https://www.reddit.com/r/bytebeat/comments/12vt718/list_of_my_creatorremixes_2/", date: "2023-04-23", sampleRate: 32000, remix: ["SthephanShi/Hard level","Zackx/drums detail"] } */
-i=t/4,(i*(i&16384?7:5)*(5-(3&i>>8))>>(3&-i>>(i&4096?2:16))|i>>(i&16384?i&4096?3:4:3))%256/3+(((3e2**(t*[[1,,,4,,4,4,8,4],[1,,,4,,4,8,16]][!(~t>>16&1)|0][7&t>>13]%32768)**.04)&128)/2+(random()*(-t&4095)/150)+((t*sin(t>>2)&255)*(-t&8191)/24e3)*'00100101'[7&t>>13])/1.5

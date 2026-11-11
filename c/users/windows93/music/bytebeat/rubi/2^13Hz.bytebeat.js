@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "2^13Hz", url: "https://www.reddit.com/r/bytebeat/comments/14fzrpi/213hz/", date: "2023-06-22", sampleRate: 8192 } */
-a=t*[1,1.2,1.35,t&8192?1.9:1.5][3&t>>14],((a%63+a%64)+(a*[2,3,4,6][3&t>>10]&64)+(4e4/(t&4095)&127)+(random()*(1&t>>12)*100&-t>>6))/1.5

@@ -1,2 +1,0 @@
-/*! { author: "MT2023", name: "fourtytwo melody with echo and filter", url: "https://dollchan.net/btb/res/500.html#1905", date: "2023-08-13", sampleRate: 32000, mode: "Floatbeat", remix: "the 42 melody" } */
-a=t=>(t/16*(t>>12&42)&64)*(1-t/4%2048/2048),k=t=>(a(t)+a(t-1)+a(t-2)+a(t-3)+a(t-4)+a(t-5)+a(t-6)+a(t-7)+a(t-8)+a(t-9)+a(t-10)+a(t-11)+a(t-12)+a(t-13)+a(t-14)+a(t-15)+a(t-16)+a(t-17)+a(t-18)+a(t-19)+a(t-20)+a(t-21))/16,(k(t)+k(t-800*4)/2+k(t-800*4*2)/3+k(t-800*4*3)/4+k(t-800*4*4)/5+k(t-800*4*5)/6+k(t-800*4*6)/7)/128-1

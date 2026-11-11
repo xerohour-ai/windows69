@@ -1,2 +1,0 @@
-/*! { author: "rubi", name: "funni music", url: "https://www.reddit.com/r/bytebeat/comments/shafna/funni_music/", date: "2022-01-31", sampleRate: 44100, remix: "rubi/fitebeat" } */
-("Baz§zaB-".charCodeAt((t*[1,0,1.5,0,1.4,0,1.5,0,1.8,1.8,1.8,1.8,1.5,1.5,1.5,1.5][(t>>12)%16]>>4)%8))+([64,32,32,32][(t>>12)%4]*random())*(1-(1&t>>11))+(128*sin(t/160))/4

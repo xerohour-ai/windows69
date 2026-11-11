@@ -1,2 +1,0 @@
-/*! { author: "kOLbOSa_exe", name: "ordinaric death files bg music", description : "Someone is negotiating via radio.", url: "https://www.reddit.com/r/bytebeat/comments/11r8dsq/ordinaric_death_files_bg_music/", date: "2023-03-14", mode: "Floatbeat" } */
-d=function(){var c = Array(2000);var i = 0;for(var i;i<256;i++){c[i]=Math.random();}return c;},t==2?n=d():0,t==1?n=[]:0,atan2(((t^t-t/128)%256)&(t>>11^t>>9),sin(t/2))-Math.PI/2+n[t%round(cos(t/10240)*250)]/3-0.25

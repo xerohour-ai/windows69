@@ -1,2 +1,0 @@
-/*! { author: "Bp103", name: "non-js bytebeat thing that resembles music if you squint your ears", url: "https://www.reddit.com/r/bytebeat/comments/qem3ip/nonjs_bytebeat_thing_that_resembles_music_if_you/", date: "2021-10-24" } */
-((t%(8000*32))<(8000*16)?(t<<((((46517>>((t/512)%16))<<15)>>15)%15))%(((.6+t)>>9)^((.4-t)<<3)):(t<<((((43690>>((t/1024)%16))<<15)>>15)%15))-(((.6+t)>>9)^((.4-t)<<3))) | ((t%8000*16)<(8000*8)?(2<<((((t%4096*2)<<3)/((t%4096*2)>>8))^(((t%8192)<<1))|4>>((t%8192)>>4)))-(((t%1024)<<3)/((t%1024)>>8)):(((t%4096*2)<<3)/((t%4096*2)>>8))^((t%8192)<<1))

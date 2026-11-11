@@ -1,2 +1,0 @@
-/*! { author: "lhphr", name: "trig", description : "It's merely a short loop, but it's still somewhat decent.", url: "https://dollchan.net/btb/res/44.html#69", date: "2022-05-21", sampleRate: 44100, mode: "Floatbeat" } */
-s=sin,c='55545556'[t>>16&7],f=q=>t*PI/q*c,'11011100'[t>>13&7]*tan(PI/2**(2+(t>>11&3))*s(PI*s(f(250))-f(4e4)))/4+([,,h=(1-t%8192/8192)*s(t**3)/8,,,h,,h][t>>12&7]??sinh(PI/2*s(c**4**(1-t%4096/2048))%(PI/4))/4)+(s(f(124)-f(89))+s(f(125)-f(100))+s(f(126)-f(105)))/12

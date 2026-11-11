@@ -1,2 +1,0 @@
-/*! { author: "psubscirbe", name: "folded 100%", url: "https://www.reddit.com/r/bytebeat/comments/150mxag/folded_100/", date: "2023-07-21", sampleRate: 44100 } */
-((t*random()&31&~t>>7)*(1&t>>13))+(sqrt(t&16383)*32&64)+(t*[,s=sin(t>>4)][t>>14&1]&63&~t>>6)+(t/2*.825/"1234"[t>>17&3]*2**([0,2,4,6,7,9,7,10][t>>13&7]/12)&64)

@@ -1,2 +1,0 @@
-/*! { author: "mu6k", name: "No Limit", url: "http://www.pouet.net/topic.php?which=8357&page=9#c388931", date: "2011-10-04", mode: "Signed Bytebeat", cover: "[2 Unlimited - No Limit](https://youtu.be/qM5W7Xn7FiA)" } */
-((sin(2000/(t&0xfff))*127)*0.2 + (( (t<<1)*(1+0.333*((t&0xffff)>0x7fff)+0.177*((t&0xffff)>0xbfff )) )&0xff)*((t&0xfff)/0x1fff)*0.4 + (( ( (t>>4^t>>6|t>>10))|(t*3*(1+0.333*((t&0xffff)>0x7fff)+0.177*((t&0xffff)>0xbfff))) )&0xff)*0.25)

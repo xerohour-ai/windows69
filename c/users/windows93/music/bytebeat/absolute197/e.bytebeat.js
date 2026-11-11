@@ -1,3 +1,0 @@
-/*! { author: "absolute197", name: "e", url: "https://www.reddit.com/r/bytebeat/comments/154bxq2/e/", date: "2023-07-20", sampleRate: 46000 } */
-x=t=>((t*1.22*1.0596**parseInt(['H0CA','H1DC'][1&t>>17][3&t>>13],36)&128)*(-t>>8&31)/16),
-((x(t)/4+x(t-(t>>9&255))/4)+x(t-12288)/8+x(t-24888)/8+random()*(-t>>7&63)+sin(sqrt(t%16384)*3)*32)/3+64

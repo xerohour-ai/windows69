@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "my own hard-coded music", url: "https://dollchan.net/btb/res/163.html#518", date: "2023-03-04", sampleRate: 8100 } */
-w=t**(t/1414&3)%256,y=cbrt((t*1024/1414&4095))*1000&128,r=(t*2*((t*1024/1414>>12&7)+2)/(4+(t*1024/1414>>12&5))&127)+32&128,w/3+y/2+r/2

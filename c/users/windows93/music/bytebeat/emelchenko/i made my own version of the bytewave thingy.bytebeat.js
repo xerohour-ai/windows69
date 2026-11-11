@@ -1,2 +1,0 @@
-/*! { author: "emelchenko", name: "i made my own version of the bytewave thingy", url: "https://www.reddit.com/r/bytebeat/comments/1h5ocqx/i_made_my_own_version_of_the_bytewave_thingy/", date: "2024-12-03", sampleRate: 44100, mode: "Floatbeat", remix: "Zackx/Bytewave/Synthbyte engine example" } */
-x=y=>(t||(A=Array(n=12222).fill(0)),a=((t*((t>>13&3)+1)*((t>>17&1)/8+1)*y/5&255)/512*(1-t/8192%1))%256+A[t%n],A[t%n]=a/2,sin(cbrt(t&32767)*4)/2+(random()/4*(t&32768?t&16384?0:1-t/16384%1:0))+a-.5),[x(1.005),x(.995)]

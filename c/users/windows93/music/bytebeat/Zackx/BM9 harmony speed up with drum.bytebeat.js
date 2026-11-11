@@ -1,2 +1,0 @@
-/*! { author: "Zackx", name: "BM9 harmony speed up with drum", url: "https://www.reddit.com/r/bytebeat/comments/12vt718/list_of_my_creatorremixes_2/", date: "2023-04-23", sampleRate: 44400, remix: ["May_I_Change_My_Name/BM9 harmony","Zackx/drums detail"] } */
-i=t/4,(2*i&i>>8|5*i&i>>7|9*i&i>>4|15*i&i>>4)%256/2.5+(((3e2**(t*[[1,,,4,,4,4,8,4],[1,,,4,,4,8,16]][!(~t>>16&1)|0][7&t>>13]%32768)**.04)&128)/2+(random()*(-t&4095)/150)+((t*sin(t>>2)&255)*(-t&8191)/24e3)*'00100101'[7&t>>13])/1.25

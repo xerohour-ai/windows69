@@ -1,2 +1,0 @@
-/*! { author: "awogler9124812041", name: "minimal sparta harmony", url: "https://www.reddit.com/r/bytebeat/comments/16yvbwx/minimal_sparta_harmony/", date: "2023-10-03", sampleRate: 16000, remix: "viznut/minimal sierpinski harmony", cover: "[Keaton Monger - This is Sparta! Last techno remix](https://youtu.be/rvYZRskNV3w)" } */
-t||(d=1.174,e=1.318,f=1.389,a=Array(n=256).fill(0)),a[t%n]=(t&t>>8)%256,a[floor(t*[e,e,e,e,f,f,f,f,d,d,d,d,f,f,f,f,e,e*2,e,e*2,f,f*2,f,f*2,d,d*2,d,d*2,f,f*2,f,f*2,][t>>12&31]%n)]

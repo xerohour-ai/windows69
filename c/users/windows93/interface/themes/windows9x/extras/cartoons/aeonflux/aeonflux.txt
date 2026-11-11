@@ -1,3 +1,0 @@
-Aeon Flux theme
-includes wallpaper, sounds, cursors, and font.
-created by Scott Schaffner (sscott@bgnet.bgsu.edu)

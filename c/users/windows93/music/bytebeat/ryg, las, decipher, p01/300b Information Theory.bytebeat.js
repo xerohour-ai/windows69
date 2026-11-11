@@ -1,2 +1,0 @@
-/*! { author: "ryg, las, decipher, p01", name: "300b Information Theory", url: ["http://www.pouet.net/topic.php?which=8357&page=17#c389541","https://youtu.be/tCRPUv8V22o?t=313"], date: "2011-10-07", mode: "Signed Bytebeat", remix: "mu6k/Longline Theory" } */
-w=t>>9,k=32,m=2048,a=1-t/m%1,d=(14*t*t^t)%m*a,y=[3,3,4.7,2][p=w/k&3]*t/4,h="IQNNNN!!]]!Q!IW]WQNN??!!W]WQNNN?".charCodeAt(w/2&15|p/3<<4)/33*t-t,s=y*.98%80+y%80+(w>>7&&a*((5*t%m*a&128)*(0x53232323>>w/4&1)+(d&127)*(0xa444c444>>w/4&1)*1.5+(d*w&1)+(h%k+h*1.99%k+h*.49%k+h*.97%k-64)*(4-a-a))),s*s>>14?127:s

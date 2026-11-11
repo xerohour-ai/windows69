@@ -1,2 +1,0 @@
-/*! { author: "psubscirbe", name: "innocent", url: ["https://www.reddit.com/r/bytebeat_2/comments/1ne827a/innocent/","https://dollchan.net/btb/res/284.html#9085"], date: "2025-09-11", sampleRate: 32000, cover: "[Gimmick! Music (FC / NES) - Innocent [Stage 6, Part 1]](https://www.youtube.com/watch?v=uEz2CT3Qn00)" } */
-a=t=>(t*2**(parseInt("DIKPDIKPCIKPCIKPBIKPBIKPAIKPAIKP"[(t>>13)%32],36)/12)&128)*(1-t%8192/1e4),a(t)/2+a(t-6144)/4+a(t-12288)/6+((t&32768)?(~t>>9&63)*random():64*random()*([1][t>>9&7]??0))

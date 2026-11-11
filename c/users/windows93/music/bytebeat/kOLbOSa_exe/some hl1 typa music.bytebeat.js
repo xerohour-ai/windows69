@@ -1,2 +1,0 @@
-/*! { author: "kOLbOSa_exe", name: "some hl1 typa music", url: "https://www.reddit.com/r/bytebeat/comments/1am6le0/some_hl1_typa_music_crystal_cave/", date: "2024-02-08", sampleRate: 48000, mode: "Floatbeat", remix: "kOLbOSa_exe/Slightly metal crystal cave" } */
-t/=48000/8000,ts=x=>tan(sin(x)),a=t=>ts(3*t/((t>>(t>>14^t>>11)&7^t>>13&6|t>>12&5)+2))*(32-(t>>6)&31)+32,(a(t+1E3)/5+a(t)/1.5+a(t-3E3)/2+a(t-6E3)/3+a(t-9E3)/4+a(t-12E3)/5)*cbrt(sin(t/8E3*PI))/200+sin(4e2/((t&4095)+1))/5+random()*(4095-(t*(((t>>14^t>>11)&1)?4:2)&4095))/32768

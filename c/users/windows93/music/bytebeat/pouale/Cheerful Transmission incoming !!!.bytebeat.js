@@ -1,2 +1,0 @@
-/*! { author: "pouale", name: "Cheerful Transmission incoming !!!", url: "https://battleofthebits.com/arena/Entry/Cheerful+Transmission+incoming+%21%21%21.txt/58510/", date: "2023-02-11" } */
-0.8 * ((sin(t * (t/4000 % 4000)) + 1) * 10 * (t%1000/1000) + (2 * sin(t) + sin(1.25*t) + sin(1.5*t) + sin(15/16*t) + 5) * 25 * (t%4000/4000) + (sin(t * (1 ^ (- t/ 2000 % 2000))) + 1) * 20 * (t%1000/1000) + (t % 100) * 0.4)

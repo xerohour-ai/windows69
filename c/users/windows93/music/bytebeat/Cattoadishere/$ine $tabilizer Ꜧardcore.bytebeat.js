@@ -1,4 +1,0 @@
-/*! { author: "Cattoadishere", name: "$ine $tabilizer Ꜧardcore", url: "https://www.reddit.com/r/bytebeat/comments/1561h2y/ine_tabilizer_%EA%9C%A7ardcore_i_guess/", date: "2023-07-22", sampleRate: 48000, remix: "lhphr/$ine $tabilizer" } */
-D=t/(b=t&t>>12),f=(a,c)=>32*sin(b--%2**c*D/2**a)|0,
-max(min(255.9,((f(5,4)+f(9,6)+f(12,8)+f(14,9))/1.5+128+
-sin(sqrt((t%2**[14,14,14,14,14,14,14,13,14,14,14,14,14,14,13,12][(t>>14)%16])*8))*32)+((t/4*(2+(t>>17&1))%256/3+t/3*(2+(t>>17&1))%256/3+t/8*(2+(t>>17&1))%256/3)%256*(256-(t>>8)%256)/256)/2),0.1)

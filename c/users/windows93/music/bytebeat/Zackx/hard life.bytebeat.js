@@ -1,3 +1,0 @@
-/*! { author: "Zackx", name: "hard life", url: "https://dollchan.net/btb/res/204.html#260", date: "2022-11-27", sampleRate: 32000 } */
-bass=[1,1.12,.75,.66,.592,.66,.75,.9][7&t>>15]*1.32,
-z=[1,1.12,1.5,1.78,1,1.12,.75,.669][7&t>>15]*1.32,(z*t%256+z*-t%257+bass*t%512+bass*-t%514)/9+128

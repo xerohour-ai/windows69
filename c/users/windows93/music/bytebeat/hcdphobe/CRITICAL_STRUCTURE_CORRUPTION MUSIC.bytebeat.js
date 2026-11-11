@@ -1,2 +1,0 @@
-/*! { author: "hcdphobe", name: "CRITICAL_STRUCTURE_CORRUPTION MUSIC", url: "https://dollchan.net/btb/res/163.html#376", date: "2023-02-03", sampleRate: 32000, mode: "Floatbeat" } */
-S=sin,C=cos,T=tan,A=abs,W=exp,C=expm1,c=4.125*t/2*(t/2>>12&3^t/2>>14&3|-t/2>>14&3&t/2>>14&15)-(t/2*(t/2>>12&3&t/2>>12&3))*((t>>12&4)+4)/((t>>12&6)+4),X=c*([1,2,4,8][t>>18&3])/128,R=t/3*0.5*PI/128,S(X)*C(.3+S(X/1.001))*W(S(X/2)/2)*T(S(X*1.0001)/2)/5+S(1000/(t%16384+256)**.4)/7+S(R)*T(S(R*3))*W(S(R*8.0001))/24

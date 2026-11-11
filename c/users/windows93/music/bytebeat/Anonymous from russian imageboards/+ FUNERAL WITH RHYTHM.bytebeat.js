@@ -1,2 +1,0 @@
-/*! { author: "Anonymous from russian imageboards", name: "+ FUNERAL WITH RHYTHM", url: ["https://arhivach.xyz/storage/a/9b/a9b7e820d10e52493570894ed002b9a5.jpg","http://arhivach.xyz/thread/28592/#71681923"], date: "2014-07-11", remix: "Anonymous from russian imageboards/6) FUNERAL" } */
-((((((t/16000)%2>1?t*3|16*t:t*2|16*t)|123)+((t/32000)%2>1?(t%1000<500?t*18.3:0):(t%1000<500?t*18.9:0)))|(t/1000<<8))|256)%205+(t&1000<50?t<<t/5:0)
