@@ -101,9 +101,24 @@ function syncFromStorage() {
   const norm = normalizeSave(parsed);
   if (!norm) return false;
   const caseChanged = norm.active !== saveData.active;
-  saveData = norm;
-  state = saveData.cases[saveData.active];
-  PAGES = CASE_PAGES[saveData.active]; PEOPLE = CASE_PEOPLE[saveData.active]; EVIDENCE = CASE_EVIDENCE[saveData.active];
+  if (!caseChanged) {
+    /* Preserve the `state` object identity: normalizeSave() builds a NEW
+       object per case, so a plain reassignment here silently orphaned any
+       state object a program captured at render time — the File Report's
+       submit handler held one for minutes (its re-render is signature-gated)
+       and its attempts++/resolved=true mutations were discarded by the next
+       save(), which persisted the fresh object instead. Merge in place. */
+    const fresh = norm.cases[saveData.active];
+    for (const k of Object.keys(state)) if (!(k in fresh)) delete state[k];
+    Object.assign(state, fresh);
+    saveData.active = norm.active;
+    saveData.cases = norm.cases;
+    saveData.cases[saveData.active] = state;
+  } else {
+    saveData = norm;
+    state = saveData.cases[saveData.active];
+    PAGES = CASE_PAGES[saveData.active]; PEOPLE = CASE_PEOPLE[saveData.active]; EVIDENCE = CASE_EVIDENCE[saveData.active];
+  }
   return caseChanged;
 }
 /* Switch cases: swap the active sub-state and every per-case registry. Other
@@ -430,6 +445,17 @@ function startHintClock() {
   }, 1000);
 }
 
+/* The epilogue email: closing a case delivers the client's reply into Mail
+   (the epilogue text itself also shows in the File Report's closed view, as
+   in the original — the mail is the part the original never sent, added here
+   so the result is visible in Mail as well as in the report). */
+function epilogueMail() {
+  const cfg = REPORTS[saveData.active];
+  const epi = cfg.epilogues ? (cfg.epilogues[state.choice] || cfg.epilogues.full) : cfg.epilogue;
+  return { id: "m-epilogue", from: cfg.client, subject: "Case closed — thank you",
+    date: "Nov 9, 2004", body: stripHtml(epi) };
+}
+
 /* ================= shared public API ================= */
 window.Somnius = {
   PROGRAM: null,            /* set by each program's app.js, e.g. "somnius-browser" */
@@ -447,6 +473,7 @@ window.Somnius = {
   entityOptions, encounteredPeople, unlockedEvidenceOptions, allMail: function () {
     const list = CASE_MAIL[saveData.active].slice();
     if (state.mail.includes("m-followup")) list.push(CASE_FOLLOWUP[saveData.active]);
+    if (state.mail.includes("m-epilogue")) list.push(epilogueMail());
     return list;
   },
   /* Wire the cross-program sync: storage events from other programs + focus. */

@@ -52,11 +52,17 @@ function renderReport() {
   <span id="report-msg" style="margin-left:8px"></span>
   <div id="epilogue"></div>`;
   $("#btn-submit").onclick = () => {
+    /* Read state FRESH here, not the object renderReport captured above:
+       shared.js replaces the state object on every cross-program sync, so a
+       form left open for a minute holds a stale object — mutating it and
+       calling S.save() persisted the fresh object instead, and the report
+       silently never stuck (attempts stayed 0, resolved stayed false). */
+    const st = S.state;
     const s1 = (document.querySelector('input[name=s1]:checked') || {}).value;
     const s2 = (document.querySelector('input[name=s2]:checked') || {}).value;
     const s3 = (document.querySelector('input[name=s3]:checked') || {}).value;
     if (!s1 || !s2 || !s3) { $("#report-msg").textContent = "Fill in all three slots first."; return; }
-    state.attempts++; S.save();
+    st.attempts++; S.save();
     const ok1 = cfg.s1correct.includes(s1);
     const ok2 = cfg.s2correct.includes(s2);
     /* A choice slot has no wrong answer — any choice is a decision. It still has to be made. */
@@ -69,8 +75,10 @@ function renderReport() {
     v3.className = "verdict " + (ok3 ? "ok" : "bad");
     v3.textContent = ok3 ? (cfg.s3kind === "choice" ? "✓ Noted — this is your call." : "✓ Correct.") : "✗ " + cfg.s3wrong;
     if (ok1 && ok2 && ok3) {
-      if (cfg.s3kind === "choice") { state.choice = s3; }
-      state.resolved = true; S.save();
+      if (cfg.s3kind === "choice") { st.choice = s3; }
+      st.resolved = true;
+      if (!st.mail.includes("m-epilogue")) st.mail.push("m-epilogue");
+      S.save();
       $("#report-msg").textContent = "";
       setTimeout(renderReport, 400);
       S.toast("✅ <b>Case closed.</b> The report went through — read the epilogue.");

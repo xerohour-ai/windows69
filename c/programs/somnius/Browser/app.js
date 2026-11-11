@@ -26,7 +26,16 @@ function navSynthetic(title, html) {
   $("#browser-view").innerHTML = html;
   $("#page-meta").textContent = title;
 }
-function bootHome() { navSynthetic("Somnius Home", S.HOMES[S.saveData.active]); hist = []; histIdx = -1; }
+function bootHome() {
+  /* The home text used to hard-code "1 unread case email" (the case email
+     only) while Mail counts ALL unread mail (2 at the start) — the two
+     programs disagreed. Render the live count so they always match. */
+  const unread = S.allMail().filter(m => !S.state.read[m.id]).length;
+  const home = S.HOMES[S.saveData.active].replace(
+    "You have <b>1 unread case email</b>.",
+    "You have <b>" + unread + " unread email" + (unread === 1 ? "" : "s") + "</b>.");
+  navSynthetic("Somnius Home", home); hist = []; histIdx = -1;
+}
 function resumeOrHome() {
   const state = S.state;
   if (state.order.length) { const last = state.order[state.order.length - 1]; hist = state.order.slice(); histIdx = hist.length - 1; nav(last, false); }
