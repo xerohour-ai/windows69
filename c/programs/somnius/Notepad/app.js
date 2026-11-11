@@ -3,7 +3,6 @@
    pinned pages. Clicking a pin opens the page in the Somnius Browser. */
 Somnius.PROGRAM = "somnius-notepad";
 const S = Somnius;
-const $ = S.$;
 
 function renderNotepad() {
   const state = S.state;

@@ -4,7 +4,6 @@
    ethical-choice slots. Only lists people and evidence actually encountered. */
 Somnius.PROGRAM = "somnius-report";
 const S = Somnius;
-const $ = S.$;
 
 /* Signature of everything the slot lists depend on — re-render on sync only
    when the available options or the resolved state actually changed, so a

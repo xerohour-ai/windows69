@@ -3,7 +3,6 @@
    pane, and unread counts. Hint emails (Tier 1) arrive here. */
 Somnius.PROGRAM = "somnius-mail";
 const S = Somnius;
-const $ = S.$;
 
 function renderMail() {
   const list = $("#mail-list"); list.innerHTML = "";

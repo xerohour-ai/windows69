@@ -4,7 +4,6 @@
    The layer-2 file needs the audio key from Skullcrusher's shrine theme. */
 Somnius.PROGRAM = "somnius-decryptor";
 const S = Somnius;
-const $ = S.$;
 
 const EYE_OPEN = "   .-~~~-.\n  /  o o  \\\n |    ^    |\n  \\  ___  /\n   '-----'\n  3y3 is watching.";
 const EYE_SHUT = "   .-~~~-.\n  /  - -  \\\n |    ^    |\n  \\  ___  /\n   '-----'\n  3y3 is watching.";

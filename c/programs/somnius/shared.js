@@ -45,11 +45,26 @@ function freshState() {
 let saveData = { active: 1, cases: { 1: freshState(), 2: freshState(), 3: freshState() } };
 /* ?reset=1 wipes the save before it loads — the clean-state escape hatch for playtesting. */
 try { if (new URLSearchParams(location.search).has("reset")) localStorage.removeItem(LS_KEY); } catch (e) {}
+/* Normalize any loaded save: every case sub-state must exist AND have every
+   field freshState() provides. Saves written by older builds (or a save
+   whose cases[1] is missing outright) used to leave `state` undefined or
+   half-built, and every program then threw on its first render and showed
+   a blank body. Backfilling here makes a stale/partial save load fresh. */
+function normalizeSave(data) {
+  if (!data || typeof data !== "object") return null;
+  if (!data.cases || typeof data.cases !== "object") return null;
+  if (data.active !== 1 && data.active !== 2 && data.active !== 3) data.active = 1;
+  for (const n of [1, 2, 3]) {
+    const c = data.cases[n];
+    data.cases[n] = (c && typeof c === "object") ? Object.assign(freshState(), c) : freshState();
+  }
+  return data;
+}
 try {
   const raw = localStorage.getItem(LS_KEY);
   if (raw) {
     const parsed = JSON.parse(raw);
-    if (parsed && parsed.cases) { saveData = parsed; if (!saveData.cases[2]) saveData.cases[2] = freshState(); if (!saveData.cases[3]) saveData.cases[3] = freshState(); }
+    if (parsed && parsed.cases) { const norm = normalizeSave(parsed); if (norm) saveData = norm; }
     else if (parsed && parsed.visited) { saveData.cases[1] = Object.assign(freshState(), parsed); } /* old flat Case 1 save */
   }
 } catch (e) {}
@@ -83,10 +98,10 @@ function syncFromStorage() {
   let parsed = null;
   try { parsed = JSON.parse(raw); } catch (e) { return false; }
   if (!parsed || !parsed.cases) return false;
-  const caseChanged = parsed.active !== saveData.active;
-  saveData = parsed;
-  if (!saveData.cases[2]) saveData.cases[2] = freshState();
-  if (!saveData.cases[3]) saveData.cases[3] = freshState();
+  const norm = normalizeSave(parsed);
+  if (!norm) return false;
+  const caseChanged = norm.active !== saveData.active;
+  saveData = norm;
   state = saveData.cases[saveData.active];
   PAGES = CASE_PAGES[saveData.active]; PEOPLE = CASE_PEOPLE[saveData.active]; EVIDENCE = CASE_EVIDENCE[saveData.active];
   return caseChanged;

@@ -4,7 +4,6 @@
    bookmarks, pins, webrings, zoom-to-reveal, and the music-box tune uploads. */
 Somnius.PROGRAM = "somnius-browser";
 const S = Somnius;
-const $ = S.$;
 
 let hist = [], histIdx = -1, currentId = null;
 

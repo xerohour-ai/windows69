@@ -4,7 +4,6 @@
    intro lives here too, on first launch (see Somnius.maybeShowIntro). */
 Somnius.PROGRAM = "somnius-casefile";
 const S = Somnius;
-const $ = S.$;
 
 function renderCaseFile() {
   const el = $("#casefile-body"); if (!el) return;
