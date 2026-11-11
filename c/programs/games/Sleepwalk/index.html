@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Somnius — Project Sleepwalk</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; font-family: Tahoma, Verdana, sans-serif; font-size: 12px; }
+  /* ---------- desktop ---------- */
+  #desktop { position: fixed; inset: 0; background:
+    radial-gradient(circle at 12% 22%, #fff 1px, transparent 1.5px),
+    radial-gradient(circle at 78% 12%, #fff 1px, transparent 1.5px),
+    radial-gradient(circle at 34% 68%, #ffe9a8 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 78%, #fff 1px, transparent 1.5px),
+    radial-gradient(circle at 55% 40%, #fff 1px, transparent 1.5px),
+    linear-gradient(160deg, #0b6e6e, #084a4a 60%, #063838);
+    background-size: 340px 260px, 420px 300px, 300px 240px, 380px 280px, 260px 220px, 100% 100%;
+    user-select: none; }
+  .desk-icon { position: absolute; width: 92px; text-align: center; color: #fff; cursor: pointer; padding: 6px 2px; text-shadow: 1px 1px 2px #000; }
+  .desk-icon .glyph { font-size: 30px; line-height: 1.1; }
+  .desk-icon:hover { background: rgba(255,255,255,.18); }
+  .desk-icon .badge { position: absolute; top: 2px; right: 14px; background: #d00; color: #fff; border-radius: 9px; min-width: 16px; height: 16px; line-height: 16px; font-size: 10px; font-weight: bold; }
+  #desk-clock-note { position: absolute; right: 14px; bottom: 44px; color: rgba(255,255,255,.75); font-size: 11px; text-align: right; text-shadow: 1px 1px 2px #000; }
+  /* ---------- windows ---------- */
+  .win { position: absolute; background: #c0c0c0; border: 2px solid; border-color: #dfdfdf #404040 #404040 #dfdfdf; box-shadow: 4px 4px 0 rgba(0,0,0,.35); display: flex; flex-direction: column; min-width: 320px; }
+  .win.hidden { display: none; }
+  .win.focused { box-shadow: 5px 5px 0 rgba(0,0,0,.45); }
+  .titlebar { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; font-weight: bold; padding: 4px 6px; display: flex; justify-content: space-between; align-items: center; cursor: move; flex: none; }
+  .win:not(.focused) .titlebar { background: linear-gradient(90deg, #666, #999); }
+  .titlebar .tb-btns button { margin-left: 3px; width: 20px; height: 18px; font-size: 11px; line-height: 1; cursor: pointer; }
+  .winbody { padding: 6px; overflow: auto; flex: 1; background: #c0c0c0; }
+  .winbody.white { background: #fff; }
+  button, input, select, textarea { font-family: Tahoma, Verdana, sans-serif; font-size: 12px; }
+  button { cursor: pointer; }
+  /* ---------- taskbar ---------- */
+  #taskbar { position: fixed; left: 0; right: 0; bottom: 0; height: 34px; background: #c0c0c0; border-top: 2px solid #dfdfdf; display: flex; align-items: center; gap: 4px; padding: 3px 6px; z-index: 9999; }
+  #start-btn { font-weight: bold; padding: 4px 12px; }
+  .task-btn { padding: 4px 10px; max-width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .task-btn.active { background: #a8a8a8; font-weight: bold; }
+  #tray-clock { margin-left: auto; padding: 4px 10px; border: 1px inset #fff; background: #c0c0c0; }
+  #start-menu { position: fixed; left: 4px; bottom: 36px; width: 220px; background: #c0c0c0; border: 2px solid; border-color: #dfdfdf #404040 #404040 #dfdfdf; z-index: 10000; display: none; }
+  #start-menu div { padding: 8px 10px; cursor: pointer; }
+  #start-menu div:hover { background: #000080; color: #fff; }
+  /* ---------- browser ---------- */
+  #browser-view a { color: #0000ee; }
+  #browser-view a:visited { color: #551a8b; }
+  .btoolbar { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; margin-bottom: 5px; }
+  .btoolbar input[type=text] { flex: 1; min-width: 120px; padding: 3px; }
+  #addr { width: 100%; padding: 3px; margin-bottom: 5px; background: #fff; border: 1px inset #fff; color: #333; }
+  #browser-view { background: #fff; border: 1px inset #fff; min-height: 300px; padding: 0; overflow: auto; }
+  #assist-panel { display: none; background: #ffffcc; border: 1px solid #cc9; padding: 6px; margin-bottom: 5px; }
+  #assist-panel b { color: #660; }
+  .pagefoot { display: flex; gap: 6px; align-items: center; margin-top: 5px; color: #444; font-size: 11px; flex-wrap: wrap; }
+  /* ---------- in-world pages ---------- */
+  .pg { padding: 12px 14px; min-height: 280px; font-size: 13px; line-height: 1.45; }
+  .pg h1 { font-size: 20px; margin: 2px 0 8px; }
+  .pg h2 { font-size: 15px; margin: 12px 0 4px; }
+  .pg.stars { background: #20206e; color: #fff;
+    background-image: radial-gradient(#fff 1px, transparent 1.4px), radial-gradient(#ffe9a8 1px, transparent 1.4px), radial-gradient(#fff 1px, transparent 1.2px);
+    background-size: 90px 70px, 130px 110px, 60px 90px; }
+  .pg.stars a { color: #ffff66; }
+  .pg.stars .box { background: rgba(0,0,0,.45); border: 1px solid #8888ff; color: #fff; }
+  .pg.dark { background: #111; color: #c9c9c9; }
+  .pg.dark a { color: #ff7777; }
+  .pg.dark h1 { color: #eee; letter-spacing: 2px; }
+  .pg.quiet { background: #dfe8ff; color: #223; }
+  .pg.plain { background: #fff; color: #000; }
+  .pg.possum { background: #e8e0d0; color: #332; }
+  .pg .box { border: 1px solid #888; padding: 8px; margin: 8px 0; background: #f4f4f4; color: #000; }
+  .pg .box.warn { background: #ffe1e1; border-color: #c00; }
+  .pg .box.sad { background: #e1ecff; border-color: #36c; }
+  .pg .gb p { border-bottom: 1px dashed #999; padding: 6px 0; margin: 0; }
+  .pg.stars .gb p, .pg.dark .gb p { border-color: #666; }
+  .pg .sig { font-size: 11px; font-style: italic; opacity: .85; margin-top: 14px; }
+  .pg .tiny { font-size: 11px; color: #888; }
+  .pg.stars .tiny, .pg.dark .tiny { color: #bbb; }
+  .pg .hl { background: #ff0; color: #000; padding: 0 2px; font-weight: bold; }
+  .pg .poem { font-style: italic; margin-left: 12px; }
+  table.card { border-collapse: collapse; margin: 8px 0; background: #fff; color: #000; }
+  table.card td { border: 1px solid #999; padding: 4px 8px; }
+  .tune-btn { font-size: 13px; padding: 4px 12px; margin-top: 4px; }
+  .tune-state { color: #060; font-weight: bold; }
+  .pg.teen { background: #3d1a5c; color: #fff;
+    background-image: radial-gradient(#ff9ff3 1px, transparent 1.4px), radial-gradient(#fff 1px, transparent 1.2px);
+    background-size: 110px 80px, 70px 90px; }
+  .pg.teen a { color: #ff9ff3; }
+  .pg.teen .box { background: rgba(0,0,0,.45); border: 1px solid #c9f; color: #fff; }
+  .pg.teen .tiny { color: #d9b3ff; }
+  .pg.corp { background: #f2f2f2; color: #111; border-left: 6px solid #c00; }
+  .pg.corp h1 { color: #c00; letter-spacing: 1px; }
+  .pg.sketch { background: #fff8e1; color: #222; }
+  .pg.sketch a { color: #7b1fa2; }
+  .zoom-panel-art { background: #101030; color: #ffe9a8; font-size: 22px; text-align: center; padding: 18px 6px; letter-spacing: 4px; margin: 8px 0; }
+  .zoom-btn { font-size: 13px; padding: 5px 14px; font-weight: bold; }
+  .zoom-reveal { display: none; background: #000; color: #0f0; border: 3px dashed #f0f; padding: 12px; margin: 8px 0; text-align: center; }
+  .pg.gamer { background: #0a0a2e; color: #fff;
+    background-image: radial-gradient(#ff0 1px, transparent 1.4px), radial-gradient(#f0f 1px, transparent 1.2px), radial-gradient(#fff 1px, transparent 1.2px);
+    background-size: 90px 70px, 130px 110px, 60px 90px; }
+  .pg.gamer a { color: #ff0; }
+  .pg.gamer .box { background: rgba(0,0,0,.55); border: 2px outset #888; color: #fff; }
+  .pg.gamer .box.warn { background: #400; border-color: #f00; }
+  .pg.gamer .tiny { color: #ccc; }
+  .pg.gamer table.card td { color: #000; }
+  .pg.nullsec { background: #000; color: #0f0; font-family: "Courier New", monospace; }
+  .pg.nullsec a { color: #0f0; text-decoration: underline; }
+  .pg.nullsec .box { background: #000; border: 1px solid #0f0; color: #0f0; }
+  .pg.nullsec .tiny { color: #090; }
+  .pg.nullsec h1 { color: #0f0; letter-spacing: 3px; }
+  #eye-art { font-family: "Courier New", monospace; background: #000; color: #0f0; padding: 8px; margin: 0 0 8px; text-align: center; }
+  #decrypt-out { background: #000; color: #0f0; font-family: "Courier New", monospace; white-space: pre-wrap; padding: 10px; min-height: 120px; border: 1px inset #fff; margin-top: 8px; }
+  .file-row { display: block; padding: 3px 0; cursor: pointer; }
+  .case-switch { display: flex; gap: 6px; margin: 4px 0 10px; flex-wrap: wrap; }
+  .case-switch button { padding: 5px 10px; }
+  .case-switch button.active { background: #000080; color: #fff; font-weight: bold; }
+  /* ---------- mail / notepad / casefile ---------- */
+  .mail-list { border: 1px inset #fff; background: #fff; margin-bottom: 6px; }
+  .mail-item { padding: 6px 8px; cursor: pointer; border-bottom: 1px solid #ddd; }
+  .mail-item:hover { background: #eef; }
+  .mail-item.unread { font-weight: bold; background: #fff8dc; }
+  .mail-item .mdate { float: right; color: #888; font-weight: normal; font-size: 11px; }
+  #mail-read { background: #fff; border: 1px inset #fff; padding: 10px; white-space: pre-wrap; min-height: 140px; }
+  #notes { width: 100%; height: 180px; }
+  .pin { background: #ffffcc; border: 1px solid #cc9; padding: 5px 7px; margin: 4px 0; }
+  .pin a { color: #00c; }
+  .ledger { border-collapse: collapse; width: 100%; background: #fff; }
+  .ledger td, .ledger th { border: 1px solid #999; padding: 3px 6px; font-size: 11px; text-align: left; }
+  .ledger th { background: #dfe8ff; }
+  .meter { height: 12px; background: #fff; border: 1px inset #fff; margin: 3px 0 8px; }
+  .meter > div { height: 100%; background: #000080; }
+  .slot { border: 1px solid #888; background: #fff; padding: 8px; margin: 8px 0; }
+  .slot label { display: block; padding: 3px 0; cursor: pointer; }
+  .slot .verdict { font-weight: bold; margin-top: 4px; }
+  .verdict.ok { color: #060; } .verdict.bad { color: #c00; }
+  #epilogue { display: none; background: #e1ecff; border: 2px solid #36c; padding: 12px; margin-top: 10px; }
+  #toast { position: fixed; right: 12px; bottom: 44px; background: #ffffcc; border: 2px solid #cc9; padding: 10px 12px; z-index: 10001; display: none; max-width: 320px; box-shadow: 3px 3px 0 rgba(0,0,0,.3); }
+  #intro { position: fixed; inset: 0; background: rgba(0,0,40,.72); z-index: 20000; display: flex; align-items: center; justify-content: center; }
+  #intro .card { background: #c0c0c0; border: 2px solid; border-color: #dfdfdf #404040 #404040 #dfdfdf; width: 520px; max-width: 92vw; padding: 0; box-shadow: 6px 6px 0 rgba(0,0,0,.4); }
+  #intro .card .body { padding: 14px 16px; background: #fff; }
+  #intro h1 { margin: 0 0 6px; font-size: 18px; }
+  .stamp { display: inline-block; border: 3px solid #060; color: #060; padding: 2px 10px; font-weight: bold; transform: rotate(-4deg); letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div id="desktop">
+  <div class="desk-icon" style="left:18px;top:16px" data-open="browser"><div class="glyph">🌐</div>Somnius<br>Browser</div>
+  <div class="desk-icon" style="left:18px;top:104px" data-open="mail"><div class="glyph">✉️</div>Mail<span class="badge" id="mail-badge" style="display:none">1</span></div>
+  <div class="desk-icon" style="left:18px;top:192px" data-open="notepad"><div class="glyph">📝</div>Notepad</div>
+  <div class="desk-icon" style="left:18px;top:280px" data-open="casefile"><div class="glyph">🗂️</div>Case File</div>
+  <div class="desk-icon" style="left:18px;top:368px" data-open="report"><div class="glyph">🔍</div>File Report</div>
+  <div class="desk-icon" id="icon-3y3" style="left:18px;top:456px;display:none" data-open="decryptor"><div class="glyph">👁️</div>3y3.exe</div>
+  <div id="desk-clock-note">SOMNIUS v1.0<br><span id="desk-node">Goodtime Valley node</span><br>November 2004</div>
+</div>
+
+<!-- Browser -->
+<div class="win" id="win-browser" style="left:130px;top:20px;width:760px;height:560px;z-index:10">
+  <div class="titlebar" data-drag="win-browser"><span id="browser-title">🌐 Somnius Browser — Goodtime Valley</span><span class="tb-btns"><button data-min="win-browser">_</button><button data-close="win-browser">✕</button></span></div>
+  <div class="winbody">
+    <div class="btoolbar">
+      <button id="btn-back">◀ Back</button><button id="btn-fwd">Forward ▶</button>
+      <button id="btn-dir">📁 Directory</button><button id="btn-hist">🕘 History</button>
+      <input type="text" id="search-input" placeholder="Search Somnius… (public pages only)">
+      <button id="btn-search">Search</button>
+    </div>
+    <div id="addr">somnius://home</div>
+    <div id="assist-panel"></div>
+    <div id="browser-view"></div>
+    <div class="pagefoot"><span id="page-meta"></span><span style="flex:1"></span><button id="btn-bookmark">☆ Bookmark</button><button id="btn-pin">📌 Pin to Notepad</button></div>
+  </div>
+</div>
+
+<!-- Mail -->
+<div class="win hidden" id="win-mail" style="left:220px;top:60px;width:640px;height:480px;z-index:11">
+  <div class="titlebar" data-drag="win-mail"><span>✉️ Somnius Mail</span><span class="tb-btns"><button data-min="win-mail">_</button><button data-close="win-mail">✕</button></span></div>
+  <div class="winbody">
+    <div class="mail-list" id="mail-list"></div>
+    <div id="mail-read"><i>Select a message to read it.</i></div>
+  </div>
+</div>
+
+<!-- Notepad -->
+<div class="win hidden" id="win-notepad" style="left:300px;top:90px;width:520px;height:460px;z-index:12">
+  <div class="titlebar" data-drag="win-notepad"><span>📝 Notepad — case notes</span><span class="tb-btns"><button data-min="win-notepad">_</button><button data-close="win-notepad">✕</button></span></div>
+  <div class="winbody">
+    <textarea id="notes" placeholder="Your notes. The game never writes here for you — except Tier 3, when Somnius Assist pins a URL because you are stuck."></textarea>
+    <h3 style="margin:8px 0 4px">Pinned pages</h3>
+    <div id="pins"><i>Nothing pinned yet. Use “📌 Pin to Notepad” in the browser.</i></div>
+  </div>
+</div>
+
+<!-- Case File -->
+<div class="win hidden" id="win-casefile" style="left:180px;top:40px;width:680px;height:560px;z-index:13">
+  <div class="titlebar" data-drag="win-casefile"><span>🗂️ Case File</span><span class="tb-btns"><button data-min="win-casefile">_</button><button data-close="win-casefile">✕</button></span></div>
+  <div class="winbody white" id="casefile-body"></div>
+</div>
+
+<!-- 3y3.exe decryptor (Case 3) -->
+<div class="win hidden" id="win-3y3" style="left:280px;top:50px;width:600px;height:520px;z-index:15">
+  <div class="titlebar" data-drag="win-3y3"><span>👁️ 3y3.exe — Null Sector Decryptor</span><span class="tb-btns"><button data-min="win-3y3">_</button><button data-close="win-3y3">✕</button></span></div>
+  <div class="winbody white" id="decryptor-body"></div>
+</div>
+
+<!-- Report -->
+<div class="win hidden" id="win-report" style="left:260px;top:70px;width:620px;height:540px;z-index:14">
+  <div class="titlebar" data-drag="win-report"><span>🔍 File Report — report your findings to the client</span><span class="tb-btns"><button data-min="win-report">_</button><button data-close="win-report">✕</button></span></div>
+  <div class="winbody white" id="report-body"></div>
+</div>
+
+<div id="taskbar">
+  <button id="start-btn">❖ Start</button>
+  <span id="task-btns" style="display:flex;gap:4px"></span>
+  <span id="tray-clock"></span>
+</div>
+<div id="start-menu">
+  <div data-open="browser">🌐 Somnius Browser</div>
+  <div data-open="mail">✉️ Mail</div>
+  <div data-open="notepad">📝 Notepad</div>
+  <div data-open="casefile">🗂️ Case File</div>
+  <div data-open="report">🔍 File Report</div>
+  <div id="start-3y3" data-open="decryptor" style="display:none">👁️ 3y3.exe</div>
+  <div id="start-reset">↺ Reset case (clear save)</div>
+</div>
+<div id="toast"></div>
+
+<div id="intro" style="display:none">
+  <div class="card">
+    <div class="titlebar"><span id="intro-title">SOMNIUS</span></div>
+    <div class="body" id="intro-body"></div>
+  </div>
+</div>
+
+<script src="pages.js"></script>
+<script src="pages2.js"></script>
+<script src="pages3.js"></script>
+<script>
+"use strict";
+/* ================= state: one save, one sub-state per case ================= */
+const LS_KEY = "sleepwalk-case1";
+const CASE_PAGES = { 1: window.SLEEPWALK_PAGES, 2: window.SLEEPWALK_PAGES2, 3: window.SLEEPWALK_PAGES3 };
+const CASE_PEOPLE = { 1: window.SLEEPWALK_PEOPLE, 2: window.SLEEPWALK_PEOPLE2, 3: window.SLEEPWALK_PEOPLE3 };
+const CASE_EVIDENCE = { 1: window.SLEEPWALK_EVIDENCE, 2: window.SLEEPWALK_EVIDENCE2, 3: window.SLEEPWALK_EVIDENCE3 };
+const CASE_MAIL = { 1: window.SLEEPWALK_MAIL, 2: window.SLEEPWALK_MAIL2, 3: window.SLEEPWALK_MAIL3 };
+const CASE_FOLLOWUP = { 1: window.SLEEPWALK_FOLLOWUP, 2: window.SLEEPWALK_FOLLOWUP2, 3: window.SLEEPWALK_FOLLOWUP3 };
+const CASE_FILES = { 3: window.SLEEPWALK_FILES3 };
+const ZONE_NAMES = { 1: "Goodtime Valley", 2: "Teentopia", 3: "gamerZone" };
+let PAGES = CASE_PAGES[1], PEOPLE = CASE_PEOPLE[1], EVIDENCE = CASE_EVIDENCE[1];
+const byId = id => PAGES.find(p => p.id === id);
+function freshState() {
+  return { visited: {}, order: [], enc: {}, ev: {}, pins: [], notes: "",
+    hints: 0, hintLog: [], idle: 0, resolved: false, attempts: 0,
+    mail: ["m-case", "m-welcome"], read: {}, bookmarks: {}, seenIntro: false,
+    started: Date.now(), downloads: [], decrypted: {}, has3y3: false, audioKey: false, choice: null };
+}
+let saveData = { active: 1, cases: { 1: freshState(), 2: freshState(), 3: freshState() } };
+/* ?reset=1 wipes the save before it loads — the clean-state escape hatch for playtesting. */
+try { if (new URLSearchParams(location.search).has("reset")) localStorage.removeItem(LS_KEY); } catch (e) {}
+try {
+  const raw = localStorage.getItem(LS_KEY);
+  if (raw) {
+    const parsed = JSON.parse(raw);
+    if (parsed && parsed.cases) { saveData = parsed; if (!saveData.cases[2]) saveData.cases[2] = freshState(); if (!saveData.cases[3]) saveData.cases[3] = freshState(); }
+    else if (parsed && parsed.visited) { saveData.cases[1] = Object.assign(freshState(), parsed); } /* old flat Case 1 save */
+  }
+} catch (e) {}
+/* ?case=2 / ?case=3 opens straight into that case (playtest shortcut). */
+try { const c = new URLSearchParams(location.search).get("case"); if (c === "2" || c === "3") saveData.active = +c; } catch (e) {}
+let state = saveData.cases[saveData.active];
+PAGES = CASE_PAGES[saveData.active]; PEOPLE = CASE_PEOPLE[saveData.active]; EVIDENCE = CASE_EVIDENCE[saveData.active];
+function save() { saveData.cases[saveData.active] = state; try { localStorage.setItem(LS_KEY, JSON.stringify(saveData)); } catch (e) {} }
+/* Switch cases: swap the active sub-state and every per-case registry, then re-render. */
+function setCase(n) {
+  if (n === saveData.active) return;
+  saveData.active = n; state = saveData.cases[n];
+  PAGES = CASE_PAGES[n]; PEOPLE = CASE_PEOPLE[n]; EVIDENCE = CASE_EVIDENCE[n];
+  hist = []; histIdx = -1; currentId = null;
+  save();
+  const zb = document.getElementById("browser-title");
+  if (zb) zb.textContent = "🌐 Somnius Browser — " + ZONE_NAMES[n];
+  const dn = document.getElementById("desk-node");
+  if (dn) dn.textContent = ZONE_NAMES[n] + " node";
+  renderMail(); renderNotepad(); updateMailBadge(); update3y3Visibility();
+  document.getElementById("mail-read").innerHTML = "<i>Select a message to read it.</i>"; /* reading pane belongs to the old case */
+  if (state.order.length) { const last = state.order[state.order.length - 1]; hist = state.order.slice(); histIdx = hist.length - 1; nav(last, false); }
+  else bootHome();
+  renderCaseFile(); renderReport();
+  if (!state.seenIntro) showIntro();
+}
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+function toast(msg) { const t = $("#toast"); t.innerHTML = msg; t.style.display = "block"; setTimeout(() => t.style.display = "none", 6000); }
+
+/* ================= window manager ================= */
+const WINS = { browser: ["win-browser", "🌐 Browser"], mail: ["win-mail", "✉️ Mail"], notepad: ["win-notepad", "📝 Notepad"], casefile: ["win-casefile", "🗂️ Case File"], report: ["win-report", "🔍 File Report"], decryptor: ["win-3y3", "👁️ 3y3.exe"] };
+let zTop = 20;
+function openWin(name) {
+  const [id, label] = WINS[name];
+  const el = document.getElementById(id);
+  el.classList.remove("hidden"); el.style.zIndex = ++zTop; el.classList.add("focused");
+  $$(".win").forEach(w => { if (w.id !== id) w.classList.remove("focused"); });
+  renderTaskbar();
+  if (name === "casefile") renderCaseFile();
+  if (name === "report") renderReport();
+  if (name === "mail") renderMail();
+  if (name === "notepad") renderNotepad();
+  if (name === "decryptor") renderDecryptor();
+}
+function closeWin(name) { document.getElementById(WINS[name][0]).classList.add("hidden"); renderTaskbar(); }
+function renderTaskbar() {
+  const bar = $("#task-btns"); bar.innerHTML = "";
+  Object.keys(WINS).forEach(name => {
+    const el = document.getElementById(WINS[name][0]);
+    if (el.classList.contains("hidden")) return;
+    const b = document.createElement("button");
+    b.className = "task-btn" + (el.classList.contains("focused") ? " active" : "");
+    b.textContent = WINS[name][1];
+    b.onclick = () => { if (el.classList.contains("focused")) { el.classList.add("hidden"); renderTaskbar(); } else openWin(name); };
+    bar.appendChild(b);
+  });
+}
+$$(".win").forEach(w => w.addEventListener("mousedown", () => {
+  w.style.zIndex = ++zTop; $$(".win").forEach(x => x.classList.remove("focused")); w.classList.add("focused"); renderTaskbar();
+}));
+$$("[data-drag]").forEach(bar => {
+  bar.addEventListener("mousedown", e => {
+    if (e.target.tagName === "BUTTON") return;
+    const win = document.getElementById(bar.dataset.drag);
+    const r = win.getBoundingClientRect(); const dx = e.clientX - r.left, dy = e.clientY - r.top;
+    function mv(ev) { win.style.left = Math.max(-40, Math.min(innerWidth - 80, ev.clientX - dx)) + "px"; win.style.top = Math.max(0, Math.min(innerHeight - 60, ev.clientY - dy)) + "px"; }
+    function up() { removeEventListener("mousemove", mv); removeEventListener("mouseup", up); }
+    addEventListener("mousemove", mv); addEventListener("mouseup", up);
+  });
+});
+$$("[data-min]").forEach(b => b.onclick = () => { document.getElementById(b.dataset.min).classList.add("hidden"); renderTaskbar(); });
+$$("[data-close]").forEach(b => b.onclick = () => { document.getElementById(b.dataset.close).classList.add("hidden"); renderTaskbar(); });
+$$("[data-open]").forEach(el => el.addEventListener("click", () => { $("#start-menu").style.display = "none"; openWin(el.dataset.open); }));
+$("#start-btn").onclick = () => { const m = $("#start-menu"); m.style.display = m.style.display === "block" ? "none" : "block"; };
+/* Two-step reset: native confirm() dialogs get auto-dismissed by automated
+   browsers, so the reset arms on first click and fires on a second click within 5s. */
+let resetArmed = false, resetArmTimer = null;
+function doReset() {
+  if (!resetArmed) {
+    resetArmed = true;
+    toast("⚠️ Click Reset case again within 5 seconds to wipe your save and restart.");
+    resetArmTimer = setTimeout(() => { resetArmed = false; }, 5000);
+    return;
+  }
+  clearTimeout(resetArmTimer);
+  localStorage.removeItem(LS_KEY); location.reload();
+}
+$("#start-reset").onclick = doReset;
+function tickClock() { const d = new Date(); $("#tray-clock").textContent = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0"); }
+setInterval(tickClock, 15000); tickClock();
+
+/* ================= browser ================= */
+let hist = [], histIdx = -1, currentId = null;
+function stripHtml(h) { const d = document.createElement("div"); d.innerHTML = h; return d.textContent || ""; }
+function encounterPage(p) {
+  (p.people || []).forEach(person => { if (!state.enc[person]) state.enc[person] = Date.now(); });
+  Object.keys(EVIDENCE).forEach(k => { if (EVIDENCE[k].unlockPage === p.id && !state.ev[k]) state.ev[k] = Date.now(); });
+}
+function nav(id, push = true) {
+  const p = byId(id); if (!p) return;
+  const isNew = !state.visited[id];
+  if (isNew) { state.visited[id] = Date.now(); state.order.push(id); state.idle = 0; encounterPage(p); save(); }
+  if (push) { hist = hist.slice(0, histIdx + 1); hist.push(id); histIdx = hist.length - 1; }
+  currentId = id;
+  $("#assist-panel").style.display = "none";
+  $("#addr").textContent = "somnius://" + id;
+  $("#browser-view").innerHTML = p.body;
+  $("#page-meta").textContent = p.title + " · by " + p.author + " · " + p.zone + " · tags: " + p.tags.join(", ");
+  $("#btn-bookmark").textContent = state.bookmarks[id] ? "★ Bookmarked" : "☆ Bookmark";
+  if (state.resolved) {} // no-op guard
+  if (document.getElementById("win-casefile").classList.contains("hidden") === false) renderCaseFile();
+}
+function navSynthetic(title, html) {
+  currentId = null;
+  $("#addr").textContent = "somnius://search";
+  $("#browser-view").innerHTML = html;
+  $("#page-meta").textContent = title;
+}
+$("#browser-view").addEventListener("click", e => {
+  const dl = e.target.closest("a[data-download]");
+  if (dl) { e.preventDefault(); downloadFile(dl.dataset.download); return; }
+  const a = e.target.closest("a[data-page]");
+  if (a) { e.preventDefault(); nav(a.dataset.page); return; }
+  const t = e.target.closest(".tune-btn");
+  if (t) { e.preventDefault(); playTune(t.dataset.tune); return; }
+  const z = e.target.closest(".zoom-btn");
+  if (z) {
+    e.preventDefault();
+    const r = document.querySelector(".zoom-reveal");
+    if (r) { const open = r.style.display === "block"; r.style.display = open ? "none" : "block"; z.textContent = open ? "🔍 MAGNIFY THIS PANEL" : "🔍 HIDE THE MAGNIFICATION"; }
+  }
+});
+$("#btn-back").onclick = () => { if (histIdx > 0) { histIdx--; nav(hist[histIdx], false); } };
+$("#btn-fwd").onclick = () => { if (histIdx < hist.length - 1) { histIdx++; nav(hist[histIdx], false); } };
+$("#btn-bookmark").onclick = () => { if (!currentId) return; state.bookmarks[currentId] = !state.bookmarks[currentId]; save(); nav(currentId, false); };
+$("#btn-pin").onclick = () => {
+  if (!currentId) return;
+  const p = byId(currentId);
+  if (!state.pins.find(x => x.id === currentId)) { state.pins.push({ id: currentId, title: p.title }); save(); toast("📌 Pinned <b>" + esc(p.title) + "</b> to your Notepad."); renderNotepad(); }
+  else toast("Already pinned.");
+};
+function doSearch() {
+  const q = $("#search-input").value.trim().toLowerCase();
+  if (!q) return;
+  const hits = PAGES.filter(p => !p.hidden && (p.title + " " + p.author + " " + p.tags.join(" ") + " " + stripHtml(p.body)).toLowerCase().includes(q));
+  let html = `<div class="pg plain"><h1>Somnius Search — “${esc(q)}”</h1>`;
+  if (!hits.length) html += `<p>No pages match. The directory only lists public pages — try the <b>Directory</b>, or follow links and webrings. Unlisted pages never show up in search.</p>`;
+  else hits.forEach(p => {
+    const txt = stripHtml(p.body).replace(/\s+/g, " ").slice(0, 160);
+    html += `<p><a href="#" data-page="${p.id}"><b>${esc(p.title)}</b></a> <span class="tiny">by ${esc(p.author)} · ${esc(p.zone)}</span><br><span class="tiny">${esc(txt)}…</span></p>`;
+  });
+  html += `<p class="tiny">Search covers public pages only. ${PAGES.filter(p => p.hidden).length} unlisted pages exist on Somnius and will never appear here — somebody has to link you to them.</p></div>`;
+  navSynthetic("Search results", html);
+}
+$("#btn-search").onclick = doSearch;
+$("#search-input").addEventListener("keydown", e => { if (e.key === "Enter") doSearch(); });
+$("#btn-dir").onclick = () => {
+  const cats = {};
+  PAGES.filter(p => !p.hidden).forEach(p => { (cats[p.dir] = cats[p.dir] || []).push(p); });
+  let html = `<div class="pg plain"><h1>📁 ${ZONE_NAMES[saveData.active]} Directory</h1><p class="tiny">Public pages only. Unlisted pages are not in the directory — that's the point of a webring.</p>`;
+  Object.keys(cats).sort().forEach(c => {
+    html += `<h2>${esc(c)}</h2><ul>` + cats[c].map(p => `<li><a href="#" data-page="${p.id}">${esc(p.title)}</a> <span class="tiny">by ${esc(p.author)}</span></li>`).join("") + `</ul>`;
+  });
+  html += `</div>`;
+  navSynthetic("Directory", html);
+};
+$("#btn-hist").onclick = () => {
+  let html = `<div class="pg plain"><h1>🕘 History</h1>`;
+  if (!state.order.length) html += `<p>You haven't visited any pages yet. The case email is a good place to start.</p>`;
+  else html += `<ol>` + state.order.map(id => { const p = byId(id); return `<li><a href="#" data-page="${id}">${esc(p.title)}</a> <span class="tiny">by ${esc(p.author)}</span></li>`; }).join("") + `</ol>`;
+  html += `<p class="tiny">Bookmarks: ` + (Object.keys(state.bookmarks).filter(k => state.bookmarks[k]).map(id => `<a href="#" data-page="${id}">${esc(byId(id).title)}</a>`).join(", ") || "none yet") + `</p></div>`;
+  navSynthetic("History", html);
+};
+function showAssist(pageId) {
+  const p = byId(pageId); if (!p) return;
+  const panel = $("#assist-panel");
+  panel.style.display = "block";
+  panel.innerHTML = `<b>Somnius Search Assist — related results:</b> you haven't visited this yet, and it matches this case — <a href="#" data-page="${p.id}">${esc(p.title)}</a> <span style="color:#666">by ${esc(p.author)}</span>`;
+  panel.querySelector("a").onclick = e => { e.preventDefault(); nav(p.id); };
+}
+
+/* ================= mail ================= */
+function allMail() {
+  const list = CASE_MAIL[saveData.active].slice();
+  if (state.mail.includes("m-followup")) list.push(CASE_FOLLOWUP[saveData.active]);
+  return list;
+}
+function renderMail() {
+  const list = $("#mail-list"); list.innerHTML = "";
+  allMail().forEach(m => {
+    const d = document.createElement("div");
+    d.className = "mail-item" + (state.read[m.id] ? "" : " unread");
+    d.innerHTML = `<span class="mdate">${esc(m.date)}</span><b>${esc(m.from)}</b> — ${esc(m.subject)}`;
+    d.onclick = () => { state.read[m.id] = true; save(); $("#mail-read").textContent = m.from + " — " + m.subject + "\n" + m.date + "\n\n" + m.body; renderMail(); updateMailBadge(); };
+    list.appendChild(d);
+  });
+  updateMailBadge();
+}
+function updateMailBadge() {
+  const unread = allMail().filter(m => !state.read[m.id]).length;
+  const b = $("#mail-badge");
+  b.style.display = unread ? "block" : "none"; b.textContent = unread;
+}
+
+/* ================= notepad ================= */
+function renderNotepad() {
+  const ta = $("#notes");
+  if (document.activeElement !== ta) ta.value = state.notes || "";
+  const pins = $("#pins");
+  pins.innerHTML = state.pins.length ? state.pins.map(pin => `<div class="pin">📌 <a href="#" data-pin="${pin.id}">${esc(pin.title)}</a></div>`).join("") : `<i>Nothing pinned yet. Use “📌 Pin to Notepad” in the browser.</i>`;
+  pins.querySelectorAll("[data-pin]").forEach(a => a.onclick = e => { e.preventDefault(); openWin("browser"); nav(a.dataset.pin); });
+}
+$("#notes").addEventListener("input", e => { state.notes = e.target.value; save(); });
+
+/* ================= tune player (WebAudio music box) ================= */
+let audioCtx = null, tuneTimer = null;
+const MELODY = [880, 1318.5, 1046.5, 880, 784, 659.3, 587.3, 659.3, 523.3, 659.3, 784, 987.8, 880, 784, 659.3, 587.3];
+const BASS = [220, 220, 174.6, 220];
+/* One fingerprint per tune. The shrine tune is also the audio key for 3y3.exe layer 2. */
+const TUNES = {
+  "1": { fp: "QR-7712", note: "Same ID on both uploads." },
+  "2": { fp: "QR-7712", note: "Same ID on both uploads." },
+  "shrine": { fp: "QR-9931", note: "Same ID as the Null Sector keygen.", audioKey: true }
+};
+function playTune(which) {
+  const tune = TUNES[which] || TUNES["1"];
+  if (tune.audioKey && !state.audioKey) { state.audioKey = true; save(); toast("🎵 3y3.exe: audio key detected — QR-9931"); }
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === "suspended") audioCtx.resume();
+    if (tuneTimer) { clearTimeout(tuneTimer); tuneTimer = null; }
+    const t0 = audioCtx.currentTime + 0.05;
+    MELODY.forEach((f, i) => {
+      const t = t0 + i * 0.42;
+      const o = audioCtx.createOscillator(), o2 = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type = "sine"; o.frequency.value = f; o2.type = "sine"; o2.frequency.value = f * 3;
+      const g2 = audioCtx.createGain(); g2.gain.value = 0.12;
+      o.connect(g); o2.connect(g2); g2.connect(g); g.connect(audioCtx.destination);
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.22, t + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.9);
+      o.start(t); o2.start(t); o.stop(t + 1); o2.stop(t + 1);
+      if (i % 4 === 0) {
+        const b = audioCtx.createOscillator(), bg = audioCtx.createGain();
+        b.type = "triangle"; b.frequency.value = BASS[(i / 4) | 0];
+        b.connect(bg); bg.connect(audioCtx.destination);
+        bg.gain.setValueAtTime(0.0001, t); bg.gain.exponentialRampToValueAtTime(0.07, t + 0.05);
+        bg.gain.exponentialRampToValueAtTime(0.0001, t + 1.4);
+        b.start(t); b.stop(t + 1.5);
+      }
+    });
+    $$(".tune-state").forEach(s => s.textContent = s.dataset.state === which ? "♪ playing… fingerprint " + tune.fp : "");
+    tuneTimer = setTimeout(() => {
+      $$(".tune-state").forEach(s => s.textContent = s.dataset.state === which ? "♪ played — fingerprint " + tune.fp + ". " + tune.note : "");
+    }, MELODY.length * 420 + 600);
+  } catch (e) { toast("Audio is blocked in this browser — but the metadata is the evidence: fingerprint " + tune.fp + "."); }
+}
+
+/* ================= 3y3.exe decryptor (Case 3) ================= */
+const EYE_OPEN = "   .-~~~-.\n  /  o o  \\\n |    ^    |\n  \\  ___  /\n   '-----'\n  3y3 is watching.";
+const EYE_SHUT = "   .-~~~-.\n  /  - -  \\\n |    ^    |\n  \\  ___  /\n   '-----'\n  3y3 is watching.";
+let dlPass = "";
+function update3y3Visibility() {
+  const show = !!state.has3y3;
+  const icon = document.getElementById("icon-3y3"); if (icon) icon.style.display = show ? "block" : "none";
+  const sm = document.getElementById("start-3y3"); if (sm) sm.style.display = show ? "block" : "none";
+}
+function downloadFile(key) {
+  if (key === "3y3.exe") {
+    if (!state.has3y3) { state.has3y3 = true; save(); update3y3Visibility(); toast("⬇ Downloaded <b>3y3.exe</b> — it's on your desktop now. Open it to decrypt files."); }
+    else toast("3y3.exe is already on your desktop.");
+    return;
+  }
+  const FILES = CASE_FILES[saveData.active] || {};
+  if (!FILES[key]) { toast("Download failed — file not found."); return; }
+  if (!state.downloads) state.downloads = [];
+  if (!state.downloads.includes(key)) { state.downloads.push(key); save(); toast("⬇ Downloaded <b>" + esc(key) + "</b> — open 3y3.exe to decrypt it."); }
+  else toast("Already downloaded.");
+}
+function renderDecryptor() {
+  const body = $("#decryptor-body");
+  const FILES = CASE_FILES[saveData.active] || {};
+  if (!state.downloads) state.downloads = [];
+  if (!state.decrypted) state.decrypted = {};
+  const rows = state.downloads.length ? state.downloads.map(k => {
+    const f = FILES[k]; if (!f) return "";
+    const done = !!state.decrypted[k];
+    const needsAudio = f.layer === 2 && !state.audioKey;
+    const status = done ? "✓ decrypted" : needsAudio ? "⚠ layer 2 — audio key required" : "🔒 encrypted";
+    return `<label class="file-row"><input type="radio" name="dl-file" value="${esc(k)}"> <b>${esc(f.title)}</b> — ${status}</label>`;
+  }).join("") : `<i>No encrypted files downloaded yet. Find .nfo files in the zone — the banner ads are a good place to start.</i>`;
+  body.innerHTML = `<pre id="eye-art">${EYE_OPEN}</pre>
+  <p><b>3y3.exe — Null Sector Decryptor</b><br><span style="color:#666">Status: shareware. register to remove this eye.</span></p>
+  <p>Passphrase: <input type="text" id="dl-pass" value="${esc(dlPass)}" placeholder="look closer…" style="width:180px"> <button id="btn-decrypt" style="padding:4px 14px;font-weight:bold">Decrypt selected</button></p>
+  <div>${rows}</div>
+  <div id="dl-status" style="margin-top:6px;font-weight:bold"></div>
+  <pre id="decrypt-out">decrypted output appears here.</pre>`;
+  $("#dl-pass").addEventListener("input", e => { dlPass = e.target.value; });
+  $("#btn-decrypt").onclick = doDecrypt;
+  if (state.audioKey) { const st = $("#dl-status"); if (st) st.textContent = "🎵 audio key detected — QR-9931"; }
+}
+function doDecrypt() {
+  const sel = document.querySelector('input[name=dl-file]:checked');
+  const out = $("#decrypt-out"), st = $("#dl-status");
+  const FILES = CASE_FILES[saveData.active] || {};
+  if (!sel) { st.textContent = "Select a file first."; return; }
+  const f = FILES[sel.value]; if (!f) { st.textContent = "File not found."; return; }
+  const pass = (dlPass || "").toLowerCase().replace(/\s+/g, "");
+  if (pass !== "lookcloser") { st.textContent = "✗ wrong passphrase. the eye blinks."; return; }
+  if (f.layer === 2 && !state.audioKey) {
+    out.textContent = "⚠ file corrupted — bad sectors.\n\n3y3.exe: audio key required.\n(a corrupted file is not always corrupted. sometimes it is waiting for a song.)";
+    st.textContent = "⚠ Decryption failed — layer 2 needs the audio key.";
+    return;
+  }
+  if (!state.decrypted) state.decrypted = {};
+  state.decrypted[sel.value] = true;
+  state.ev[f.evidence] = Date.now();
+  save();
+  toast("✅ Decrypted <b>" + esc(f.title) + "</b> — evidence logged.");
+  renderDecryptor(); /* refresh the file list so this file flips to ✓ decrypted */
+  $("#decrypt-out").textContent = f.content;
+  $("#dl-status").textContent = "✓ Decrypted — evidence logged.";
+  const radio = document.querySelector('input[name=dl-file][value="' + sel.value + '"]');
+  if (radio) radio.checked = true;
+  renderCaseFile();
+}
+/* The eye blinks, on a slow timer, whenever the decryptor is open. */
+setInterval(() => {
+  const eye = document.getElementById("eye-art");
+  if (eye && !document.getElementById("win-3y3").classList.contains("hidden")) {
+    eye.textContent = eye.textContent === EYE_OPEN ? EYE_SHUT : EYE_OPEN;
+  }
+}, 2800);
+
+/* ================= per-case config: report, case file, intro, home ================= */
+const CASE_META = {
+  1: { title: "Case 1 — “The Quiet Room”", client: "marbles_4ever, 19", objective: "memorial page <b>angelfeathers</b> (her sister Dani) vanished from Goodtime Valley. Find out who took it down.",
+    proves: ["Does the tune-as-evidence mechanic read without a hint?", "Do players find the webring without Search Assist?", "What did 20 pages cost — the real scope document?"] },
+  2: { title: "Case 2 — “The Girl Who Drew the Stars”", client: "lunar_latte, 15", objective: "her webcomic <b>Comet Cat</b> is being reposted as someone else's work on a slick Teentopia page called starfactory. She wants her cat back.",
+    proves: ["Does multi-zone search still feel like discovery, not a wall?", "Does the zoom-to-reveal signature read like the tune did?", "Does a second victim make the player say “farm” on their own?", "Does putting Hollowell in a report slot land, or does it need a scene?"] },
+  3: { title: "Case 3 — “The 3y3 of the Storm”", client: "pixelpete_99, 14", objective: "his older brother <b>DoomDealer</b> was banned from gamerZone for uploading a cracked game. Pete thinks he was framed. Find out what really happened.",
+    proves: ["Does a tool-gated case (a decryptor) still feel like reading, not a minigame?", "Does the client being wrong land, or does it feel like a gotcha?", "Does the ethical choice at the end feel like a real choice, or a menu?", "What did 20 pages cost — the real scope document?"] }
+};
+const REPORTS = {
+  1: { title: "File Report — Case 1: The Quiet Room", client: "marbles_4ever",
+    s1label: "Who requested the removal?", s1correct: ["angelfeathers", "quietrooms"],
+    s1wrong: "Not quite. Who ASKED for the removal — not who carried it out? The 404 and the Mod Log disagree, and one of them is the cover story.",
+    s2label: "What proves quietrooms is Dani?", s2correct: ["tune", "design", "guestbook-slip"],
+    s2wrong: "That doesn't prove she's the same person. What links the two handles — same song, same signature, same slip?",
+    s3label: "Where is she now?", s3kind: "people", s3correct: "quietrooms",
+    s3wrong: "She's not there anymore. Where did the webring lead?",
+    epilogue: `<p>You told marbles_4ever the truth: Dani asked for the memorial to come down. She is alive, living quietly as quietrooms, hiding from Halberd_77. The tune proved it. The stars proved it. Her friend's slip proved it.</p><p>She doesn't reply for a day. Then: <i>“thank you. i don't know if i'm angry or relieved. i think both.”</i></p><p>Whether telling her was a kindness is left alone. That's the job.</p>` },
+  2: { title: "File Report — Case 2: The Girl Who Drew the Stars", client: "lunar_latte",
+    s1label: "Who stole “Comet Cat”?", s1correct: ["starfactory"],
+    s1wrong: "Not quite. The victim isn't the thief. Who profits from the copies?",
+    s2label: "What proves it?", s2correct: ["signature", "misspelling", "timestamps"],
+    s2wrong: "That shows something happened — but not who drew it first. What links the art to lunar_latte's hand?",
+    s3label: "Who owns starfactory?", s3kind: "entities", s3correct: "hollowell",
+    s3wrong: "Follow the money past the page itself. Who is named in the small print?",
+    epilogue: `<p>You told lunar_latte the truth: starfactory stole Comet Cat, and Hollowell Media Group owns starfactory. mod_sprocket pulled the stolen pages the same day. She got her name back. starfactory is still up — Hollowell holds the zone's ad contract, and the farm has lawyers.</p><p>She doesn't reply for a day. Then: <i>“thank you. comet cat is mine again. i don't know why that doesn't feel like winning.”</i></p><p>Credit, not justice. That's the job.</p>` },
+  3: { title: "File Report — Case 3: The 3y3 of the Storm", client: "pixelpete_99",
+    s1label: "Who runs The Null Sector?", s1correct: ["c0de_z", "skullcrusher"],
+    s1wrong: "Not quite. The ringleader hides behind two names — one public, one hidden. Who profits from the trainer?",
+    s2label: "What proves it?", s2correct: ["audio", "guestbook", "log", "chatlog"],
+    s2wrong: "That shows something happened — but not who runs the ring. What links the public gamer to the hidden group?",
+    s3label: "What do you do with the evidence?", s3kind: "choice",
+    s3choices: [
+      { key: "full", label: "Send the full evidence to the gamerZone mods" },
+      { key: "fraud", label: "Send only the ban-fraud evidence" },
+      { key: "anon", label: "Send the evidence anonymously to pixelpete_99" },
+      { key: "delete", label: "Delete the evidence and report “no case”" }
+    ],
+    s3wrong: "Pick one. There is no right answer — only the one you can live with.",
+    epilogues: {
+      full: `<p>You sent everything to the gamerZone mods: the chat log, the keygen fingerprint, the guestbook, the forged ban request. c0de_z was banned the same day. DoomDealer's ban was reviewed — and he was banned again, for warez, less severe this time. The ring dissolved. Some innocent members were caught in it.</p><p>Pete doesn't reply for a day. Then: <i>“my brother's home. he's mad at me. he's mad at himself. thank you. i think.”</i></p><p>Clearing his name meant clearing all of it. That's the job.</p>`,
+      fraud: `<p>You sent only the ban-fraud evidence: one signature where the rules demand two, a session token used while mod_hex was at a LAN party. c0de_z was banned. DoomDealer was unbanned on probation.</p><p>Pete doesn't reply for a day. Then: <i>“he's back!! he says thank you. he says don't ask him about the other stuff.”</i></p><p>c0de_z's alt accounts survived. The ring is quieter, not gone. You got the brother back, not the justice. That's the job.</p>`,
+      anon: `<p>You sent the evidence anonymously to pixelpete_99 — no mods, no names, just the truth in his inbox. He confronted DoomDealer the same night. His brother admitted everything: the cracks, the refusal, the proof he never got to release.</p><p>Pete doesn't reply for a day. Then: <i>“we talked all night. he told me everything. the mods still think he's a pirate. but i know. our family knows.”</i></p><p>c0de_z continues. The zone doesn't know. The family does. That's the job.</p>`,
+      delete: `<p>You deleted the evidence and filed “no case.” DoomDealer stays banned. c0de_z continues. The group survives.</p><p>Pete doesn't reply for a day. Then: <i>“u said there was nothing. i know there was something. i don't trust u anymore.”</i></p><p>The quietest outcome, and the most compromised. That's the job.</p>`
+    } }
+};
+const S3_ENTITIES = [
+  { key: "hollowell", label: "Hollowell Media Group — the conglomerate", unlockPages: ["starfactory-about", "press-release"] },
+  { key: "somnius", label: "Somnius Labs — they built the platform", unlockPages: ["devblog2"] },
+  { key: "sprocket", label: "mod_sprocket — the Teentopia moderator", unlockPages: ["modlog2", "sprocket-personal"] },
+  { key: "indie", label: "Independent artists — that's what starfactory claims", unlockPages: ["starfactory-about"] }
+];
+function entityOptions() { return S3_ENTITIES.filter(e => e.unlockPages.some(p => state.visited[p])); }
+const HINT_TEXT = {
+  1: { tier1: "Tier 1 — client follow-up email (no new page for 60s): “did you try her guestbook?”", from: "marbles_4ever" },
+  2: { tier1: "Tier 1 — client follow-up email (no new page for 60s): “did you look at the stars?”", from: "lunar_latte" },
+  3: { tier1: "Tier 1 — Somnius Labs email (no new page for 60s): “Have you checked the banner ads? Some trainers are not trainers.”", from: "Somnius Labs" }
+};
+const INTRO = {
+  1: { title: "SOMNIUS — Case 1: The Quiet Room",
+    body: `<h1>You are a private investigator.</h1><p>Not a moderator. Not an employee. Someone people hire when the platform won't help them.</p><p>Your client is <b>marbles_4ever</b>, 19. Her older sister Dani died eight months ago. Dani's memorial page — <b>angelfeathers</b> — has vanished from Goodtime Valley, and nobody will say why.</p><p>Your only tools are the ones on this desktop: a <b>browser</b>, <b>mail</b>, a <b>notepad</b>, and your ability to notice when two stories don't match.</p><p>Read the case email. Then go looking. When you know the truth, <b>File Report</b> and tell her.</p>` },
+  2: { title: "SOMNIUS — Case 2: The Girl Who Drew the Stars",
+    body: `<h1>You are a private investigator.</h1><p>Not a moderator. Not an employee. Someone people hire when the platform won't help them.</p><p>Your client is <b>lunar_latte</b>, 15. She draws a webcomic called <b>Comet Cat</b> — one panel a night, after homework. A slick page called <b>starfactory</b> is posting her comic like they drew it, and they're #1 in Teentopia while she's #47.</p><p>New zone, same tools: a <b>browser</b>, <b>mail</b>, a <b>notepad</b>, and your ability to notice when two stories don't match. In Teentopia, the art is the person.</p><p>Read the case email. Then go looking. When you know the truth, <b>File Report</b> and tell her.</p>` },
+  3: { title: "SOMNIUS — Case 3: The 3y3 of the Storm",
+    body: `<h1>You are a private investigator.</h1><p>Not a moderator. Not an employee. Someone people hire when the platform won't help them.</p><p>Your client is <b>pixelpete_99</b>, 14. His older brother <b>DoomDealer</b> was banned from gamerZone for uploading a cracked game. Pete thinks he was framed. He is wrong about that — and right about something else.</p><p>New zone, same tools: a <b>browser</b>, <b>mail</b>, a <b>notepad</b>, and your ability to notice when two stories don't match. In gamerZone, the ads are not all ads, and some files are not what they say they are. You will need a tool of your own before this one is over.</p><p>Read the case email. Then go looking. When you know the truth, <b>File Report</b> — and decide what the truth is for.</p>` }
+};
+const HOMES = {
+  1: `<div class="pg plain"><h1>Welcome to Somnius</h1><p><i>the internet you visit while you sleep. goodtime valley node. november 2004.</i></p><p>You have <b>1 unread case email</b>. Start there — or start digging.</p><p>📁 <a href="#" data-page="memorial-404">angelfeathers — the missing memorial page</a><br>📁 <a href="#" data-page="fanclub-hub">The Flip-Flop Fan Club</a><br>📁 <a href="#" data-page="zone-rules">Goodtime Valley Zone Rules</a></p><p class="tiny">Tip: use the Directory button for public pages, Search for keywords, and follow links — the webrings go further than the directory does.</p></div>`,
+  2: `<div class="pg plain"><h1>Welcome to Somnius</h1><p><i>the internet you visit while you sleep. teentopia node. november 2004.</i></p><p>You have <b>1 unread case email</b>. Start there — or start digging.</p><p>📁 <a href="#" data-page="lunar-home">lunar_latte — the girl who drew the stars</a><br>📁 <a href="#" data-page="comet-hub">COMET CAT — Official Hub</a><br>📁 <a href="#" data-page="starfactory-home">starfactory — the internet's #1 comics network</a></p><p class="tiny">Tip: use the Directory button for public pages, Search for keywords, and follow links — the webrings go further than the directory does.</p></div>`,
+  3: `<div class="pg plain"><h1>Welcome to Somnius</h1><p><i>the internet you visit while you sleep. gamerzone node. november 2004.</i></p><p>You have <b>1 unread case email</b>. Start there — or start digging.</p><p>📁 <a href="#" data-page="pete-home">pixelpete_99 — the client</a><br>📁 <a href="#" data-page="cheat-vault">The Cheat Vault</a><br>📁 <a href="#" data-page="skullcrusher">Skullcrusher's Shrine</a></p><p class="tiny">Tip: use the Directory button for public pages, Search for keywords, and follow links — the webrings go further than the directory does. Some files are encrypted .nfo files. The zone's banner ads are not all ads.</p></div>`
+};
+function bootHome() { navSynthetic("Somnius Home", HOMES[saveData.active]); hist = []; histIdx = -1; }
+function showIntro() {
+  const intro = $("#intro");
+  const cfg = INTRO[saveData.active];
+  document.getElementById("intro-title").textContent = cfg.title;
+  document.getElementById("intro-body").innerHTML = cfg.body +
+    `<p><button id="intro-go" style="padding:6px 16px;font-weight:bold">Open the case email →</button></p>
+     <p style="color:#666;font-size:11px">Project Sleepwalk vertical slice: ${saveData.active} zone${saveData.active > 1 ? "s" : ""}, ${saveData.active} case${saveData.active > 1 ? "s" : ""}, 20 pages per case. Progress saves in this browser, per case. “Reset case” in the Start menu clears it.</p>`;
+  intro.style.display = "flex";
+  document.getElementById("intro-go").onclick = () => { state.seenIntro = true; save(); intro.style.display = "none"; openWin("mail"); };
+}
+
+/* ================= report (structured slots, no free text) ================= */
+const DISTRACTORS = {
+  1: {
+    "poem": { label: "Halberd's poem — proves he's obsessed, not who she is", unlockPage: "halberd-poetry" },
+    "modlog": { label: "The Mod Log — proves the removal broke procedure, not who she is", unlockPage: "mod-log" },
+    "eulogy": { label: "The eulogy edit — proves someone saw her, not where she is", unlockPage: "eulogy" }
+  },
+  2: {
+    "comparison": { label: "The comparison page — the panels match, but it doesn't say who copied whom", unlockPage: "comparison" },
+    "ranking": { label: "The Rising Stars list — starfactory is #1, but popularity isn't proof", unlockPage: "rising-stars" },
+    "guestbook-praise": { label: "starfactory's guestbook — fans love it, but fans can be fooled", unlockPage: "starfactory-guestbook" }
+  },
+  3: {
+    "cracks": { label: "The fake game cracks — they prove DoomDealer cracked games, not that he posted the keylogger", unlockPage: "warez-list" },
+    "legend": { label: "The clan praise — “doomdealer is a legend” proves he's admired, not what he did", unlockPage: "clan-deathtrap" },
+    "surface": { label: "The ModLog entry — on the surface it looks like a clean ban", unlockPage: "modlog3" }
+  }
+};
+function encounteredPeople() { return Object.keys(state.enc).sort((a, b) => state.enc[a] - state.enc[b]); }
+function unlockedEvidenceOptions() {
+  const opts = [];
+  Object.keys(EVIDENCE).forEach(k => { if (state.ev[k]) opts.push({ key: k, label: EVIDENCE[k].label }); });
+  const D = DISTRACTORS[saveData.active];
+  Object.keys(D).forEach(k => { if (state.visited[D[k].unlockPage]) opts.push({ key: k, label: D[k].label }); });
+  return opts;
+}
+function renderReport() {
+  const body = $("#report-body");
+  const cfg = REPORTS[saveData.active];
+  if (state.resolved) {
+    const mins = Math.max(1, Math.round((Date.now() - state.started) / 60000));
+    const epi = cfg.epilogues ? cfg.epilogues[state.choice] : cfg.epilogue;
+    body.innerHTML = `<h2>Report filed — <span class="stamp">CASE CLOSED</span></h2>
+    ${epi}
+    <p><b>Stats:</b> ${state.order.length}/20 pages visited · ${Object.keys(state.ev).length}/${Object.keys(EVIDENCE).length} identity evidence found · ${state.hints}/3 hints used · ${state.attempts} report attempt(s) · ~${mins} min on the case.</p>
+    <p><button onclick="doReset()">↺ Play it again (reset case)</button></p>
+    <div id="epilogue" style="display:block"></div>`;
+    return;
+  }
+  const people = encounteredPeople();
+  const evOpts = unlockedEvidenceOptions();
+  const s3opts = cfg.s3kind === "entities" ? entityOptions() : cfg.s3kind === "choice" ? cfg.s3choices : people.map(p => ({ key: p, label: p }));
+  body.innerHTML = `<h2>${esc(cfg.title)}</h2>
+  <p>Report your findings to ${esc(cfg.client)}. Pick from people and pages you have <b>actually encountered</b> — the report only lists what you've seen. You can retry as many times as you like; partial credit tells you which slot is wrong, never the answer.</p>
+  <div class="slot"><b>1. ${esc(cfg.s1label)}</b>
+    ${people.length ? people.map(p => `<label><input type="radio" name="s1" value="${p}"> ${esc(PEOPLE[p] || p)}</label>`).join("") : `<i>You haven't met anyone yet. Visit some pages first.</i>`}
+    <div class="verdict" id="v1"></div></div>
+  <div class="slot"><b>2. ${esc(cfg.s2label)}</b>
+    ${evOpts.length ? evOpts.map(o => `<label><input type="radio" name="s2" value="${o.key}"> ${esc(o.label)}</label>`).join("") : `<i>No identity evidence found yet. Keep looking — something has to link the two sides.</i>`}
+    <div class="verdict" id="v2"></div></div>
+  <div class="slot"><b>3. ${esc(cfg.s3label)}</b>
+    ${s3opts.length ? s3opts.map(o => `<label><input type="radio" name="s3" value="${o.key}"> ${esc(o.label)}</label>`).join("") : `<i>Nothing to choose from yet. Keep looking — the answer has to be something you've seen.</i>`}
+    <div class="verdict" id="v3"></div></div>
+  <button id="btn-submit" style="padding:6px 18px;font-weight:bold">Submit report</button>
+  <span id="report-msg" style="margin-left:8px"></span>
+  <div id="epilogue"></div>`;
+  $("#btn-submit").onclick = () => {
+    const s1 = (document.querySelector('input[name=s1]:checked') || {}).value;
+    const s2 = (document.querySelector('input[name=s2]:checked') || {}).value;
+    const s3 = (document.querySelector('input[name=s3]:checked') || {}).value;
+    if (!s1 || !s2 || !s3) { $("#report-msg").textContent = "Fill in all three slots first."; return; }
+    state.attempts++; save();
+    const ok1 = cfg.s1correct.includes(s1);
+    const ok2 = cfg.s2correct.includes(s2);
+    /* A choice slot has no wrong answer — any choice is a decision. It still has to be made. */
+    const ok3 = cfg.s3kind === "choice" ? !!s3 : s3 === cfg.s3correct;
+    const v1 = $("#v1"), v2 = $("#v2"), v3 = $("#v3");
+    v1.className = "verdict " + (ok1 ? "ok" : "bad");
+    v1.textContent = ok1 ? "✓ Correct." : "✗ " + cfg.s1wrong;
+    v2.className = "verdict " + (ok2 ? "ok" : "bad");
+    v2.textContent = ok2 ? "✓ Correct." : "✗ " + cfg.s2wrong;
+    v3.className = "verdict " + (ok3 ? "ok" : "bad");
+    v3.textContent = ok3 ? (cfg.s3kind === "choice" ? "✓ Noted — this is your call." : "✓ Correct.") : "✗ " + cfg.s3wrong;
+    if (ok1 && ok2 && ok3) {
+      if (cfg.s3kind === "choice") { state.choice = s3; }
+      state.resolved = true; save();
+      $("#report-msg").textContent = "";
+      setTimeout(renderReport, 400);
+      toast("✅ <b>Case closed.</b> The report went through — read the epilogue.");
+    } else {
+      $("#report-msg").textContent = "Partial credit: " + [ok1, ok2, ok3].filter(Boolean).length + "/3 slots right. Try again.";
+    }
+    renderCaseFile();
+  };
+}
+
+/* ================= hints: 3 diegetic tiers on the no-new-page timer ================= */
+const HINT_PRIORITY = {
+  1: ["webring-hub", "cached-guestbook", "tune", "quietrooms-home", "memorial-directory", "possum-personal"],
+  2: ["webring-sketchbook", "comparison", "zoom-panel", "moss-home", "starfactory-about", "press-release"],
+  3: ["cheat-vault", "free-gamez", "null-hub", "doom-stash", "modlog3", "skullcrusher"]
+};
+const HINT_SECONDS = [60, 150, 240]; /* slice thresholds; the real game would use longer ones */
+function firstUnvisitedPriority() { return HINT_PRIORITY[saveData.active].find(id => !state.visited[id]) || ({ 1: "quietrooms-home", 2: "zoom-panel", 3: "null-hub" })[saveData.active]; }
+function fireHint(tier) {
+  if (tier === 1) {
+    if (!state.mail.includes("m-followup")) state.mail.push("m-followup");
+    state.hintLog.push(HINT_TEXT[saveData.active].tier1);
+    renderMail(); updateMailBadge();
+    toast("✉️ New mail from <b>" + esc(HINT_TEXT[saveData.active].from) + "</b> — she remembered something.");
+  } else if (tier === 2) {
+    const target = firstUnvisitedPriority();
+    showAssist(target); openWin("browser");
+    state.hintLog.push("Tier 2 — Search Assist surfaced an unvisited page: " + byId(target).title);
+    toast("🔍 Somnius Search Assist surfaced a related result in the browser.");
+  } else if (tier === 3) {
+    const target = firstUnvisitedPriority();
+    if (!state.pins.find(x => x.id === target)) state.pins.push({ id: target, title: byId(target).title + " (pinned by Somnius Assist)" });
+    state.hintLog.push("Tier 3 — Notepad auto-pinned: " + byId(target).title);
+    renderNotepad();
+    toast("📌 Somnius Assist pinned a page to your Notepad.");
+  }
+  state.hints = tier; save(); renderCaseFile();
+}
+setInterval(() => {
+  if (state.resolved || document.hidden) return;
+  state.idle++;
+  const clock = document.getElementById("hint-clock");
+  if (clock) clock.textContent = "No new pages for " + Math.floor(state.idle / 60) + ":" + String(state.idle % 60).padStart(2, "0");
+  if (state.hints < 1 && state.idle >= HINT_SECONDS[0]) fireHint(1);
+  else if (state.hints < 2 && state.idle >= HINT_SECONDS[1]) fireHint(2);
+  else if (state.hints < 3 && state.idle >= HINT_SECONDS[2]) fireHint(3);
+}, 1000);
+
+/* ================= case file ================= */
+function renderCaseFile() {
+  const el = $("#casefile-body"); if (!el) return;
+  const meta = CASE_META[saveData.active];
+  const visited = state.order.length, evCount = Object.keys(state.ev).length, ppl = Object.keys(state.enc).length;
+  const totals = { stub: 0, standard: 0, hub: 0 };
+  PAGES.forEach(p => totals[p.type]++);
+  const totalMin = PAGES.reduce((a, p) => a + p.costMin, 0);
+  const mins = Math.max(1, Math.round((Date.now() - state.started) / 60000));
+  const zone = ZONE_NAMES[saveData.active];
+  el.innerHTML = `<div class="case-switch">
+    ${Object.keys(CASE_META).map(n => `<button class="${saveData.active === +n ? "active" : ""}" onclick="setCase(${n})">${esc(CASE_META[n].title)}</button>`).join("")}
+  </div>
+  <p style="color:#666">In the full game, Case 2 unlocks by closing Case 1, and Case 3 by closing Case 2. In this slice all cases are open for playtesting — progress saves per case. Search and the directory scope per case here; unlocked zones accumulate in search in the full game.</p>
+  <h2>${esc(meta.title)} ${state.resolved ? '<span class="stamp">CASE CLOSED</span>' : ""}</h2>
+  <p><b>Client:</b> ${esc(meta.client)}. <b>Subject:</b> ${meta.objective}</p>
+  <p><b>Pages visited:</b> ${visited}/20</p><div class="meter"><div style="width:${visited / 20 * 100}%"></div></div>
+  <p><b>Identity evidence found:</b> ${evCount}/${Object.keys(EVIDENCE).length} &nbsp;·&nbsp; <b>People met:</b> ${ppl}/${Object.keys(PEOPLE).length} &nbsp;·&nbsp; <b>Hints used:</b> ${state.hints}/3 &nbsp;·&nbsp; <b>Report attempts:</b> ${state.attempts} &nbsp;·&nbsp; <b>Time on case:</b> ~${mins} min</p>
+  <p><b>Hint clock:</b> <span id="hint-clock">No new pages for 0:00</span> <span style="color:#666">(Tier 1 at 1:00, Tier 2 at 2:30, Tier 3 at 4:00 of no new pages — slice thresholds)</span></p>
+  ${state.hintLog.length ? `<p><b>Hints delivered:</b><br>${state.hintLog.map(esc).join("<br>")}</p>` : ""}
+  <p><button onclick="openWin('report')">🔍 File Report</button> <button onclick="openWin('browser')">🌐 Back to the browser</button></p>
+  <h3>What this slice has to prove</h3>
+  <ol>${meta.proves.map(p => `<li>${esc(p)}</li>`).join("")}</ol>
+  <h3>Page-cost ledger (estimates from the design doc)</h3>
+  <table class="ledger"><tr><th>Page</th><th>Type</th><th>Est.</th></tr>
+  ${PAGES.map(p => `<tr><td>${esc(p.title)}</td><td>${p.type}</td><td>${p.costMin} min</td></tr>`).join("")}
+  <tr><td><b>Total — 20 pages</b></td><td><b>${totals.stub} stubs · ${totals.standard} standard · ${totals.hub} hubs</b></td><td><b>${totalMin} min (${(totalMin / 60).toFixed(1)} hrs)</b></td></tr></table>
+  <p><b>Gate check:</b> the doc says if a case costs 25+ hours, the target drops from 300 pages to 200. This case estimates at <b>${(totalMin / 60).toFixed(1)} hours — the gate trips on estimate alone</b>. The number that matters is the measured one: how long the 20 pages actually took to write. At the estimated rate, 300 pages is ~${Math.round(totalMin / 20 * 300 / 60)} writing hours; 200 pages is ~${Math.round(totalMin / 20 * 200 / 60)}.</p>
+  <p style="color:#666">How to play: read the case email, search and browse ${esc(zone)}, follow links and webrings. Unlisted pages never appear in search or the directory — somebody has to link you to them. When you know the truth, File Report.</p>`;
+}
+
+/* ================= boot ================= */
+renderMail(); renderNotepad(); updateMailBadge(); update3y3Visibility();
+(function boot() {
+  const zb = document.getElementById("browser-title");
+  if (zb) zb.textContent = "🌐 Somnius Browser — " + ZONE_NAMES[saveData.active];
+  const dn = document.getElementById("desk-node");
+  if (dn) dn.textContent = ZONE_NAMES[saveData.active] + " node";
+  if (state.order.length) { const last = state.order[state.order.length - 1]; hist = state.order.slice(); histIdx = hist.length - 1; nav(last, false); }
+  else bootHome();
+  openWin("browser"); renderTaskbar();
+  if (!state.seenIntro) showIntro();
+})();
+</script>
+</body>
+</html>

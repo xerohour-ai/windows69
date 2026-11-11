@@ -1,0 +1,12 @@
+{
+  name: "Project Sleepwalk",
+  command: "sleepwalk",
+  categories: ["Games"],
+
+  width: 900,
+  height: 640,
+  maximizable: true,
+  resizable: true,
+
+  document: "./index.html",
+}
